@@ -867,6 +867,16 @@ h1, h2, h3, h4, h5,
         background: #f23a2e;
         color: #fff; }
 
+.logo {
+  position: relative;
+  align-items: center;
+  height: 82px;
+  width: 249px;
+  background-repeat: no-repeat;
+}
+
+
+
 .bgimg {
   background-position: center;
   background-size: cover;
