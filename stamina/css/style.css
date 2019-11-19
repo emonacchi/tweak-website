@@ -1,3 +1,8 @@
+/* tweak OFFICIAL COLORS */
+/* #FAC710 - light orange */
+ /* #F49805 - dark orange */
+
+
 /* Base */
 html {
   overflow-x: hidden; }
@@ -77,8 +82,8 @@ h1, h2, h3, h4, h5,
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
   .btn.btn-primary:hover {
-    border-color: #f23a2e;
-    background: #f23a2e;
+    border-color: #FAC710;
+    background: #FAC710;
     color: #fff; }
   .btn.btn-black {
     border-width: 2px;
@@ -132,7 +137,7 @@ h1, h2, h3, h4, h5,
   border-width: 2px;
   font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   .form-control:active, .form-control:focus {
-    border-color: #f23a2e;
+    border-color: #FAC710;
     background: none; }
   .form-control:hover, .form-control:active, .form-control:focus {
     -webkit-box-shadow: none !important;
@@ -286,7 +291,7 @@ h1, h2, h3, h4, h5,
   .ul-check.success li:before {
     color: #8bc34a; }
   .ul-check.primary li:before {
-    color: #f23a2e; }
+    color: #FAC710; }
 
 .select-wrap, .wrap-icon {
   position: relative; }
@@ -313,7 +318,7 @@ h1, h2, h3, h4, h5,
   .site-logo a {
     color: #fff; }
     .site-logo a span {
-      color: #f23a2e; }
+      color: #FAC710; }
 
 .site-navbar {
   margin-bottom: 0px;
@@ -332,7 +337,7 @@ h1, h2, h3, h4, h5,
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active {
-      color: #f23a2e;
+      color: #FAC710;
       display: inline-block;
       padding: 5px 20px; }
     .site-navbar .site-navigation .site-menu a {
@@ -368,7 +373,7 @@ h1, h2, h3, h4, h5,
         top: 100%;
         position: absolute;
         text-align: left;
-        border-top: 2px solid #f23a2e;
+        border-top: 2px solid #FAC710;
         -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
         box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
         border-left: 1px solid #edf0f5;
@@ -405,7 +410,7 @@ h1, h2, h3, h4, h5,
           transition: 0s all;
           color: #343a40; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown .active > a {
-          color: #f23a2e !important; }
+          color: #FAC710 !important; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -427,7 +432,7 @@ h1, h2, h3, h4, h5,
             background: #f4f5f9;
             color: #25262a; }
       .site-navbar .site-navigation .site-menu .has-children:hover > a, .site-navbar .site-navigation .site-menu .has-children:focus > a, .site-navbar .site-navigation .site-menu .has-children:active > a {
-        color: #f23a2e; }
+        color: #FAC710; }
       .site-navbar .site-navigation .site-menu .has-children:hover, .site-navbar .site-navigation .site-menu .has-children:focus, .site-navbar .site-navigation .site-menu .has-children:active {
         cursor: pointer; }
         .site-navbar .site-navigation .site-menu .has-children:hover > .dropdown, .site-navbar .site-navigation .site-menu .has-children:focus > .dropdown, .site-navbar .site-navigation .site-menu .has-children:active > .dropdown {
@@ -509,12 +514,12 @@ h1, h2, h3, h4, h5,
       position: relative;
       color: #212529; }
       .site-mobile-menu .site-nav-wrap a:hover {
-        color: #f23a2e; }
+        color: #FAC710; }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
       .site-mobile-menu .site-nav-wrap li .active {
-        color: #f23a2e; }
+        color: #FAC710; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -621,9 +626,9 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         text-decoration: none !important; }
         .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover {
-          color: #f23a2e; }
+          color: #FAC710; }
         .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a.active:after {
-          background: #f23a2e; }
+          background: #FAC710; }
   .sticky-wrapper .shrink {
     padding-top: 10px !important;
     padding-bottom: 10px !important; }
@@ -680,7 +685,7 @@ h1, h2, h3, h4, h5,
 
 .schedule-wrap {
   padding: 40px;
-  background: #f23a2e;
+  background: #FAC710;
   max-width: 700px;
   position: relative;
   z-index: 9;
@@ -719,7 +724,7 @@ h1, h2, h3, h4, h5,
 
 .schedule-wrap2 {
   padding: 40px;
-  background: #f23a2e;
+  background: #FAC710;
   width: 50%;
   position: absolute;
   z-index: 9;
@@ -769,7 +774,7 @@ h1, h2, h3, h4, h5,
   background: #fff; }
   .ftco-feature-1 .icon {
     font-size: 70px;
-    color: #f23a2e; }
+    color: #FAC710; }
   .ftco-feature-1 .ftco-feature-1-text {
     padding: 30px; }
   .ftco-feature-1 h2 {
@@ -800,7 +805,7 @@ h1, h2, h3, h4, h5,
       background: #ccc;
       border-radius: 50%; }
     .block-14 .owl-dots .owl-dot.active > span {
-      background: #f23a2e; }
+      background: #FAC710; }
 
 .section-heading .subheading {
   color: #ababab;
@@ -845,7 +850,7 @@ h1, h2, h3, h4, h5,
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     z-index: 2;
-    background: #f23a2e; }
+    background: #FAC710; }
     .class-item:hover h2 a {
       color: #fff; }
     .class-item:hover p, .class-item:hover span {
@@ -864,7 +869,7 @@ h1, h2, h3, h4, h5,
       padding: 10px;
       display: block; }
       .days li a:hover, .days li a.active {
-        background: #f23a2e;
+        background: #FAC710;
         color: #fff; }
 
 .logo {
