@@ -1151,7 +1151,7 @@ h5,
 .ftco-feature-1:hover,
 .ftco-feature-1.active {
   -webkit-box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
 }
 
 .block-14 .owl-nav {
@@ -1245,11 +1245,12 @@ h5,
   -ms-transform: scale(1.2);
   transform: scale(1.2);
   z-index: 2;
-  background: #FAC710;
+  background: fff;
 }
 
 .class-item:hover h2 a {
-  color: #fff;
+  color: #000;
+  ;
 }
 
 .class-item:hover p,
