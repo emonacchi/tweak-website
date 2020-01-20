@@ -4,7 +4,7 @@
   "description": "Official tweak browser extension web site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/validate-html.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,7 @@
     "url": "https://github.com/emonacchi/tweak-website/issues"
   },
   "homepage": "https://github.com/emonacchi/tweak-website#readme",
-  "devDependencies": {}
+  "devDependencies": {
+    "html5-lint": "0.3.0"
+  }
 }
