@@ -1,0 +1,26 @@
+{
+  "name": "tweak-website",
+  "version": "0.0.0",
+  "description": "Official tweak browser extension web site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emonacchi/tweak-website.git"
+  },
+  "keywords": [
+    "browser",
+    "extension",
+    "web",
+    "request"
+  ],
+  "author": "Elisa Monacchi <elisa.monacchi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emonacchi/tweak-website/issues"
+  },
+  "homepage": "https://github.com/emonacchi/tweak-website#readme",
+  "devDependencies": {}
+}
