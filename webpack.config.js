@@ -6,17 +6,19 @@ const ExtractSASS = new ExtractTextPlugin("./[name].[hash].css");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
+const ip = require("ip");
+
 const pages = require("./src/content");
 
 // TODO: configure production properly
+const ipAddr = ip.address();
 const proxy = "http://localhost:8081/";
 const port = process.env.NODE_ENV === "development" ? 3001 : "";
 let baseUrl = proxy;
 
-if (process.env.BASE_URL) {
-  baseUrl = port
-    ? `${process.env.BASE_URL}:${port}/`
-    : `${process.env.BASE_URL}/`;
+if (ipAddr) {
+  // TODO: improve this...
+  baseUrl = port ? `http://${ipAddr}:${port}/` : `https://${ipAddr}/`;
 }
 
 const common = {
