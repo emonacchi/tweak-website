@@ -10,6 +10,7 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
 
 const pages = require("./src/pages");
+
 let renderedPages = [];
 for (let i = 0; i < pages.length; i++) {
   let page = Object.assign({}, pages[i]);

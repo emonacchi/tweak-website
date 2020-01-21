@@ -4,7 +4,10 @@
   "description": "Official tweak browser extension web site",
   "main": "index.js",
   "scripts": {
-    "test": "node scripts/validate-html.js"
+    "build": "webpack --config webpack-prod.config.js --colors --optimize-minimize",
+    "start": "nodemon --exec yarn watch --watch src/pages.js",
+    "test": "node scripts/validate-html.js",
+    "watch": "webpack-dev-server --config webpack-dev.config.js --watch --colors -d"
   },
   "repository": {
     "type": "git",
