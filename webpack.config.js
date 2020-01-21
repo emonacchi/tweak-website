@@ -1,6 +1,4 @@
-// CONTINUE TOMORROW>......................https://github.com/statickidz/webpack-handlebars-bootstrap
-const Path = require("path");
-const Webpack = require("webpack");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -8,71 +6,58 @@ const ExtractSASS = new ExtractTextPlugin("./[name].[hash].css");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
-
-const pages = require("./src/pages");
-
-let renderedPages = [];
-for (let i = 0; i < pages.length; i++) {
-  let page = Object.assign({}, pages[i]);
-  renderedPages.push(
+const pages = require('./src/content');
+const renderedPages = pages.map(
+  page =>
     new HtmlWebpackPlugin({
       template: page.template,
       filename: page.output,
-      title: page.content.title,
-      description: page.content.description
+      // TODO
+      // title: page.content.title,
+      // description: page.content.description
     })
-  );
-}
+);
 
 module.exports = options => {
-  const dest = Path.join(__dirname, "dist");
-
   let webpackConfig = {
-    devtool: options.devtool,
-    entry: ["./src/app.js"],
+    devtool: process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
+    entry: ['./src/app.js'],
     output: {
-      path: dest,
-      filename: "./assets/scripts/[name].[hash].js"
+      path: path.join(__dirname, 'dist'),
+      filename: '[name].[hash].js',
     },
     plugins: [
-      new Webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery",
-        Tether: "tether",
-        "window.Tether": "tether",
-        Popper: ["popper.js", "default"]
-      }),
+      // TODO: use below instead of inline import jquery
+      // new webpack.ProvidePlugin({
+      //   $: "jquery",
+      //   jQuery: "jquery",
+      //   "window.jQuery": "jquery",
+      //   Tether: "tether",
+      //   "window.Tether": "tether",
+      //   Popper: ["popper.js", "default"]
+      // }),
       new CopyWebpackPlugin([
         { from: "./src/assets/images", to: "./assets/images" }
       ]),
       new CopyWebpackPlugin([
         { from: "./src/assets/fonts", to: "./assets/fonts" }
       ]),
-      new Webpack.DefinePlugin({
+      new webpack.DefinePlugin({
         "process.env": {
-          NODE_ENV: JSON.stringify(
-            options.isProduction ? "production" : "development"
-          )
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
         }
       })
     ],
     module: {
       rules: [
         {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: "babel-loader"
-        },
-        {
           test: /\.hbs$/,
           loader: "handlebars-loader",
           query: {
-            helperDirs: [Path.join(__dirname, "src", "helpers")],
             partialDirs: [
-              Path.join(__dirname, "src", "layouts"),
-              Path.join(__dirname, "src", "components"),
-              Path.join(__dirname, "src", "pages")
+              path.join(__dirname, "src", "layouts"),
+              // path.join(__dirname, "src", "components"),
+              path.join(__dirname, "src", "pages")
             ]
           }
         },
@@ -100,8 +85,8 @@ module.exports = options => {
     }
   };
 
-  if (options.isProduction) {
-    webpackConfig.entry = ["./src/app.js"];
+  if (process.env.NODE_ENV === 'production') {
+    // webpackConfig.entry = ["./src/app.js"];
 
     webpackConfig.plugins.push(
       ExtractSASS,
@@ -122,7 +107,7 @@ module.exports = options => {
       }
     );
   } else {
-    webpackConfig.plugins.push(new Webpack.HotModuleReplacementPlugin());
+    webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 
     webpackConfig.module.rules.push(
       {
@@ -137,23 +122,18 @@ module.exports = options => {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"]
       },
-      {
-        test: /\.js$/,
-        use: "eslint-loader",
-        exclude: /node_modules/
-      }
     );
 
     webpackConfig.devServer = {
-      port: options.port,
-      contentBase: dest,
+      port: process.env.NODE_ENV === 'development' ? 8081 : null,
+      contentBase: path.join("dist"),
       historyApiFallback: true,
-      compress: options.isProduction,
-      inline: !options.isProduction,
-      hot: !options.isProduction,
+      compress: process.env.NODE_ENV === 'production',
+      inline: process.env.NODE_ENV === 'development',
+      hot: process.env.NODE_ENV === 'development',
       stats: {
         chunks: false
-      }
+      },
     };
 
     webpackConfig.plugins.push(
@@ -175,12 +155,12 @@ module.exports = options => {
                   bs.reload();
                 }
               }
-            }
-          ]
+            },
+          ],
         },
         {
           reload: false
-        }
+        },
       )
     );
   }
