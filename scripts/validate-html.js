@@ -3,7 +3,7 @@ const html5Lint = require("html5-lint");
 
 const targets = [
   "tweak/index.html",
-  "tweak/howto1.html",
+  "tweak/documentation.html",
   "tweak/main.html",
 ];
 
