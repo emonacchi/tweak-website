@@ -2,7 +2,6 @@
   "name": "tweak-website",
   "version": "0.0.0",
   "description": "Official tweak browser extension web site",
-  "main": "index.js",
   "scripts": {
     "build": "BASE_URL=\"http://$(ipconfig getifaddr en0)\" webpack --colors --optimize-minimize",
     "start": "BASE_URL=\"http://$(ipconfig getifaddr en0)\" NODE_ENV=development nodemon --exec npm run watch --watch src/content.js",
