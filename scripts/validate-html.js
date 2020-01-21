@@ -2,8 +2,8 @@ const fs = require("fs");
 const html5Lint = require("html5-lint");
 
 const targets = [
-  "tweak/index.html",
-  "tweak/documentation.html",
+  "dist/index.html",
+  "dist/documentation.html",
   "tweak/main.html",
 ];
 
