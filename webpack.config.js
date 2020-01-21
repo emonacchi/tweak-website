@@ -62,7 +62,7 @@ module.exports = options => {
           query: {
             partialDirs: [
               path.join(__dirname, "src", "layouts"),
-              // path.join(__dirname, "src", "components"),
+              path.join(__dirname, "src", "components"),
               path.join(__dirname, "src", "pages")
             ]
           }
@@ -92,7 +92,7 @@ module.exports = options => {
   };
 
   if (process.env.NODE_ENV === 'production') {
-    // webpackConfig.entry = ["./src/app.js"];
+    webpackConfig.entry = ["./src/app.js"];
 
     webpackConfig.plugins.push(
       ExtractSASS,
