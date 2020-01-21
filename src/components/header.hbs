@@ -10,7 +10,7 @@
   <div class="container-fluid">
     <div class="d-flex align-items-center">
       <div class="site-logo">
-        <a href="index.html">
+        <a href="{{ htmlWebpackPlugin.options.baseUrl }}">
           <span>
             <div class="logo" style="background-image: url('../assets/images/tweak-logo.png');"></div>
           </span>
@@ -19,14 +19,14 @@
       <div class="ml-auto">
         <nav class="site-navigation position-relative text-right" role="navigation">
           <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-            <li><a href="index.html#home-section" class="nav-link">Home</a></li>
-            <li><a href="index.html#howto-section" class="nav-link">How to's</a></li>
-            <!-- <li><a href="index.html#classes-section" class="nav-link">How-tos</a></li> -->
-            <li><a href="index.html#faqs-section" class="nav-link">FAQs</a></li>
-            <li><a href="index.html#about-section" class="nav-link">About</a></li>
+            <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#home-section" class="nav-link">Home</a></li>
+            <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#howto-section" class="nav-link">How to's</a></li>
+            <!-- <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#classes-section" class="nav-link">How-tos</a></li> -->
+            <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#faqs-section" class="nav-link">FAQs</a></li>
+            <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#about-section" class="nav-link">About</a></li>
             <!-- The Services tab is hidden as we don't need it now. The classes-section looks a lot like the FAQs one -->
-            <!-- <li><a href="index.html#classes-section" class="nav-link">Services</a></li> -->
-            <li><a href="index.html#contact-section" class="nav-link">Contact</a></li>
+            <!-- <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#classes-section" class="nav-link">Services</a></li> -->
+            <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}#contact-section" class="nav-link">Contact</a></li>
           </ul>
         </nav>
         <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span

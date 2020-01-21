@@ -7,12 +7,28 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
 const pages = require("./src/content");
+
+// TODO: configure production properly
+const proxy = "http://localhost:8081/";
+const port = process.env.NODE_ENV === "development" ? 3001 : "";
+let baseUrl = proxy;
+
+if (process.env.BASE_URL) {
+  baseUrl = port
+    ? `${process.env.BASE_URL}:${port}/`
+    : `${process.env.BASE_URL}/`;
+}
+
+const common = {
+  baseUrl,
+};
 const renderedPages = pages.map(
   page =>
     new HtmlWebpackPlugin({
+      ...common,
       template: page.template,
-      filename: page.output
-      // TODO
+      filename: page.output,
+      // TODO: Pass additional information
       // title: page.content.title,
       // description: page.content.description
     })
@@ -143,8 +159,8 @@ module.exports = options => {
       new BrowserSyncPlugin(
         {
           host: "localhost",
-          port: 3001,
-          proxy: "http://localhost:8081/",
+          port,
+          proxy,
           files: [
             {
               match: ["**/*.hbs"],
