@@ -6,12 +6,12 @@ const ExtractSASS = new ExtractTextPlugin("./[name].[hash].css");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
-const pages = require('./src/content');
+const pages = require("./src/content");
 const renderedPages = pages.map(
   page =>
     new HtmlWebpackPlugin({
       template: page.template,
-      filename: page.output,
+      filename: page.output
       // TODO
       // title: page.content.title,
       // description: page.content.description
@@ -20,11 +20,12 @@ const renderedPages = pages.map(
 
 module.exports = options => {
   let webpackConfig = {
-    devtool: process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
-    entry: ['./src/app.js'],
+    devtool:
+      process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
+    entry: ["./src/app.js"],
     output: {
-      path: path.join(__dirname, 'dist'),
-      filename: '[name].[hash].js',
+      path: path.join(__dirname, "dist"),
+      filename: "[name].[hash].js"
     },
     plugins: [
       // TODO: use below instead of inline import jquery
@@ -42,12 +43,8 @@ module.exports = options => {
       new CopyWebpackPlugin([
         { from: "./src/assets/fonts", to: "./assets/fonts" }
       ]),
-      new CopyWebpackPlugin([
-        { from: "./src/assets/js", to: "./assets/js" }
-      ]),
-      new CopyWebpackPlugin([
-        { from: "./src/assets/css", to: "./assets/css" }
-      ]),
+      new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
+      new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV)
@@ -91,7 +88,7 @@ module.exports = options => {
     }
   };
 
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === "production") {
     webpackConfig.entry = ["./src/app.js"];
 
     webpackConfig.plugins.push(
@@ -127,19 +124,19 @@ module.exports = options => {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"]
-      },
+      }
     );
 
     webpackConfig.devServer = {
-      port: process.env.NODE_ENV === 'development' ? 8081 : null,
+      port: process.env.NODE_ENV === "development" ? 8081 : null,
       contentBase: path.join("dist"),
       historyApiFallback: true,
-      compress: process.env.NODE_ENV === 'production',
-      inline: process.env.NODE_ENV === 'development',
-      hot: process.env.NODE_ENV === 'development',
+      compress: process.env.NODE_ENV === "production",
+      inline: process.env.NODE_ENV === "development",
+      hot: process.env.NODE_ENV === "development",
       stats: {
         chunks: false
-      },
+      }
     };
 
     webpackConfig.plugins.push(
@@ -161,12 +158,12 @@ module.exports = options => {
                   bs.reload();
                 }
               }
-            },
-          ],
+            }
+          ]
         },
         {
           reload: false
-        },
+        }
       )
     );
   }
