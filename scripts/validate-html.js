@@ -4,7 +4,6 @@ const html5Lint = require("html5-lint");
 const targets = [
   "dist/index.html",
   "dist/documentation.html",
-  "tweak/main.html",
 ];
 
 function htmlProofFile(filename, html) {
@@ -16,7 +15,7 @@ function htmlProofFile(filename, html) {
         console.info(`\n\n🔎 ${filename} 👇\n\n`);
 
         results.messages.forEach(msg => {
-          const { type, message, lastLine, firstColumn } = msg;
+          const { type, message, lastLine='', firstColumn='' } = msg;
 
           if (type === "error") {
             hasError = true;
