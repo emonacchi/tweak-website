@@ -1,10 +1,17 @@
 const fs = require("fs");
 const html5Lint = require("html5-lint");
 
+const WHITELIST = [
+  "Bad value  for attribute “src” on element “img”: Expected an equals sign, a comma or a token character but saw “;” instead",
+];
 const targets = [
   "dist/index.html",
   "dist/documentation.html",
 ];
+
+function isWhitelisted(m) {
+  return !!WHITELIST.find(wm => m && m.includes && m.includes(wm));
+}
 
 function htmlProofFile(filename, html) {
   return new Promise((resolve, reject) => {
@@ -16,12 +23,13 @@ function htmlProofFile(filename, html) {
 
         results.messages.forEach(msg => {
           const { type, message, lastLine='', firstColumn='' } = msg;
+          const whitelisted = isWhitelisted(message);
 
-          if (type === "error") {
+          if (type === "error" && !whitelisted) {
             hasError = true;
           }
 
-          console.info(
+          !whitelisted && console.info(
             `html5-lint [${type}]: ${message} ${filename}:${lastLine}:${firstColumn}`
           );
         });
