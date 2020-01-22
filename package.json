@@ -1,0 +1,50 @@
+{
+  "name": "tweak-website",
+  "version": "0.0.0",
+  "description": "Official tweak browser extension web site",
+  "scripts": {
+    "build": "webpack --colors --optimize-minimize",
+    "start": "NODE_ENV=development nodemon --exec npm run watch --watch src/content.js",
+    "test": "node scripts/validate-html.js",
+    "watch": "webpack-dev-server --watch --colors -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emonacchi/tweak-website.git"
+  },
+  "keywords": [
+    "browser",
+    "extension",
+    "web",
+    "request"
+  ],
+  "author": "Elisa Monacchi <elisa.monacchi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emonacchi/tweak-website/issues"
+  },
+  "homepage": "https://github.com/emonacchi/tweak-website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^5.0.2",
+    "handlebars": "^4.7.2",
+    "handlebars-loader": "^1.7.1",
+    "html-to-text": "^5.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "html5-lint": "0.3.0",
+    "ip": "^1.1.5",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "sass-loader": "^8.0.2",
+    "spellchecker": "^3.7.0",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
