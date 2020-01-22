@@ -12,19 +12,21 @@ function htmlProofFile(filename, html) {
     let hasError = false;
 
     html5Lint(html, (err, results) => {
-      console.info(`\n\n🔎 ${filename} 👇\n\n`);
+      if (results && results.messages && results.messages.length) {
+        console.info(`\n\n🔎 ${filename} 👇\n\n`);
 
-      results.messages.forEach(msg => {
-        const { type, message, lastLine, firstColumn } = msg;
+        results.messages.forEach(msg => {
+          const { type, message, lastLine, firstColumn } = msg;
 
-        if (type === "error") {
-          hasError = true;
-        }
+          if (type === "error") {
+            hasError = true;
+          }
 
-        console.info(
-          `html5-lint [${type}]: ${message} ${filename}:${lastLine}:${firstColumn}`
-        );
-      });
+          console.info(
+            `html5-lint [${type}]: ${message} ${filename}:${lastLine}:${firstColumn}`
+          );
+        });
+      }
 
       return resolve(hasError);
     });
