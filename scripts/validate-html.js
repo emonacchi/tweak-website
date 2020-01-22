@@ -59,7 +59,8 @@ async function main() {
   }
 
   if (hasError) {
-    throw new Error("\n\n\nplease fix the errors pointed by html5-lint!");
+    console.warn("\n\n\nplease fix the errors pointed by html5-lint!");
+    process.exit(1);
   }
 }
 
