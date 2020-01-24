@@ -2,15 +2,18 @@ const fs = require("fs");
 const html5Lint = require("html5-lint");
 
 const WHITELIST = [
-  "Bad value  for attribute “src” on element “img”: Expected an equals sign, a comma or a token character but saw “;” instead",
+  "Bad value  for attribute “src” on element “img”: Expected an equals sign, a comma or a token character but saw “;” instead."
 ];
-const targets = [
-  "dist/index.html",
-  "dist/documentation.html",
-];
+const targets = ["dist/index.html", "dist/documentation.html"];
 
 function isWhitelisted(m) {
-  return !!WHITELIST.find(wm => m && m.includes && m.includes(wm));
+  const { message = "" } = m;
+
+  return !!WHITELIST.find(wm => message.includes(wm));
+}
+
+function negate(fn) {
+  return (...args) => !fn(...args);
 }
 
 function htmlProofFile(filename, html) {
@@ -18,18 +21,22 @@ function htmlProofFile(filename, html) {
     let hasError = false;
 
     html5Lint(html, (err, results) => {
-      if (results && results.messages && results.messages.length) {
+      const messages =
+        results &&
+        results.messages &&
+        results.messages.filter(negate(isWhitelisted));
+
+      if (messages && messages.length) {
         console.info(`\n\n🔎 ${filename} 👇\n\n`);
 
-        results.messages.forEach(msg => {
-          const { type, message, lastLine='', firstColumn='' } = msg;
-          const whitelisted = isWhitelisted(message);
+        messages.forEach(msg => {
+          const { type, message, lastLine = "", firstColumn = "" } = msg;
 
-          if (type === "error" && !whitelisted) {
+          if (type === "error") {
             hasError = true;
           }
 
-          !whitelisted && console.info(
+          console.info(
             `html5-lint [${type}]: ${message} ${filename}:${lastLine}:${firstColumn}`
           );
         });
