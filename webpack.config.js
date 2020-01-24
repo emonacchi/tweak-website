@@ -30,9 +30,7 @@ const renderedPages = pages.map(
       ...common,
       template: page.template,
       filename: page.output,
-      // TODO: Pass additional information
-      // title: page.content.title,
-      // description: page.content.description
+      content: page.content,
     })
 );
 
