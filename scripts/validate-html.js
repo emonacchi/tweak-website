@@ -76,6 +76,8 @@ async function main() {
   if (hasError) {
     console.warn("\n\n\nplease fix the errors pointed by html5-lint!");
     process.exit(1);
+  } else {
+    console.log('\n\n\n🎉🎉🎉 No errors found! 🎉🎉🎉\n\n\n')
   }
 }
 
