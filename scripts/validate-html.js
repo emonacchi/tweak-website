@@ -1,30 +1,46 @@
 const fs = require("fs");
 const html5Lint = require("html5-lint");
 
-const targets = [
-  "dist/index.html",
-  "dist/documentation.html",
-  "tweak/main.html",
+const WHITELIST = [
+  "Bad value  for attribute “src” on element “img”: Expected an equals sign, a comma or a token character but saw “;” instead."
 ];
+const targets = ["dist/index.html", "dist/documentation.html"];
+
+function isWhitelisted(m) {
+  const { message = "" } = m;
+
+  return !!WHITELIST.find(wm => message.includes(wm));
+}
+
+function negate(fn) {
+  return (...args) => !fn(...args);
+}
 
 function htmlProofFile(filename, html) {
   return new Promise((resolve, reject) => {
     let hasError = false;
 
     html5Lint(html, (err, results) => {
-      console.info(`\n\n🔎 ${filename} 👇\n\n`);
+      const messages =
+        results &&
+        results.messages &&
+        results.messages.filter(negate(isWhitelisted));
 
-      results.messages.forEach(msg => {
-        const { type, message, lastLine, firstColumn } = msg;
+      if (messages && messages.length) {
+        console.info(`\n\n🔎 ${filename} 👇\n\n`);
 
-        if (type === "error") {
-          hasError = true;
-        }
+        messages.forEach(msg => {
+          const { type, message, lastLine = "", firstColumn = "" } = msg;
 
-        console.info(
-          `html5-lint [${type}]: ${message} ${filename}:${lastLine}:${firstColumn}`
-        );
-      });
+          if (type === "error") {
+            hasError = true;
+          }
+
+          console.info(
+            `html5-lint [${type}]: ${message} ${filename}:${lastLine}:${firstColumn}`
+          );
+        });
+      }
 
       return resolve(hasError);
     });
@@ -58,7 +74,10 @@ async function main() {
   }
 
   if (hasError) {
-    throw new Error("\n\n\nplease fix the errors pointed by html5-lint!");
+    console.warn("\n\n\nplease fix the errors pointed by html5-lint!");
+    process.exit(1);
+  } else {
+    console.log('\n\n\n🎉🎉🎉 No errors found! 🎉🎉🎉\n\n\n')
   }
 }
 

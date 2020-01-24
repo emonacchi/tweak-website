@@ -1,4 +1,4 @@
-# tweak-website
+# tweak-website [![Build Status](https://travis-ci.com/emonacchi/tweak-website.svg?branch=master)](https://travis-ci.com/emonacchi/tweak-website)
 
 ### Developer guide
 1. Install dependencies.
