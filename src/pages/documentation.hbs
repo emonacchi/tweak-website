@@ -1,5 +1,6 @@
 {{#> _page }}
-<div class="bgimg" style="background-image: url('../assets/images/documentation/screen-page.png');" data-stellar-background-ratio="0.5">
+<div class="bgimg" style="background-image: url('assets/images/documentation/screen-page.png');"
+  data-stellar-background-ratio="0.5">
   <div class="container">
     <div class="row align-items-center justify-content-center text-center">
       <div class="col-md-7">
@@ -10,46 +11,93 @@
   </div>
 </div>
 <div class="site-section">
-  <div class="container">
-    <h2>Step 1</h2>
+  <div style="margin: 50px;">
+    <h2>Step 1 - Request setup</h2>
     <div class="row mb-5">
-      <div class="col-lg-6">
-        <img alt="some description" src="../assets/images/documentation/screen-page.png" class="img-fluid">
+      <div class="col-lg-8">
+        <img alt="Step 1 - Request setup" src="assets/images/documentation/step1.png" class="img-fluid">
       </div>
-      <div class="col-lg-6">
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
-          blind texts.
-          Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+      <div class="col-lg-4">
+        <ul>
+          <li>Open the DevTools Network tab</li>
+          <li>In the Name section, <b>select the request you want to intercept if you need to collect information about the request</b></li>
+          <li>Open tweak and fill in <b>Configuration name</b>, <b>HTTP Method</b> and <b>Request URL</b> according to the
+            caracteristics of
+            the request you want to intercept</li>
+        </ul>
       </div>
     </div>
-    <h2>Step 2</h2>
+    <h2>Step 2 - Raw response data</h2>
     <div class="row mb-5">
-      <div class="row mb-5">
-        <div class="col-lg-6">
-          <img alt="some description" src="../assets/images/documentation/screen-page.png" class="img-fluid">
-        </div>
-        <div class="col-lg-6">
-          <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
-            paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-          <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks
-            and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her
-            initial into the belt and made herself on the way.</p>
-        </div>
+      <div class="col-lg-8">
+        <img alt="Step 2 - Copy the raw response data" src="assets/images/documentation/step2.png" class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <ul>
+          <li><b>Copy the Raw response data</b> from the response section</li>
+          <li><b>Paste the Raw response data in the json editor in tweak</b></li>
+        </ul>
       </div>
     </div>
-    <div class="col-lg-6">
-      <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life
-        One day however
-        a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-      <ul class="ul-check list-unstyled success">
-        <li>Even the see Pointing has no control</li>
-        <li>Lorem Ipsum decided to leave for</li>
-        <li>The far World of Grammar</li>
-      </ul>
+    <h2>Step 3 - Format the response</h2>
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <img alt="Step 3 - Format the data to make it readable" src="assets/images/documentation/step3.png"
+          class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <p>In the json editor, you can <b>format the data</b> by clicking on the first icon. The data will be more
+          readable and you can start tweaking the response as you need.</p>
+      </div>
+    </div>
+    <h2>Step 4 - tweak the response payload</h2>
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <img alt="Step 4 - tweak the response in the json editor" src="assets/images/documentation/step4.png"
+          class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <p><b>tweak the response</b> in the json editor by adding, removing or editing existing data fields</p>
+      </div>
+    </div>
+    <h2>Step 5 - Run the extension</h2>
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <img alt="Step 5 - Run the extension" src="assets/images/documentation/step5.png" class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <p>Go to the menu on the top left of the extension and <b>click Run</b></p>
+        <p>By default, the extention is paused as it could interfere with the websites that you normally use.</p>
+        <p>It is a good practice to keep the extention turned off when you are not using it, otherwise it would perform
+          unnecessary work in the background.</p>
+      </div>
+    </div>
+    <h2>Step 6 - Switch on the Request</h2>
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <img alt="Step 6 - Switch on the Request that you want to intercept" src="assets/images/documentation/step6.png"
+          class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <p><b>Switch on</b> the request(s) that you want to intercept.</p>
+      </div>
+    </div>
+    <h2>Step 7 - Request intercepted!</h2>
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <img alt="Step 7 - The request was intercepted!" src="assets/images/documentation/step7.png" class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <p><b>Reproduce the event that triggers the data fetching</b>, in this example by clicking on the refresh button.</p>
+        <p>When the request is intercepted, you will see a number near the switch in the extention. This number displays
+          the amount of requests successfully intercepted.</p>
+      </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="margin: 50px;">
     <div class="col-12">
+      <p>Do you want to try it yourself in the same application? <a href="https://tweak-target-app.herokuapp.com"><b>Here</b></a> you can access
+        the website shown in these steps.</p>
     </div>
   </div>
 </div>
