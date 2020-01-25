@@ -40,7 +40,7 @@ module.exports = options => {
       process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
     entry: ["./src/app.js"],
     output: {
-      path: path.join(__dirname, "dist"),
+      path: path.join(__dirname, "site"),
       filename: "[name].[hash].js"
     },
     plugins: [
@@ -109,7 +109,7 @@ module.exports = options => {
 
     webpackConfig.plugins.push(
       ExtractSASS,
-      new CleanWebpackPlugin(["dist"], {
+      new CleanWebpackPlugin(["site"], {
         verbose: true,
         dry: false
       })
@@ -145,7 +145,7 @@ module.exports = options => {
 
     webpackConfig.devServer = {
       port: process.env.NODE_ENV === "development" ? 8081 : null,
-      contentBase: path.join("dist"),
+      contentBase: path.join("site"),
       historyApiFallback: true,
       compress: process.env.NODE_ENV === "production",
       inline: process.env.NODE_ENV === "development",
