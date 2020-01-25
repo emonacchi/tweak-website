@@ -1,8 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const ExtractSASS = new ExtractTextPlugin("./[name].[hash].css");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
@@ -22,7 +21,7 @@ if (ipAddr) {
 }
 
 const common = {
-  baseUrl,
+  baseUrl
 };
 const renderedPages = pages.map(
   page =>
@@ -30,7 +29,7 @@ const renderedPages = pages.map(
       ...common,
       template: page.template,
       filename: page.output,
-      content: page.content,
+      content: page.content
     })
 );
 
@@ -40,7 +39,7 @@ module.exports = options => {
       process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
     entry: ["./src/app.js"],
     output: {
-      path: path.join(__dirname, "dist"),
+      path: path.join(__dirname, "site"),
       filename: "[name].[hash].js"
     },
     plugins: [
@@ -61,10 +60,22 @@ module.exports = options => {
       ]),
       new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
       new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
+      // favicon from: https://favicon.io/favicon-converter/
+      new CopyWebpackPlugin([{ from: "./src/assets/favicon", to: "." }]),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV)
         }
+      }),
+      new MiniCssExtractPlugin({
+        filename:
+          process.env.NODE_ENV === "development"
+            ? "[name].css"
+            : "[name].[hash].css",
+        chunkFilename:
+          process.env.NODE_ENV === "development"
+            ? "[id].css"
+            : "[id].[hash].css"
       })
     ],
     module: {
@@ -93,12 +104,29 @@ module.exports = options => {
           ]
         },
         {
-          test: /\.(gif|jpg|png)$/,
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "./assets/images"
-          }
+          test: /\.(gif|jpg|png|jpeg)$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                outputPath: "./assets/images"
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                hmr: process.env.NODE_ENV === "development"
+              }
+            },
+            "css-loader",
+            "sass-loader"
+          ]
         }
       ]
     }
@@ -106,46 +134,13 @@ module.exports = options => {
 
   if (process.env.NODE_ENV === "production") {
     webpackConfig.entry = ["./src/app.js"];
-
-    webpackConfig.plugins.push(
-      ExtractSASS,
-      new CleanWebpackPlugin(["dist"], {
-        verbose: true,
-        dry: false
-      })
-    );
-
-    webpackConfig.module.rules.push(
-      {
-        test: /\.scss$/i,
-        use: ExtractSASS.extract(["css-loader", "sass-loader"])
-      },
-      {
-        test: /\.css$/i,
-        use: ExtractSASS.extract(["css-loader"])
-      }
-    );
+    webpackConfig.plugins.push(new CleanWebpackPlugin());
   } else {
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-    webpackConfig.module.rules.push(
-      {
-        test: /\.scss$/i,
-        use: [
-          "style-loader?sourceMap",
-          "css-loader?sourceMap",
-          "sass-loader?sourceMap"
-        ]
-      },
-      {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"]
-      }
-    );
-
     webpackConfig.devServer = {
       port: process.env.NODE_ENV === "development" ? 8081 : null,
-      contentBase: path.join("dist"),
+      contentBase: path.join("site"),
       historyApiFallback: true,
       compress: process.env.NODE_ENV === "production",
       inline: process.env.NODE_ENV === "development",
