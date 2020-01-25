@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Official tweak browser extension web site",
   "scripts": {
-    "build": "NODE_ENV=production webpack --colors --optimize-minimize",
+    "build": "NODE_ENV=production webpack --mode production --colors --optimize-minimize",
     "start": "NODE_ENV=development nodemon --exec npm run watch --watch src/content.js",
     "test": "node scripts/validate-html.js",
     "watch": "webpack-dev-server --watch --colors -d"
