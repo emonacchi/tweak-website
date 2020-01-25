@@ -60,6 +60,8 @@ module.exports = options => {
       ]),
       new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
       new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
+      // favicon from: https://favicon.io/favicon-converter/
+      new CopyWebpackPlugin([{ from: "./src/assets/favicon", to: "." }]),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV)
