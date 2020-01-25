@@ -103,11 +103,15 @@ module.exports = options => {
         },
         {
           test: /\.(gif|jpg|png|jpeg)$/,
-          loader: "file-loader",
-          options: {
-            name: "[name].[ext]",
-            outputPath: "./assets/images"
-          }
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                outputPath: "./assets/images"
+              }
+            }
+          ]
         },
         {
           test: /\.(sa|sc|c)ss$/,
