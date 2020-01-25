@@ -4,8 +4,9 @@
 
 
 /* Base */
-html {
-  overflow-x: hidden;
+html, body {            /* by danielcaldas 25.01.2020 */
+  max-width: 100%;      /* by danielcaldas 25.01.2020 */
+  overflow-x: hidden;   /* by danielcaldas 25.01.2020 */
 }
 
 body {
