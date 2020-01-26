@@ -36,7 +36,7 @@ module.exports = options => {
   let webpackConfig = {
     devtool:
       process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
-    entry: ["./src/app.js"],
+    entry: ["./src/assets/js/main.js"],
     output: {
       path: path.join(__dirname, "site"),
       filename: "[name].[hash].js"
@@ -123,7 +123,7 @@ module.exports = options => {
   };
 
   if (process.env.NODE_ENV === "production") {
-    webpackConfig.entry = ["./src/app.js"];
+    webpackConfig.entry = ["./src/assets/js/main.js"];
     webpackConfig.plugins.push(new CleanWebpackPlugin());
   } else {
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
