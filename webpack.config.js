@@ -16,7 +16,6 @@ const port = process.env.NODE_ENV === "development" ? 3001 : "";
 let baseUrl = proxy;
 
 if (ipAddr) {
-  // TODO: improve this...
   baseUrl = port ? `http://${ipAddr}:${port}/` : `https://${ipAddr}/`;
 }
 
