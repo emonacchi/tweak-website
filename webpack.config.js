@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
 const ip = require("ip");
@@ -125,6 +126,9 @@ module.exports = options => {
   if (process.env.NODE_ENV === "production") {
     webpackConfig.entry = ["./src/assets/js/main.js"];
     webpackConfig.plugins.push(new CleanWebpackPlugin());
+    webpackConfig.optimization = {
+      minimizer: [new UglifyJsPlugin()]
+    };
   } else {
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 
