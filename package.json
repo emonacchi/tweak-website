@@ -5,6 +5,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production --colors --optimize-minimize",
     "start": "NODE_ENV=development nodemon --exec npm run watch --watch src/content.js",
+    "start:ga": "GOOGLE_ANALYTICS=on npm run start",
     "test": "node scripts/validate-html.js",
     "watch": "webpack-dev-server --watch --colors -d"
   },

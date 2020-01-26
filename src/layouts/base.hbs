@@ -35,6 +35,18 @@
   <script src="assets/js/jquery.easing.min.js"></script>
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/jquery.sticky.js"></script>
+
+  {{#if htmlWebpackPlugin.options.isAnalyticsActive }}
+    {{!-- Global site tag (gtag.js) - Google Analytics --}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ htmlWebpackPlugin.options.gaKey }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "{{ htmlWebpackPlugin.options.gaKey }}");
+    </script>
+  {{/if}}
+
 </body>
 
 </html>
