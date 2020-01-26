@@ -43,22 +43,13 @@ module.exports = options => {
       filename: "[name].[hash].js"
     },
     plugins: [
-      // TODO: use below instead of inline import jquery
-      // new webpack.ProvidePlugin({
-      //   $: "jquery",
-      //   jQuery: "jquery",
-      //   "window.jQuery": "jquery",
-      //   Tether: "tether",
-      //   "window.Tether": "tether",
-      //   Popper: ["popper.js", "default"]
-      // }),
       new CopyWebpackPlugin([
         { from: "./src/assets/images", to: "./assets/images" }
       ]),
       new CopyWebpackPlugin([
         { from: "./src/assets/fonts", to: "./assets/fonts" }
       ]),
-      // new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
+      new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
       new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
       // favicon from: https://favicon.io/favicon-converter/
       new CopyWebpackPlugin([{ from: "./src/assets/favicon", to: "." }]),
