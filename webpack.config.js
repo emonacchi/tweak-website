@@ -58,7 +58,7 @@ module.exports = options => {
       new CopyWebpackPlugin([
         { from: "./src/assets/fonts", to: "./assets/fonts" }
       ]),
-      new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
+      // new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
       new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
       // favicon from: https://favicon.io/favicon-converter/
       new CopyWebpackPlugin([{ from: "./src/assets/favicon", to: "." }]),
@@ -158,7 +158,7 @@ module.exports = options => {
           proxy,
           files: [
             {
-              match: ["**/*.hbs"],
+              match: ["**/*"],
               fn: function(event, file) {
                 if (
                   event === "change" ||
