@@ -35,26 +35,30 @@ module.exports = [
         {
           q: new handlebars.SafeString("Is tweak interfering with other web applications?"),
           a: new handlebars.SafeString(`
-            tweak uses
-            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" title="developer mozilla documentation for window postMessage" target="_blank" rel="noopener">
-              Window.postMessage API
-            </a>
-            to communicate between web pages and the extension. Leaving tweak
-            turned on (running mode) might interfere with the <i>runtime</i> of the website. <b>It is a good practice to keep tweak paused and only turn it on when you are using it.</b>
+            <span>
+              tweak uses
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" title="developer mozilla documentation for window postMessage" target="_blank" rel="noopener">
+                Window.postMessage API
+              </a>
+              to communicate between web pages and the extension. Leaving tweak
+              turned on (running mode) might interfere with the <i>runtime</i> of the website. <b>It is a good practice to keep tweak paused and only turn it on when you are using it.</b>
+            </span>
           `)
         },
         {
           q: new handlebars.SafeString("I setup everything, but no requests are being intercepted."),
-          a: new handlebars.SafeString("Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i> to understand tweak limitations.")
+          a: new handlebars.SafeString("<span>Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i> to understand tweak limitations.</span>")
         },
         {
           q: new handlebars.SafeString("Will tweak ever be available for Mozilla Firefox?"),
-          a: new handlebars.SafeString("Perhaps. There are no plans to do so at the moment, we might add it if there's a high number of requests.")
+          a: new handlebars.SafeString("<span>Perhaps. There are no plans to do so at the moment, we might add it if there's a high number of requests.</span>")
         },
         {
           q: new handlebars.SafeString("Is there any detailed step by step guide where I can learn how to use tweak?"),
           a: new handlebars.SafeString(`
-            Glad you asked. We drafted a very detailed <a href="/documentation.html" title="tweak documentation page">documentation page</a> for you.
+            <span>
+              Glad you asked. We drafted a very detailed <a href="/documentation.html" title="tweak documentation page">documentation page</a> for you.
+            </span>
           `)
         }
       ]
