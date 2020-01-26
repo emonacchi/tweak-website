@@ -681,6 +681,7 @@ h5,
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
+  overflow-y: hidden;
 }
 
 .offcanvas-menu .site-mobile-menu {
@@ -737,7 +738,7 @@ h5,
 }
 
 .site-mobile-menu .site-mobile-menu-body {
-  overflow-y: scroll;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   position: relative;
   padding: 0 20px 20px 20px;
