@@ -1,0 +1,9 @@
+= Privacy Policy
+== Your Privacy Rights
+This Privacy Policy describes your privacy rights regarding our collection and use of your activity data. It applies to the tweak browser extension and website https://tweak-extension.com.
+== How we collect information about you
+We use Google Analytics to collect information about how you use the tweak extension, this includes only interactions with the extension. Google Analytics also collects information such as device type (mobile/desktop) and geographical location.
+== How we use the personal information we collect
+Our primary purpose in collecting analytics data is to track bugs and enhance the usability of the extension based on the usage patterns identified.
+== How you can contact us about privacy questions
+If you have questions or concerns regarding this policy, you should contact us by sending an email to help.tweak@gmail.com.

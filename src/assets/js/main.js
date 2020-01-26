@@ -177,20 +177,6 @@ jQuery(document).ready(function($) {
   };
   siteCarousel();
 
-  // by danielcaldas 26.01.2020
-  // to reactivate jquery.stellar.min.js must be included
-  // var siteStellar = function() {
-  // 	$(window).stellar({
-  //     responsive: false,
-  //     parallaxBackgrounds: true,
-  //     parallaxElements: true,
-  //     horizontalScrolling: false,
-  //     hideDistantElements: false,
-  //     scrollProperty: 'scroll'
-  //   });
-  // };
-  // siteStellar();
-
   var siteSticky = function() {
     $(".js-sticky-header").sticky({ topSpacing: 0 });
   };
@@ -206,17 +192,40 @@ jQuery(document).ready(function($) {
         e.preventDefault();
 
         var hash = this.hash;
+        var url = this.href;
+        var isHashInCurrentLocation = false;
 
-        $("html, body").animate(
-          {
-            scrollTop: $(hash).offset().top
-          },
-          600,
-          "easeInOutCirc",
-          function() {
-            window.location.hash = hash;
+        try {
+          var current = window.location.href.split("#")[0];
+          var target = url.split(hash)[0];
+
+          isHashInCurrentLocation = target && target === current;
+        } catch (error) {
+          if (process.env.NODE_ENV === "development") {
+            console.error(error);
           }
-        );
+          isHashInCurrentLocation = false;
+        }
+
+        if (hash && isHashInCurrentLocation) {
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top
+            },
+            600,
+            "easeInOutCirc",
+            function() {
+              window.location.hash = hash;
+            }
+          );
+        } else if (url) {
+          window.location = url;
+        } else if (process.env.NODE_ENV === "development") {
+          console.warn("Bad element in OnePageNavigation: ", {
+            hash: hash,
+            url: url
+          });
+        }
       }
     );
   };
@@ -234,9 +243,4 @@ jQuery(document).ready(function($) {
     });
   };
   siteScroll();
-
-  // by danielcaldas 26.01.2020
-  // $(function () {
-  // 	$("#bgndVideo").YTPlayer();
-  // });
 });

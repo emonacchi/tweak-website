@@ -13,7 +13,7 @@ const pages = require("./src/content");
 const GA_KEY_STAGING = "UA-151413843-3";
 const GA_KEY_PRODUCTION = "UA-151413843-4";
 const gaKey = process.env.NODE_ENV === "development" ? GA_KEY_STAGING : GA_KEY_PRODUCTION;
-const isAnalyticsActive = process.env.NODE_ENV === "production" || process.env.GOOGLE_ANALYTICS === 'on';
+const isAnalyticsActive = process.env.NODE_ENV === "production" || process.env.GOOGLE_ANALYTICS === "on";
 
 const proxy = "http://localhost:8081/";
 const port = process.env.NODE_ENV === "development" ? 3001 : "";
@@ -67,6 +67,9 @@ module.exports = options => {
       new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
       // favicon from: https://favicon.io/favicon-converter/
       new CopyWebpackPlugin([{ from: "./src/assets/favicon", to: "." }]),
+      // privacy policies
+      new CopyWebpackPlugin([{ from: "./src/privacy-policy.txt", to: "." }]),
+      new CopyWebpackPlugin([{ from: "./src/use-policy.txt", to: "." }]),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV)
