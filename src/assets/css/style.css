@@ -1392,3 +1392,19 @@ h5,
 
 .footer-section {
 }
+
+.pizza-custom-link {
+  color: white;
+}
+
+.pizza-custom-link:hover {
+  color: #f23a2e;
+}
+
+.footer-custom-link {
+  color: #343a40;
+}
+
+.footer-custom-link:hover {
+  color: #f23a2e;
+}
