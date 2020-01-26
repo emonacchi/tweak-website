@@ -16,11 +16,11 @@ const gaKey = process.env.NODE_ENV === "development" ? GA_KEY_STAGING : GA_KEY_P
 const isAnalyticsActive = process.env.NODE_ENV === "production" || process.env.GOOGLE_ANALYTICS === 'on';
 
 const proxy = "http://localhost:8081/";
+const port = process.env.NODE_ENV === "development" ? 3001 : "";
 let baseUrl = proxy;
 
 if (process.env.NODE_ENV === 'development') {
   const ipAddr = ip.address();
-  const port = process.env.NODE_ENV === "development" ? 3001 : "";
 
   if (ipAddr) {
     baseUrl = port ? `http://${ipAddr}:${port}/` : `https://${ipAddr}/`;
