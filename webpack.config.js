@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const webpack = require("webpack");
 const ip = require("ip");
@@ -16,7 +17,6 @@ const port = process.env.NODE_ENV === "development" ? 3001 : "";
 let baseUrl = proxy;
 
 if (ipAddr) {
-  // TODO: improve this...
   baseUrl = port ? `http://${ipAddr}:${port}/` : `https://${ipAddr}/`;
 }
 
@@ -37,21 +37,12 @@ module.exports = options => {
   let webpackConfig = {
     devtool:
       process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
-    entry: ["./src/app.js"],
+    entry: ["./src/assets/js/main.js"],
     output: {
       path: path.join(__dirname, "site"),
       filename: "[name].[hash].js"
     },
     plugins: [
-      // TODO: use below instead of inline import jquery
-      // new webpack.ProvidePlugin({
-      //   $: "jquery",
-      //   jQuery: "jquery",
-      //   "window.jQuery": "jquery",
-      //   Tether: "tether",
-      //   "window.Tether": "tether",
-      //   Popper: ["popper.js", "default"]
-      // }),
       new CopyWebpackPlugin([
         { from: "./src/assets/images", to: "./assets/images" }
       ]),
@@ -133,8 +124,11 @@ module.exports = options => {
   };
 
   if (process.env.NODE_ENV === "production") {
-    webpackConfig.entry = ["./src/app.js"];
+    webpackConfig.entry = ["./src/assets/js/main.js"];
     webpackConfig.plugins.push(new CleanWebpackPlugin());
+    webpackConfig.optimization = {
+      minimizer: [new UglifyJsPlugin()]
+    };
   } else {
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 
@@ -158,7 +152,7 @@ module.exports = options => {
           proxy,
           files: [
             {
-              match: ["**/*.hbs"],
+              match: ["**/*"],
               fn: function(event, file) {
                 if (
                   event === "change" ||
