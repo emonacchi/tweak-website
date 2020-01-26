@@ -22,11 +22,17 @@
           <li>Open the DevTools Network tab</li>
           <li>In the Name section, <b>select the request you want to intercept if you need to collect information about
               the request</b></li>
-          <li>Open tweak and fill in <b>Configuration name</b>, <b>HTTP Method</b> and <b>Request URL</b> according to
+          <li>Open tweak and fill in <b>Configuration name</b>, <b>HTTP Method</b> and <b>URL match expression*</b> according to
             the
             caracteristics of
             the request you want to intercept</li>
         </ul>
+        <small>
+          * the <i>URL match expression</i> can either be pure text that tweak will try to match against the URL
+          with simple string inclusion or in alternative you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" title="developer mozilla documentation for Regular Expressions" target="_blank">regular expression</a>,
+          just use the prefix <code>rx:</code>, for example <code>rx: /api/users/1[0-9]+</code> will intercept all the requests that hit this <i>users</i> endpoint
+          with an id between 10 and 19.
+        </small>
       </div>
     </div>
     <h2>Step 2 - Raw response data</h2>

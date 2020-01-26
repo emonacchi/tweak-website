@@ -1249,11 +1249,6 @@ h5,
   ;
 }
 
-.class-item:hover p,
-.class-item:hover span {
-  color: #ff7c67;
-}
-
 .days {
   width: 100%;
   padding: 0;
