@@ -1204,9 +1204,9 @@ h5,
   overflow: hidden;
   margin-bottom: 30px;
   position: relative;
-  -webkit-transition: .3s all ease;
+  /* -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: .3s all ease; */
   z-index: 1;
   background: white;
 }
@@ -1243,9 +1243,9 @@ h5,
 }
 
 .class-item:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+  /* -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2); */
+  /* transform: scale(1.2); */
   z-index: 2;
   background: fff;
 }
