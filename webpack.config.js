@@ -10,19 +10,33 @@ const ip = require("ip");
 
 const pages = require("./src/content");
 
-// TODO: configure production properly
-const ipAddr = ip.address();
+const GA_KEY_STAGING = "UA-151413843-3";
+const GA_KEY_PRODUCTION = "UA-151413843-4";
+const gaKey = process.env.NODE_ENV === "development" ? GA_KEY_STAGING : GA_KEY_PRODUCTION;
+const isAnalyticsActive = process.env.NODE_ENV === "production" || process.env.GOOGLE_ANALYTICS === 'on';
+
 const proxy = "http://localhost:8081/";
-const port = process.env.NODE_ENV === "development" ? 3001 : "";
 let baseUrl = proxy;
 
-if (ipAddr) {
-  baseUrl = port ? `http://${ipAddr}:${port}/` : `https://${ipAddr}/`;
+if (process.env.NODE_ENV === 'development') {
+  const ipAddr = ip.address();
+  const port = process.env.NODE_ENV === "development" ? 3001 : "";
+
+  if (ipAddr) {
+    baseUrl = port ? `http://${ipAddr}:${port}/` : `https://${ipAddr}/`;
+  }
+} else if (process.env.NODE_ENV === 'production') {
+  baseUrl = "https://tweak-extension.com/"
 }
 
 const common = {
-  baseUrl
+  baseUrl,
+  gaKey,
+  isAnalyticsActive
 };
+
+console.info("Running with the common configurations:", common);
+
 const renderedPages = pages.map(
   page =>
     new HtmlWebpackPlugin({
