@@ -114,98 +114,16 @@
     <div class="tab-content">
       <div class="tab-pane fade show active" id="nav-sunday" role="tabpanel">
         <div class="row">
+        {{#each htmlWebpackPlugin.options.content.faqs }}
           <div class="col-lg-6">
             <div class="class-item d-flex align-items-center">
-              <a href="faq1.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-                <div class="class-item-text">
-                  <span>blablabla</span>
-                  <h2>FAQ 1</h2>
-                  <span>By blabla</span>,
-                  <span>additional stuff</span>
-                </div>
-              </a>
-            </div>
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #2</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
-              </div>
-            </div>
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #3</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
-              </div>
-            </div>
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #4</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
+              <div class="class-item-text" style="margin: 10px;">
+                <h2>{{ this.q }}</h2>
+                <span>{{ this.a }}</span>
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #1</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
-              </div>
-            </div>
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #2</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
-              </div>
-            </div>
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #3</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
-              </div>
-            </div>
-            <div class="class-item d-flex align-items-center">
-              <a href="single.html" class="class-item-thumbnail">
-                <img src="assets/images/pretty-doge.jpeg" alt="Image">
-              </a>
-              <div class="class-item-text">
-                <span>Sunday 7:30am - 9:00am</span>
-                <h2><a href="single.html">Fitness Class Name #4</a></h2>
-                <span>By Justin Daniel</span>,
-                <span>30 minutes</span>
-              </div>
-            </div>
-          </div>
+        {{/each}}
         </div>
       </div>
     </div>
