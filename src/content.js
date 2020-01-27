@@ -6,6 +6,7 @@ module.exports = [
     content: {
       title: "tweak - browser extension",
       metaDescription: "tweak browser extension main page",
+      metaSubject: "tweak is an extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application.",
       faqs: [
         {
           q: new handlebars.SafeString("Will this work in every web application?"),
@@ -69,14 +70,17 @@ module.exports = [
     output: "./documentation.html",
     content: {
       title: "tweak - browser extension - documentation",
-      metaDescription: "tweak browser documentation page"
+      metaDescription: "tweak browser documentation page",
+      metaSubject: "tweak browser documentation page"
     },
     template: "./src/pages/documentation.hbs"
   },
   {
     output: "./404.html",
     content: {
-      title: "tweak - 404 page not found"
+      title: "tweak - 404 page not found",
+      metaDescription: "tweak browser 404 page",
+      metaSubject: "tweak browser 404 page"
     },
     template: "./src/pages/404.hbs"
   }

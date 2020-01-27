@@ -5,6 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="{{ htmlWebpackPlugin.options.content.metaDescription }}">
+
+  <!-- Control the behavior of search engine crawling and indexing -->
+  <meta name="robots" content="index,follow"><!-- All Search Engines -->
+  <meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+  <!-- Short description of your document's subject -->
+  <meta name="subject" content="{{ htmlWebpackPlugin.options.content.metaSubject }}">
+
+  <!-- Gives a general age rating based on the document's content -->
+  <meta name="rating" content="General">
+
   <title>{{ htmlWebpackPlugin.options.content.title }}</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
