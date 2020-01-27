@@ -957,7 +957,7 @@ h5,
 .intro-section,
 .intro-section .container .row {
   height: 100vh;
-  min-height: 900px;
+  /* min-height: 900px; */
 }
 
 .intro-section:before {
