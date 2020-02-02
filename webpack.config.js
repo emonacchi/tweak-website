@@ -53,7 +53,7 @@ module.exports = options => {
       process.env.NODE_ENV === "development" ? "cheap-eval-source-map" : "",
     entry: ["./src/assets/js/main.js"],
     output: {
-      path: path.join(__dirname, "site"),
+      path: path.join(__dirname, "docs"),
       filename: "[name].[hash].js"
     },
     plugins: [
@@ -151,7 +151,7 @@ module.exports = options => {
 
     webpackConfig.devServer = {
       port: process.env.NODE_ENV === "development" ? 8081 : null,
-      contentBase: path.join("site"),
+      contentBase: path.join("docs"),
       historyApiFallback: true,
       compress: process.env.NODE_ENV === "production",
       inline: process.env.NODE_ENV === "development",
