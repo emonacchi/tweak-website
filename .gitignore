@@ -125,6 +125,3 @@ temp/
 
 # End of https://www.gitignore.io/api/git,node
 
-.DS_STORE
-# TODO: remove below line once publishing the website
-site

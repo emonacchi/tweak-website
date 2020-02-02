@@ -1,0 +1,2 @@
+= Acceptable Use Policy
+== The tweak browser extension software is distributed under official browser vendor platforms on, we are not to be held responsible for any digital damage caused to any website using the tweak browser extension, especially when manipulating website’s data for malicious purposes. Please use it at your own risk.
