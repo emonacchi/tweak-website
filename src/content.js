@@ -30,6 +30,10 @@ module.exports = [
                 WebSockets.
                 </a>
               </li>
+              <li>
+                It will only apply the configurations to the browser tab where you configure the requests to intercept and
+                activate the extension (by clicking the run button).
+              </li>
             </ul>
           `)
         },
@@ -48,7 +52,15 @@ module.exports = [
         },
         {
           q: new handlebars.SafeString("I setup everything, but no requests are being intercepted."),
-          a: new handlebars.SafeString("<span>Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i> to understand tweak limitations.</span>")
+          a: new handlebars.SafeString(`
+            <span>
+              Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i> to understand tweak limitations.
+              Another important aspect on the request URL matching expression that might be easy to miss, is that sometimes
+              we perform requests to the same domain, thus we do not have the domain present in the request URL, we simply
+              write the path. In those cases, if you specify the full URL in the tweak configuration <b>the request will be a mismatch and will
+              not be intercepted.</b>
+            </span>
+          `)
         },
         {
           q: new handlebars.SafeString("Will tweak ever be available for Mozilla Firefox?"),
