@@ -6,7 +6,7 @@
     "build": "NODE_ENV=production webpack --mode production --colors --optimize-minimize",
     "start": "NODE_ENV=development nodemon --exec npm run watch --watch src/content.js",
     "start:ga": "GOOGLE_ANALYTICS=on npm run start",
-    "test": "node scripts/validate-html.js",
+    "test": "node tools/validate-html.js",
     "watch": "webpack-dev-server --watch --colors -d"
   },
   "repository": {
@@ -42,7 +42,6 @@
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
     "sass-loader": "^8.0.2",
-    "spellchecker": "^3.7.0",
     "style-loader": "^1.1.3",
     "uglifyjs-webpack-plugin": "2.2.0",
     "webpack": "^4.41.5",
