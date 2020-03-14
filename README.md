@@ -1,6 +1,6 @@
 # tweak-website [![Build Status](https://travis-ci.com/emonacchi/tweak-website.svg?branch=master)](https://travis-ci.com/emonacchi/tweak-website)
 
-<a href="https://tweak-extension.com/" alt="tweak browser extension">
+<a href="https://tweak-extension.com/" title="tweak browser extension">
   <img width="100" height="30" alt="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo.png"/>
 </a>
 
@@ -10,11 +10,11 @@
 
 ### How does the thing work?
 
-<a href="https://tweak-extension.com/documentation" alt="tweak browser extension documentation page">Here, we wrote a detailed documentation</a> to get you started with a simple example.
+<a href="https://tweak-extension.com/documentation" title="tweak browser extension documentation page">Here, we wrote a detailed documentation</a> to get you started with a simple example.
 
 ### Get tweak for free!
 
-<a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" alt="tweak browser extension">👉 available on google chrome store</a>
+<a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" title="tweak browser extension">👉 available on google chrome store</a>
 
 ### Developer guide (for the website)
 
@@ -50,12 +50,12 @@ Additionally would like to thank [@statickidz](https://github.com/statickidz) fo
 
 <footer>
 <p style="float:left; width: 20%;">
-<i><a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" alt="tweak browser extension">tweak browser extension</a></i>
+<i><a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" title="tweak browser extension">tweak browser extension</a></i>
 </p>
 <p style="float:left; width: 60%; text-align:center;">
-<a href="https://tweak-extension.com#contact-section"><img width="100" height="30" alt="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo.png"/></a><br />If you wish to contact us you can drop an email at <b>help.tweak@gmail.com</b>
+<a href="https://tweak-extension.com#contact-section"><img width="100" height="30" title="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo.png"/></a><br />If you wish to contact us you can drop an email at <b>help.tweak@gmail.com</b>
 </p>
 <p style="float:left; width: 20%;">
-<a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" alt="tweak browser extension available on chrome store">👉 available on google chrome store</a>
+<a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" title="tweak browser extension available on chrome store">👉 available on google chrome store</a>
 </p>
 </footer>
