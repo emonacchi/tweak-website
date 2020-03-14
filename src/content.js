@@ -19,17 +19,7 @@ module.exports = [
           a: new handlebars.SafeString(`
             No. tweak has its own <b>limitations</b>, currently:
             <ul>
-              <li>Is not able to intercept requests that are triggered at the page load.</li>
-              <li>
-                It cannot intercept requests if your web application patches/overrides the browser APIs
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" title="developer mozilla documentation for XMLHttpRequest" target="_blank" rel="noopener">
-                XMLHttpRequest
-                </a>
-                and
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" title="developer mozilla documentation for fetch API" target="_blank" rel="noopener">
-                window.fetch.
-                </a>
-              </li>
+              <li>Is not able to intercept requests that are triggered at the page load. The problem is that the requests might be fired before the extension loads in the web page. This is a race condition we are putting a lot of effort to solve.</li>
               <li>
                 It cannot intercept data received through
                 <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" title="developer mozilla documentation for WebSockets API" target="_blank" rel="noopener">
@@ -40,6 +30,7 @@ module.exports = [
                 It will only apply the configurations to the browser tab where you configure the requests to intercept and
                 activate the extension (by clicking the run button).
               </li>
+              <li>In case you refresh the page of the website while the extension is active the extension will need a manual reset, you'll need to click on the <i>STOP</i> button and then again click on the <i>RUN</i> button in order to the extension to be able to intercept requests again.</li>
             </ul>
           `)
         },
