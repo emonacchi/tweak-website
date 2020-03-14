@@ -168,23 +168,13 @@
           <div class="tab-pane fade show active" id="nav-sunday" role="tabpanel">
             <div class="row">
               <div class="col-lg-6">
-                <div class="class-item d-flex align-items-center">
+                <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
                     <h2>Will this work in every web application?</h2>
                     
                 No. tweak has its own <b>limitations</b>, currently:
                 <ul>
-                  <li>Is not able to intercept requests that are triggered at the page load.</li>
-                  <li>
-                    It cannot intercept requests if your web application patches/overrides the browser APIs
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" title="developer mozilla documentation for XMLHttpRequest" target="_blank" rel="noopener">
-                    XMLHttpRequest
-                    </a>
-                    and
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" title="developer mozilla documentation for fetch API" target="_blank" rel="noopener">
-                    window.fetch.
-                    </a>
-                  </li>
+                  <li>Is not able to intercept requests that are triggered at the page load. The problem is that the requests might be fired before the extension loads in the web page. This is a race condition we are putting a lot of effort to solve.</li>
                   <li>
                     It cannot intercept data received through
                     <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" title="developer mozilla documentation for WebSockets API" target="_blank" rel="noopener">
@@ -195,13 +185,14 @@
                     It will only apply the configurations to the browser tab where you configure the requests to intercept and
                     activate the extension (by clicking the run button).
                   </li>
+                  <li>In case you refresh the page of the website while the extension is active the extension will need a manual reset, you'll need to click on the <i>STOP</i> button and then again click on the <i>RUN</i> button in order to the extension to be able to intercept requests again.</li>
                 </ul>
               
                   </div>
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="class-item d-flex align-items-center">
+                <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
                     <h2>Is tweak interfering with other web applications?</h2>
                     
@@ -218,15 +209,15 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="class-item d-flex align-items-center">
+                <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
                     <h2>I setup everything, but no requests are being intercepted.</h2>
                     
                 <span>
-                  Have you tried to turn it off and on? 🤞 Please refer to the question <i>"Will this work in every web application?"</i> to understand tweak limitations.
+                  Have you tried to turn it off and on? 🤞 Please refer to the question <i>"Will this work in every web application?"</i>	&nbsp; to understand tweak limitations.
                   Another important aspect on the request URL matching expression that might be easy to miss, is that sometimes
                   we perform requests to the same domain, thus we do not have the domain present in the request URL, we simply
-                  write the path. In those cases, if you specify the full URL in the tweak configuration <b>the request will be a mismatch and will
+                  write the path. <b>In those cases</b>, if you specify the full URL in the tweak configuration <b>the request will be a mismatch and will
                   not be intercepted.</b>
                 </span>
               
@@ -234,7 +225,7 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="class-item d-flex align-items-center">
+                <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
                     <h2>Will tweak ever be available for Mozilla Firefox?</h2>
                     <span>Perhaps. There are no plans to do so at the moment, we might add it if there's a high number of requests.</span>
@@ -242,7 +233,21 @@
                 </div>
               </div>
               <div class="col-lg-6">
-                <div class="class-item d-flex align-items-center">
+                <div class="class-item d-flex align-items-center faqs">
+                  <div class="class-item-text" style="margin: 10px;">
+                    <h2>
+                Any thoughts on having a tailored support for <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>?
+              </h2>
+                    
+                <span>
+                  We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a> to intercept request that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
+                </span>
+              
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
                     <h2>Is there any detailed step by step guide where I can learn how to use tweak?</h2>
                     
@@ -384,6 +389,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.340b4afb2666498c7377.js"></script></body>
+<script type="text/javascript" src="main.4ddd3ad498a79b519360.js"></script></body>
 
 </html>

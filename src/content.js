@@ -19,17 +19,7 @@ module.exports = [
           a: new handlebars.SafeString(`
             No. tweak has its own <b>limitations</b>, currently:
             <ul>
-              <li>Is not able to intercept requests that are triggered at the page load.</li>
-              <li>
-                It cannot intercept requests if your web application patches/overrides the browser APIs
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" title="developer mozilla documentation for XMLHttpRequest" target="_blank" rel="noopener">
-                XMLHttpRequest
-                </a>
-                and
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" title="developer mozilla documentation for fetch API" target="_blank" rel="noopener">
-                window.fetch.
-                </a>
-              </li>
+              <li>Is not able to intercept requests that are triggered at the page load. The problem is that the requests might be fired before the extension loads in the web page. This is a race condition we are putting a lot of effort to solve.</li>
               <li>
                 It cannot intercept data received through
                 <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" title="developer mozilla documentation for WebSockets API" target="_blank" rel="noopener">
@@ -40,8 +30,9 @@ module.exports = [
                 It will only apply the configurations to the browser tab where you configure the requests to intercept and
                 activate the extension (by clicking the run button).
               </li>
+              <li>In case you refresh the page of the website while the extension is active the extension will need a manual reset, you'll need to click on the <i>STOP</i> button and then again click on the <i>RUN</i> button in order to the extension to be able to intercept requests again.</li>
             </ul>
-          `)
+          `),
         },
         {
           q: new handlebars.SafeString("Is tweak interfering with other web applications?"),
@@ -54,23 +45,33 @@ module.exports = [
               to communicate between web pages and the extension. Leaving tweak
               turned on (running mode) might interfere with the <i>runtime</i> of the website. <b>It is a good practice to keep tweak paused and only turn it on when you are using it.</b>
             </span>
-          `)
+          `),
         },
         {
           q: new handlebars.SafeString("I setup everything, but no requests are being intercepted."),
           a: new handlebars.SafeString(`
             <span>
-              Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i> to understand tweak limitations.
+              Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i>	&nbsp; to understand tweak limitations.
               Another important aspect on the request URL matching expression that might be easy to miss, is that sometimes
               we perform requests to the same domain, thus we do not have the domain present in the request URL, we simply
-              write the path. In those cases, if you specify the full URL in the tweak configuration <b>the request will be a mismatch and will
+              write the path. <b>In those cases</b>, if you specify the full URL in the tweak configuration <b>the request will be a mismatch and will
               not be intercepted.</b>
             </span>
-          `)
+          `),
         },
         {
           q: new handlebars.SafeString("Will tweak ever be available for Mozilla Firefox?"),
           a: new handlebars.SafeString("<span>Perhaps. There are no plans to do so at the moment, we might add it if there's a high number of requests.</span>")
+        },
+        {
+          q: new handlebars.SafeString(`
+            Any thoughts on having a tailored support for <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>?
+          `),
+          a: new handlebars.SafeString(`
+            <span>
+              We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a> to intercept request that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
+            </span>
+          `),
         },
         {
           q: new handlebars.SafeString("Is there any detailed step by step guide where I can learn how to use tweak?"),
@@ -78,8 +79,8 @@ module.exports = [
             <span>
               Glad you asked. We drafted a very detailed <a href="${links.documentation}" title="tweak documentation page">documentation page</a> for you.
             </span>
-          `)
-        }
+          `),
+        },
       ],
       links
     },

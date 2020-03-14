@@ -57,11 +57,9 @@ module.exports = options => {
       filename: "[name].[hash].js"
     },
     plugins: [
+      new CopyWebpackPlugin([{ from: "CNAME", to: "." }]),
       new CopyWebpackPlugin([
         { from: "./src/assets/images", to: "./assets/images" }
-      ]),
-      new CopyWebpackPlugin([
-        { from: "./src/assets/fonts", to: "./assets/fonts" }
       ]),
       new CopyWebpackPlugin([{ from: "./src/assets/js", to: "./assets/js" }]),
       new CopyWebpackPlugin([{ from: "./src/assets/css", to: "./assets/css" }]),
