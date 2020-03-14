@@ -57,6 +57,7 @@ module.exports = options => {
       filename: "[name].[hash].js"
     },
     plugins: [
+      new CopyWebpackPlugin([{ from: "CNAME", to: "." }]),
       new CopyWebpackPlugin([
         { from: "./src/assets/images", to: "./assets/images" }
       ]),
