@@ -1,9 +1,14 @@
 const handlebars = require('handlebars');
 
 const links = {
-  documentation: process.env.NODE_ENV === 'development'
-    ? '/documentation.html'
-    : 'https://tweak-extension.com/documentation'
+  documentation:
+    process.env.NODE_ENV === "development"
+      ? "/documentation.html"
+      : "https://tweak-extension.com/documentation",
+  changelog:
+    process.env.NODE_ENV === "development"
+      ? "/changelog.html"
+      : "https://tweak-extension.com/changelog"
 };
 
 module.exports = [
@@ -90,18 +95,28 @@ module.exports = [
     output: "./documentation.html",
     content: {
       title: "tweak - browser extension - documentation",
-      metaDescription: "tweak browser documentation page",
-      metaSubject: "tweak browser documentation page",
+      metaDescription: "tweak browser extension documentation page",
+      metaSubject: "tweak browser extension documentation page",
       links
     },
     template: "./src/pages/documentation.hbs"
   },
   {
+    output: "./changelog.html",
+    content: {
+      title: "tweak - browser extension - changelog",
+      metaDescription: "tweak browser extension changelog page",
+      metaSubject: "tweak browser extension changelog page",
+      links
+    },
+    template: "./src/pages/changelog.hbs"
+  },
+  {
     output: "./404.html",
     content: {
       title: "tweak - 404 page not found",
-      metaDescription: "tweak browser 404 page",
-      metaSubject: "tweak browser 404 page",
+      metaDescription: "tweak browser extension 404 page",
+      metaSubject: "tweak browser extension 404 page",
       links
     },
     template: "./src/pages/404.hbs"
