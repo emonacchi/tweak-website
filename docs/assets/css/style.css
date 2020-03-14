@@ -1387,9 +1387,6 @@ h5,
   padding-bottom: 8rem !important;
 }
 
-.footer-section {
-}
-
 .pizza-custom-link {
   color: white;
 }
@@ -1404,4 +1401,9 @@ h5,
 
 .footer-custom-link:hover {
   color: #f23a2e;
+}
+
+div.faqs b {
+  color: rgb(101, 96, 96);
+  font-weight: bolder;
 }
