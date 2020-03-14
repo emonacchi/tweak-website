@@ -1,0 +1,40 @@
+{{#> _page }}
+<div class="site-section">
+  <div class="site-changelog">
+    <div class="site-changelog-heading">
+      <h2 class="text-dark">Changelog</h2>
+      <p>In this page we document <a
+          href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" target="_blank"
+          title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
+        version.</p>
+    </div>
+    <h3 class="text-dark">0.0.2</h3>
+    <ul>
+      <li>Bug fix: Fix memory leak on start/stop extension.</li>
+      <li>Bug fix: Improve compatibility of interceptions, better compliance with browser APIs:</li>
+      <ul>
+        <li>
+          Intercept <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/text"
+            title="developer mozilla documentation for Body text" target="_blank" rel="noopener">Body.text()</a> for <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+            title="developer mozilla documentation for fetch API" target="_blank" rel="noopener">
+            window.fetch</a> requests.
+        </li>
+        <li>
+          Intercept <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseText"
+            title="developer mozilla documentation for XMLHttpRequest responseText" target="_blank"
+            rel="noopener">XMLHttpRequest.responseText</a>
+          for <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"
+            title="developer mozilla documentation for XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a>
+          requests.
+        </li>
+      </ul>
+    </ul>
+    <h3 class="text-dark">0.0.1</h3>
+    <ul>
+      <li>First <a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe"
+          target="_blank" title="chrome store tweak extension available for free">tweak</a> version</li>
+    </ul>
+  </div>
+</div>
+{{/ _page }}

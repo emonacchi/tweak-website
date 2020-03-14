@@ -4,19 +4,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="tweak browser extension documentation page">
+  <meta name="description" content="tweak browser extension changelog page">
 
   <!-- Control the behavior of search engine crawling and indexing -->
   <meta name="robots" content="index,follow"><!-- All Search Engines -->
   <meta name="googlebot" content="index,follow"><!-- Google Specific -->
 
   <!-- Short description of your document's subject -->
-  <meta name="subject" content="tweak browser extension documentation page">
+  <meta name="subject" content="tweak browser extension changelog page">
 
   <!-- Gives a general age rating based on the document's content -->
   <meta name="rating" content="General">
 
-  <title>tweak - browser extension - documentation</title>
+  <title>tweak - browser extension - changelog</title>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -73,115 +73,42 @@
       </div>
     </div>
   </header>
-    <div class="bgimg" style="background-image: url('assets/images/documentation/screen-page.png');"
-      data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-          <div class="col-md-7">
-            <h2>Documentation</h2>
-            <p class="lead mx-auto desc mb-5">Follow the steps to intercept your first request with tweak!</p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="site-section">
-      <div style="margin: 50px;">
-        <h2>Step 1 - Request setup</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 1 - Request setup" src="assets/images/documentation/step1.png" class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>Open the DevTools Network tab</li>
-              <li>In the Name section, <b>select the request you want to intercept if you need to collect information about
-                  the request</b></li>
-              <li>Open tweak and fill in <b>Configuration name</b>, <b>HTTP Method</b> and <b>URL match expression*</b> according to
-                the
-                caracteristics of
-                the request you want to intercept</li>
-            </ul>
-            <small>
-              * the <i>URL match expression</i> can either be pure text that tweak will try to match against the URL
-              with simple string inclusion or in alternative you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" title="developer mozilla documentation for Regular Expressions" target="_blank">regular expression</a>,
-              just use the prefix <code>rx:</code>, for example <code>rx: /api/users/1[0-9]+</code> will intercept all the requests that hit this <i>users</i> endpoint
-              with an id between 10 and 19.
-            </small>
-          </div>
+      <div class="site-changelog">
+        <div class="site-changelog-heading">
+          <h2 class="text-dark">Changelog</h2>
+          <p>In this page we document <a
+              href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe" target="_blank"
+              title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
+            version.</p>
         </div>
-        <h2>Step 2 - Raw response data</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 2 - Copy the raw response data" src="assets/images/documentation/step2.png" class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li><b>Copy the Raw response data</b> from the response section</li>
-              <li><b>Paste the Raw response data in the json editor in tweak</b></li>
-            </ul>
-          </div>
-        </div>
-        <h2>Step 3 - Format the response</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 3 - Format the data to make it readable" src="assets/images/documentation/step3.png"
-              class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <p>In the json editor, you can <b>format the data</b> by clicking on the first icon. The data will be more
-              readable and you can start tweaking the response as you need.</p>
-          </div>
-        </div>
-        <h2>Step 4 - tweak the response payload</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 4 - tweak the response in the json editor" src="assets/images/documentation/step4.png"
-              class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <p><b>tweak the response</b> in the json editor by adding, removing or editing existing data fields.</p>
-          </div>
-        </div>
-        <h2>Step 5 - Run the extension</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 5 - Run the extension" src="assets/images/documentation/step5.png" class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <p>Go to the menu on the top left of the extension and <b>click Run</b>.</p>
-            <p>By default, the extention is paused as it could interfere with the websites that you normally use.</p>
-            <p>It is a good practice to keep the extention turned off when you are not using it, otherwise it would perform
-              unnecessary work in the background.</p>
-          </div>
-        </div>
-        <h2>Step 6 - Switch on the Request</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 6 - Switch on the Request that you want to intercept" src="assets/images/documentation/step6.png"
-              class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <p><b>Switch on</b> the request(s) that you want to intercept.</p>
-          </div>
-        </div>
-        <h2>Step 7 - Request intercepted!</h2>
-        <div class="row mb-5">
-          <div class="col-lg-8">
-            <img alt="Step 7 - The request was intercepted!" src="assets/images/documentation/step7.png" class="img-fluid">
-          </div>
-          <div class="col-lg-4">
-            <p><b>Reproduce the event that triggers the data fetching</b>, in this example by clicking on the refresh
-              button.</p>
-            <p>When the request is intercepted, you will see a number near the switch in the extention. This number displays
-              the amount of requests successfully intercepted.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row" style="margin: 50px;">
-        <p>Do you want to try it yourself in the same application? <a href="https://tweak-target-app.herokuapp.com"
-            target="_blank" title="Link to the web application where you can test tweak"><b>Here</b></a> you can access
-          the website shown in these steps.</p>
-        <p>Oh! and btw, to checkout the latest changes in tweak you can take a look at our <a href="https://tweak-extension.com/changelog" target="_blank" title="Link to Changelog of tweak"><b>Changelog</b></a></p>
+        <h3 class="text-dark">0.0.2</h3>
+        <ul>
+          <li>Bug fix: Fix memory leak on start/stop extension.</li>
+          <li>Bug fix: Improve compatibility of interceptions, better compliance with browser APIs:</li>
+          <ul>
+            <li>
+              Intercept <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/text"
+                title="developer mozilla documentation for Body text" target="_blank" rel="noopener">Body.text()</a> for <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+                title="developer mozilla documentation for fetch API" target="_blank" rel="noopener">
+                window.fetch</a> requests.
+            </li>
+            <li>
+              Intercept <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseText"
+                title="developer mozilla documentation for XMLHttpRequest responseText" target="_blank"
+                rel="noopener">XMLHttpRequest.responseText</a>
+              for <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest"
+                title="developer mozilla documentation for XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a>
+              requests.
+            </li>
+          </ul>
+        </ul>
+        <h3 class="text-dark">0.0.1</h3>
+        <ul>
+          <li>First <a href="https://chrome.google.com/webstore/detail/tweak/cafandgjnmfddalocalikgnoiafbblbe"
+              target="_blank" title="chrome store tweak extension available for free">tweak</a> version</li>
+        </ul>
       </div>
     </div>
   <footer class="footer-section">
