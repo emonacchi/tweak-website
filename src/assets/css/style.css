@@ -1432,3 +1432,22 @@ div.faqs b {
     padding: 20px;
   }
 }
+
+.custom-tweak-warning-banner {
+  position: fixed;
+  bottom: 0;
+  z-index: 999999;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .custom-tweak-warning-banner {
+    position: fixed;
+    bottom: 0;
+    z-index: 999999;
+    max-width: 60%;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+}
