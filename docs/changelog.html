@@ -82,6 +82,47 @@
               title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
             version.</p>
         </div>
+        <h3 class="text-dark">v0.2.0</h3>
+        <p title="tweak interceptor, mock responses, any website">Although we didn't introduced new functionalities in this release, we did some foundational changes in the
+          way that tweak interacts with your website in order to augment the coverage of scenarios where it can intercept
+          requests. That's the reason why we also changed our user permissions from <a
+            href="https://developer.chrome.com/extensions/activeTab" title="The activeTab permission - Google Chrome"
+            target="_blank" rel="noopener">activeTab</a> to <a href="https://developer.chrome.com/extensions/match_patterns"
+            title="Match Patterns - Google Chrome" target="_blank" rel="noopener">host permissions</a>, allowing us to fix the following fundamental issues:
+        </p>
+        <ul>
+          <li>
+            <b>Feature: tweak is now able to intercept requests that are fired/triggered at page load 🎉🎉🎉</b>
+          </li>
+          <li>
+            Bug fix: tweak interceptions were flaky for applications using <code>XMLHttpRequest</code> methods:
+            <ul>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange"
+                  title="developer mozilla documentation for XMLHttpRequest onreadystatechange" target="_blank"
+                  rel="noopener">XMLHttpRequest.onreadystatechange</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event"
+                  title="developer mozilla documentation for XMLHttpRequest onload" target="_blank"
+                  rel="noopener">XMLHttpRequest.onload</a></li>
+              <li>and <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/loadend_event"
+                  title="developer mozilla documentation for XMLHttpRequest onloadend" target="_blank"
+                  rel="noopener">XMLHttpRequest.onloadend</a></li>
+            </ul>
+          </li>
+          <li>
+            Bug fix: Prior to this release tweak was not capable of intercepting requests to the same host when the configuration had an absolute path in the <code>URL match expression</code> field.
+          </li>
+          <li>
+            Bug fix: Prior this release calls to <code>window.fetch</code> with <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Request"
+              title="developer mozilla documentation for Request" target="_blank" rel="noopener">Request</a> object could
+            not be intercepted.
+          </li>
+          <li>
+            Bug fix: Bubble up errors that occur during <code>window.fetch</code>. tweak was silencing these errors, which would make
+            developer's job of debugging the request failure harder. In this new release, tweak properly surfaces the error to the
+            application.
+          </li>
+        </ul>
         <h3 class="text-dark">v0.1.0</h3>
         <ul>
           <li>Feature: <b>By default turn on the request interception</b> <i>switch</i> toggle when adding a new
@@ -104,8 +145,8 @@
           <ul>
             <li>
               Intercept <a href="https://developer.mozilla.org/en-US/docs/Web/API/Body/text"
-                title="developer mozilla documentation for Body text" target="_blank" rel="noopener">Body.text()</a> for <a
-                href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
+                title="developer mozilla documentation for Body text" target="_blank" rel="noopener">Body.text()</a> for
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
                 title="developer mozilla documentation for fetch API" target="_blank" rel="noopener">
                 window.fetch</a> requests.
             </li>
@@ -142,7 +183,8 @@
                 title="chrome store tweak extension available for free">Try tweak!</a>
             </li>
             <li><a href="https://tweak-extension.com/documentation" title="link to the Documentation page">Documentation</a></li>
-            <li><a href="https://tweak-extension.com/privacy-policy.txt" title="Link to the Privacty policy document">Privacy Policy</a></li>
+            <li><a href="https://tweak-extension.com/changelog" title="link to the Changelog page">Changelog</a></li>
+            <li><a href="https://tweak-extension.com/privacy-policy.txt" title="Link to the Privacy policy document">Privacy Policy</a></li>
             <li><a href="https://tweak-extension.com/use-policy.txt" title="Link to the Use Policy document">Use Policy</a></li>
           </ul>
         </div>
@@ -170,7 +212,7 @@
       </div>
     </div>
   </footer>
-    <div class="custom-tweak-warning-banner alert alert-success alert-dismissible fade show" role="alert">
+    <div id="tweak-announcements-banner" class="custom-tweak-warning-banner alert alert-success alert-dismissible" style="visibility:hidden;" role="alert">
       <h3><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="chrome store link" target="_blank" rel="noopener">tweak is back 🎉</a></h3>
       If you installed tweak before the April 1st, please get the latest version <b><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="chrome store link" target="_blank" rel="noopener">here </a></b>to stay up-to-date.
       <br><a href="https://tweak-extension.com/changelog" title="link to tweak changelog" target="_blank" rel="noopener">Here</a> you can find all the latest improvements released!
@@ -194,6 +236,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.c1a154be830c3cc07772.js"></script></body>
+<script type="text/javascript" src="main.a7ffad066962d1ee0e8a.js"></script></body>
 
 </html>
