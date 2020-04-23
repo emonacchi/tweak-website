@@ -24,7 +24,6 @@ module.exports = [
           a: new handlebars.SafeString(`
             No. tweak has its own <b>limitations</b>, currently:
             <ul>
-              <li>Is not able to intercept requests that are triggered at the page load. The problem is that the requests might be fired before the extension loads in the web page. This is a race condition we are putting a lot of effort to solve.</li>
               <li>
                 It cannot intercept data received through
                 <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" title="developer mozilla documentation for WebSockets API" target="_blank" rel="noopener">
@@ -35,7 +34,9 @@ module.exports = [
                 It will only apply the configurations to the browser tab where you configure the requests to intercept and
                 activate the extension (by clicking the run button).
               </li>
-              <li>In case you refresh the page of the website while the extension is active the extension will need a manual reset, you'll need to click on the <i>STOP</i> button and then again click on the <i>RUN</i> button in order to the extension to be able to intercept requests again.</li>
+              <li>
+                Under specific conditions combined with the asynchronous nature of the way tweak communicates with your website, things might not work at first. For that we advise a page reload after pressing the play/run button to active the extension.
+              </li>
             </ul>
           `),
         },
@@ -57,10 +58,6 @@ module.exports = [
           a: new handlebars.SafeString(`
             <span>
               Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i>	&nbsp; to understand tweak limitations.
-              Another important aspect on the request URL matching expression that might be easy to miss, is that sometimes
-              we perform requests to the same domain, thus we do not have the domain present in the request URL, we simply
-              write the path. <b>In those cases</b>, if you specify the full URL in the tweak configuration <b>the request will be a mismatch and will
-              not be intercepted.</b>
             </span>
           `),
         },

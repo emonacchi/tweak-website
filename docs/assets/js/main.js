@@ -7,6 +7,22 @@ AOS.init({
 jQuery(document).ready(function($) {
   "use strict";
 
+  // do not show announcements banner to returning users
+  try {
+    var tweakBanner = document.getElementById("tweak-announcements-banner");
+    var shouldHideBanner = localStorage.getItem("_tweak_hide_banner_v1_");
+    if(shouldHideBanner === "yes") {
+      tweakBanner.remove();
+    } else {
+      tweakBanner.style.setProperty("visibility", "");
+      localStorage.setItem("_tweak_hide_banner_v1_", "yes");
+    }
+  } catch (error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error(error);
+    }
+  }
+
   var siteMenuClone = function() {
     $(".js-clone-nav").each(function() {
       var $this = $(this);
