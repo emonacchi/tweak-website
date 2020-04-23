@@ -1278,12 +1278,10 @@ h5,
 .logo {
   position: relative;
   align-items: center;
-  height: 46px;
-  width: 174px;
+  height: 32px;
+  width: 120px;
   background-repeat: no-repeat;
 }
-
-
 
 .bgimg {
   background-position: center;
