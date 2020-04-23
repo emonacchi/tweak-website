@@ -8,7 +8,7 @@
 # tweak-website [![Build Status](https://travis-ci.com/emonacchi/tweak-website.svg?branch=master)](https://travis-ci.com/emonacchi/tweak-website)
 
 <a href="https://tweak-extension.com/" title="tweak browser extension">
-  <img width="100" height="30" alt="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo.png"/>
+  <img width="100" height="30" alt="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo-23042020.png"/>
 </a>
 
 ### What is tweak?
@@ -60,7 +60,7 @@ Additionally would like to thank [@statickidz](https://github.com/statickidz) fo
 <i><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="tweak browser extension">tweak browser extension</a></i>
 </p>
 <p style="float:left; width: 60%; text-align:center;">
-<a href="https://tweak-extension.com#contact-section"><img width="100" height="30" title="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo.png"/></a><br />If you wish to contact us you can drop an email at <b>help.tweak@gmail.com</b>
+<a href="https://tweak-extension.com#contact-section"><img width="100" height="30" title="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo-23042020.png"/></a><br />If you wish to contact us you can drop an email at <b>help.tweak@gmail.com</b>
 </p>
 <p style="float:left; width: 20%;">
 <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="tweak browser extension available on chrome store">👉 available on google chrome store</a>
