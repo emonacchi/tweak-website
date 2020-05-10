@@ -20,16 +20,17 @@ module.exports = [
       metaSubject: "tweak is an extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application.",
       faqs: [
         {
+          q: new handlebars.SafeString("How does this thing work?"),
+          a: new handlebars.SafeString(`
+            Fair question. Straight to the point. Don't worry, it won't
+            take you more than 2 minutes to start being productive with tweak: <a href="https://www.youtube.com/watch?v=M7rMuNBw1xQ" title="How to intercept HTTP requests with tweak extension" target="_blank" rel="noopener">watch this short video</a>.
+          `),
+        },
+        {
           q: new handlebars.SafeString("Will this work in every web application?"),
           a: new handlebars.SafeString(`
             No. tweak has its own <b>limitations</b>, currently:
             <ul>
-              <li>
-                It cannot intercept data received through
-                <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" title="developer mozilla documentation for WebSockets API" target="_blank" rel="noopener">
-                WebSockets.
-                </a>
-              </li>
               <li>
                 It will only apply the configurations to the browser tab where you configure the requests to intercept and
                 activate the extension (by clicking the run button).
@@ -71,7 +72,11 @@ module.exports = [
           `),
           a: new handlebars.SafeString(`
             <span>
-              We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a> to intercept request that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
+              We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>
+              to intercept requests that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
+              In the meantime you can still intercept a specific GraphQL by specifying the right request body, you can
+              <a href="https://youtube.com/" title="tweak video tutorial, how to intercept a POST request" target="_blank" rel="noopener">watch this short video</a> to learn how to intercept a
+              request with a specific request payload (request body).
             </span>
           `),
         },
@@ -79,7 +84,7 @@ module.exports = [
           q: new handlebars.SafeString("Is there any detailed step by step guide where I can learn how to use tweak?"),
           a: new handlebars.SafeString(`
             <span>
-              Glad you asked. We drafted a very detailed <a href="${links.documentation}" title="tweak documentation page">documentation page</a> for you.
+              Glad you asked. We drafted a very detailed <a href="${links.documentation}" title="tweak documentation page">documentation page</a> for you with some awesome video content.
             </span>
           `),
         },
