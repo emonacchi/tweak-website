@@ -8,13 +8,83 @@
           title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
         version.</p>
     </div>
+    <h3 class="text-dark" title="chrome developer tool to mock http request">v1.0.0</h3>
+    <p title="intercept POST request, delay HTTP request and more">
+      We're happy to announce <b>tweak 1.0</b>! After <b>improving the foundations</b> of tweak in the initial releases
+      where we mainly focus on making sure the extension intercepts requests consistently across different websites and
+      different environments, we decided that now is the right time to <b>focus on new features and enhancing user
+        experience</b>. We scanned the extensions in the market, and we cross-referenced dozens of browser extensions
+      and their hundreds of reviews to come up with the feature set of this version. We then re-designed from scratch
+      the extension UI focusing on productivity and usability, and we add a few other neat functionalities to provide
+      you with a sound experience.
+    </p>
+    <ul>
+      <li>Feature: Allow users to <b>delay a request</b> by a specified amount of time.</li>
+      <li>Feature: Add a new action on the top bar to <b>collapse all the expanded rows</b> in the extension.</li>
+      <li>Feature: Add a new action on the top bar that allows users to <b>delete all</b> the configurations in one go.
+      </li>
+      <li>Feature: Allow users to <b>specify the request payload (request body)</b> for <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST" title="POST - HTTP MDN"
+          target="_blank" rel="noopener">POST</a>, <code>PUT</code> and <code>PATCH</code> requests. The user can edit
+        the request payload by clicking the <code>Request Payload</code> tab in the editors area.</li>
+      <li>Feature: Allow users to specify the <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type"
+          title="Content-Type - HTTP MDN" target="_blank" rel="noopener">Content-Type</a> response header.</li>
+      <li>Feature: Allow users to specify the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
+          title="HTTP response status codes - HTTP MDN" target="_blank" rel="noopener">HTTP response status code</a>
+        of an intercepted request.</li>
+      <li>
+        Enhancement: Overall <b>extension re-design with major UI improvements</b>. Some highlights:
+        <ul>
+          <li title="url field and regular expressions">
+            <b>Larger URL field</b> (old <code>URL match expression</code>) with a new regular expression toggle and
+            instant input validation.
+          </li>
+          <li>
+            Better interception count experience with improved active/inactive states. From this version on, the
+            interception counter is always visible even when its value is <code>0</code>. The team hopes that this
+            serves as an indicator/call to action in cases where user is expecting an interception but does not get the
+            expected result or neither feedback from the extension.
+          </li>
+          <li>
+            <b>Larger and slightly more spacious JSON editor(s)</b> with comprehensive footnote captions, to hint users
+            towards the right direction when filling in the content based on the type of request their trying to
+            intercept.
+          </li>
+        </ul>
+      </li>
+      <li>
+        Feature: allow users to bypass requests despite the original one not being successful (e.g. status
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" title="404 Not Found - HTTP MDN"
+          target="_blank" rel="noopener">404</a> or
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+          title="500 Internal Server Error - HTTP MDN" target="_blank" rel="noopener">500</a> are the most common use
+        cases). Users may now simulate calls to resources that don't exist on the server, or even create their own
+        routes in the extension to truly simulate an API.
+      </li>
+      <li>
+        Bug fix: deleting individual configuration didn't stop the request from being intercepted in the background.
+        This might cause
+        <i>zombie</i> interceptions, where a request is still intercepted even tough the user deleted the configuration.
+        In prior versions
+        of tweak the user would have to refresh the page to get rid of the <i>zombie</i> interception.
+      </li>
+      <li>
+        Bug fix: compute the proper header <code>Content-Length</code> based on the user defined payload.
+      </li>
+      <li>
+        Maintenance: 3rd party security dependencies updates.
+      </li>
+    </ul>
     <h3 class="text-dark">v0.2.0</h3>
-    <p title="tweak interceptor, mock responses, any website">Although we didn't introduced new functionalities in this release, we did some foundational changes in the
+    <p title="tweak interceptor, mock responses, any website">Although we didn't introduced new functionalities in this
+      release, we did some foundational changes in the
       way that tweak interacts with your website in order to augment the coverage of scenarios where it can intercept
       requests. That's the reason why we also changed our user permissions from <a
         href="https://developer.chrome.com/extensions/activeTab" title="The activeTab permission - Google Chrome"
         target="_blank" rel="noopener">activeTab</a> to <a href="https://developer.chrome.com/extensions/match_patterns"
-        title="Match Patterns - Google Chrome" target="_blank" rel="noopener">host permissions</a>, allowing us to fix the following fundamental issues:
+        title="Match Patterns - Google Chrome" target="_blank" rel="noopener">host permissions</a>, allowing us to fix
+      the following fundamental issues:
     </p>
     <ul>
       <li>
@@ -35,7 +105,8 @@
         </ul>
       </li>
       <li>
-        Bug fix: Prior to this release tweak was not capable of intercepting requests to the same host when the configuration had an absolute path in the <code>URL match expression</code> field.
+        Bug fix: Prior to this release tweak was not capable of intercepting requests to the same host when the
+        configuration had an absolute path in the <code>URL match expression</code> field.
       </li>
       <li>
         Bug fix: Prior this release calls to <code>window.fetch</code> with <a
@@ -44,8 +115,10 @@
         not be intercepted.
       </li>
       <li>
-        Bug fix: Bubble up errors that occur during <code>window.fetch</code>. tweak was silencing these errors, which would make
-        developer's job of debugging the request failure harder. In this new release, tweak properly surfaces the error to the
+        Bug fix: Bubble up errors that occur during <code>window.fetch</code>. tweak was silencing these errors, which
+        would make
+        developer's job of debugging the request failure harder. In this new release, tweak properly surfaces the error
+        to the
         application.
       </li>
     </ul>
