@@ -94,7 +94,21 @@ module.exports = [
       title: "tweak - browser extension - documentation",
       metaDescription: "tweak browser extension documentation page",
       metaSubject: "tweak browser extension documentation page",
-      links
+      links,
+      videos: [
+        {
+          title: 'How to intercept HTTP requests with tweak extension',
+          frameSrc: 'https://www.youtube.com/embed/M7rMuNBw1xQ',
+        },
+        {
+          title: 'How to intercept a POST request specifying the body with tweak',
+          frameSrc: 'https://www.youtube.com/embed/M7rMuNBw1xQ',
+        },
+        {
+          title: 'How to change the response status and content-type header in tweak',
+          frameSrc: 'https://www.youtube.com/embed/M7rMuNBw1xQ',
+        },
+      ]
     },
     template: "./src/pages/documentation.hbs"
   },
