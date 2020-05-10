@@ -53,9 +53,11 @@
         <h4 class="text-dark">{{ this.title }}</h4>
       </div>
       <div class="row justify-content-center text-center mb-5">
-        <iframe width="90%" height="60%" style="min-height: 340px; max-width: 680px;"
-          src="{{ this.frameSrc }}" frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe
+          src="{{ this.frameSrc }}"
+          style="min-height: 340px; width: 100%; margin: 2% 4%; max-width: 720px; border: 0;"
+          allowfullscreen>
+        </iframe>
       </div>
     {{/each}}
   </div>
