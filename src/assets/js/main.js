@@ -23,6 +23,20 @@ jQuery(document).ready(function($) {
     }
   }
 
+  // when user goes over to the changelog page change the top bar links color to black
+  try {
+    if (window.location.href.includes('/changelog')) {
+      var navLis = Array.from(document.querySelectorAll('.js-clone-nav li .nav-link'));
+      navLis.forEach(e => {
+        e.style.color = 'black';
+      });
+    }
+  } catch (error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error(error);
+    }
+  }
+
   var siteMenuClone = function() {
     $(".js-clone-nav").each(function() {
       var $this = $(this);
