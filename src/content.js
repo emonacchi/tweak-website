@@ -42,23 +42,20 @@ module.exports = [
           `),
         },
         {
-          q: new handlebars.SafeString("Is tweak interfering with other web applications?"),
-          a: new handlebars.SafeString(`
-            <span>
-              tweak uses
-              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" title="developer mozilla documentation for window postMessage" target="_blank" rel="noopener">
-                Window.postMessage API
-              </a>
-              to communicate between web pages and the extension. Leaving tweak
-              turned on (running mode) might interfere with the <i>runtime</i> of the website. <b>It is a good practice to keep tweak paused and only turn it on when you are using it.</b>
-            </span>
-          `),
-        },
-        {
           q: new handlebars.SafeString("I setup everything, but no requests are being intercepted."),
           a: new handlebars.SafeString(`
             <span>
               Have you tried to turn it off and on? 🤞 Please refer to the question <i>\"Will this work in every web application?\"</i>	&nbsp; to understand tweak limitations.
+            </span>
+          `),
+        },
+        {
+          q: new handlebars.SafeString("Do I need to keep the <i>DevTools</i> open?"),
+          a: new handlebars.SafeString(`
+            <span>
+              <b>No you don't</b> 😎. <b>tweak will still work even if you have the browser <i>DevTools</i> closed!</b> <b>However</b>, if you're using it for development purposes
+              we recommend you to keep the <i>DevTools</i> opened so that you don't get tricked by the browser cache. For cases where you're doing a demo or doing a
+              screen recording it's understandable that you would want to keep the <i>DevTools</i> closed.
             </span>
           `),
         },
