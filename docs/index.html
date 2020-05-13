@@ -62,8 +62,8 @@
               <li><a href="https://tweak-extension.com/#home-section" class="nav-link" title="Link to the homepage">Home</a></li>
               <li><a href="https://tweak-extension.com/#faqs-section" class="nav-link" title="Link to the FAQs section">FAQs</a></li>
               <li><a href="https://tweak-extension.com/#contact-section" class="nav-link" title="Link to the Get In Touch section">Get In Touch</a></li>
-              <li><a href="https://tweak-extension.com/#about-section" class="nav-link" title="Link to the About Us section">About us</a></li>
-              <li><a href="https://tweak-extension.com/documentation" class="nav-link" title="Link to the documentation page">Documentation</a></li>
+              <li><a href="https://tweak-extension.com/#about-section" class="nav-link" title="Link to the About Us section">About</a></li>
+              <li><a href="https://tweak-extension.com/documentation" class="nav-link" title="Link to the documentation page">Docs</a></li>
               <li><a href="https://tweak-extension.com/changelog" class="nav-link" title="Link to the changelog page">Changelog</a></li>
             </ul>
           </nav>
@@ -73,7 +73,7 @@
       </div>
     </div>
   </header>
-    <div class="intro-section bgimg" id="home-section" style="background-image: url('assets/images/pizza-gif-optimized.gif');">
+    <div class="intro-section bgimg" id="home-section" style="background-image: url('assets/images/pizza-gif-optimized-v2.gif');">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
@@ -189,16 +189,21 @@
               <div class="col-lg-6">
                 <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
+                    <h2>How does this thing work?</h2>
+                    
+                Fair question. Straight to the point. Don't worry, it won't
+                take you more than 2 minutes to start being productive with tweak: <a href="https://www.youtube.com/watch?v=M7rMuNBw1xQ" title="How to intercept HTTP requests with tweak extension" target="_blank" rel="noopener">watch this short video</a>.
+              
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="class-item d-flex align-items-center faqs">
+                  <div class="class-item-text" style="margin: 10px;">
                     <h2>Will this work in every web application?</h2>
                     
                 No. tweak has its own <b>limitations</b>, currently:
                 <ul>
-                  <li>
-                    It cannot intercept data received through
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" title="developer mozilla documentation for WebSockets API" target="_blank" rel="noopener">
-                    WebSockets.
-                    </a>
-                  </li>
                   <li>
                     It will only apply the configurations to the browser tab where you configure the requests to intercept and
                     activate the extension (by clicking the run button).
@@ -214,15 +219,10 @@
               <div class="col-lg-6">
                 <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
-                    <h2>Is tweak interfering with other web applications?</h2>
+                    <h2>I setup everything, but no requests are being intercepted.</h2>
                     
                 <span>
-                  tweak uses
-                  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" title="developer mozilla documentation for window postMessage" target="_blank" rel="noopener">
-                    Window.postMessage API
-                  </a>
-                  to communicate between web pages and the extension. Leaving tweak
-                  turned on (running mode) might interfere with the <i>runtime</i> of the website. <b>It is a good practice to keep tweak paused and only turn it on when you are using it.</b>
+                  Have you tried to turn it off and on? 🤞 Please refer to the question <i>"Will this work in every web application?"</i>	&nbsp; to understand tweak limitations.
                 </span>
               
                   </div>
@@ -231,10 +231,12 @@
               <div class="col-lg-6">
                 <div class="class-item d-flex align-items-center faqs">
                   <div class="class-item-text" style="margin: 10px;">
-                    <h2>I setup everything, but no requests are being intercepted.</h2>
+                    <h2>Do I need to keep the <i>DevTools</i> open?</h2>
                     
                 <span>
-                  Have you tried to turn it off and on? 🤞 Please refer to the question <i>"Will this work in every web application?"</i>	&nbsp; to understand tweak limitations.
+                  <b>No you don't</b> 😎. <b>tweak will still work even if you have the browser <i>DevTools</i> closed!</b> <b>However</b>, if you're using it for development purposes
+                  we recommend you to keep the <i>DevTools</i> opened so that you don't get tricked by the browser cache. For cases where you're doing a demo or doing a
+                  screen recording it's understandable that you would want to keep the <i>DevTools</i> closed.
                 </span>
               
                   </div>
@@ -256,7 +258,11 @@
               </h2>
                     
                 <span>
-                  We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a> to intercept request that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
+                  We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>
+                  to intercept requests that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
+                  In the meantime you can still intercept a specific GraphQL by specifying the right request body, you can
+                  <a href="https://youtube.com/" title="tweak video tutorial, how to intercept a POST request" target="_blank" rel="noopener">watch this short video</a> to learn how to intercept a
+                  request with a specific request payload (request body).
                 </span>
               
                   </div>
@@ -268,7 +274,7 @@
                     <h2>Is there any detailed step by step guide where I can learn how to use tweak?</h2>
                     
                 <span>
-                  Glad you asked. We drafted a very detailed <a href="https://tweak-extension.com/documentation" title="tweak documentation page">documentation page</a> for you.
+                  Glad you asked. We drafted a very detailed <a href="https://tweak-extension.com/documentation" title="tweak documentation page">documentation page</a> for you with some awesome video content.
                 </span>
               
                   </div>
@@ -414,6 +420,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.11bba676beb22ef55cb2.js"></script></body>
+<script type="text/javascript" src="main.ec81f19b9a548fe24a06.js"></script></body>
 
 </html>

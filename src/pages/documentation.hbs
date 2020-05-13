@@ -1,113 +1,78 @@
 {{#> _page }}
-<div class="bgimg" style="background-image: url('assets/images/documentation/screen-page.png');"
+<div class="bgimg" style="background-image: url('assets/images/documentation/screen-page-v2.png');"
   data-stellar-background-ratio="0.5">
   <div class="container">
     <div class="row align-items-center justify-content-center text-center">
       <div class="col-md-7">
         <h2>Documentation</h2>
-        <p class="lead mx-auto desc mb-5">Follow the steps to intercept your first request with tweak!</p>
+        <p class="lead mx-auto desc mb-5">All the resources you need to learn how to use tweak!</p>
       </div>
     </div>
   </div>
 </div>
+{{!-- tweak anatomy --}}
 <div class="site-section">
-  <div style="margin: 50px;">
-    <h2>Step 1 - Request setup</h2>
-    <div class="row mb-5">
-      <div class="col-lg-8">
-        <img alt="Step 1 - Request setup" src="assets/images/documentation/step1.png" class="img-fluid">
-      </div>
-      <div class="col-lg-4">
-        <ul>
-          <li>Open the DevTools Network tab</li>
-          <li>In the Name section, <b>select the request you want to intercept if you need to collect information about
-              the request</b></li>
-          <li>Open tweak and fill in <b>Configuration name</b>, <b>HTTP Method</b> and <b>URL match expression*</b> according to
-            the
-            caracteristics of
-            the request you want to intercept</li>
-        </ul>
-        <small>
-          * the <i>URL match expression</i> can either be pure text that tweak will try to match against the URL
-          with simple string inclusion or in alternative you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" title="developer mozilla documentation for Regular Expressions" target="_blank">regular expression</a>,
-          just use the prefix <code>rx:</code>, for example <code>rx: /api/users/1[0-9]+</code> will intercept all the requests that hit this <i>users</i> endpoint
-          with an id between 10 and 19.
-        </small>
+  <div class="documentation-section">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-md-8 section-heading">
+        <h3 class="heading mb-3">tweak anatomy</h3>
+        <span class="subheading">A tour guide through our UI</span>
       </div>
     </div>
-    <h2>Step 2 - Raw response data</h2>
-    <div class="row mb-5">
+    <div class="row mb-6">
       <div class="col-lg-8">
-        <img alt="Step 2 - Copy the raw response data" src="assets/images/documentation/step2.png" class="img-fluid">
+        <img alt="tweak components" src="assets/images/documentation/tweak-anatomy.png" class="img-fluid">
       </div>
       <div class="col-lg-4">
-        <ul>
-          <li><b>Copy the Raw response data</b> from the response section</li>
-          <li><b>Paste the Raw response data in the json editor in tweak</b></li>
-        </ul>
-      </div>
-    </div>
-    <h2>Step 3 - Format the response</h2>
-    <div class="row mb-5">
-      <div class="col-lg-8">
-        <img alt="Step 3 - Format the data to make it readable" src="assets/images/documentation/step3.png"
-          class="img-fluid">
-      </div>
-      <div class="col-lg-4">
-        <p>In the json editor, you can <b>format the data</b> by clicking on the first icon. The data will be more
-          readable and you can start tweaking the response as you need.</p>
-      </div>
-    </div>
-    <h2>Step 4 - tweak the response payload</h2>
-    <div class="row mb-5">
-      <div class="col-lg-8">
-        <img alt="Step 4 - tweak the response in the json editor" src="assets/images/documentation/step4.png"
-          class="img-fluid">
-      </div>
-      <div class="col-lg-4">
-        <p><b>tweak the response</b> in the json editor by adding, removing or editing existing data fields.</p>
-      </div>
-    </div>
-    <h2>Step 5 - Run the extension</h2>
-    <div class="row mb-5">
-      <div class="col-lg-8">
-        <img alt="Step 5 - Run the extension" src="assets/images/documentation/step5.png" class="img-fluid">
-      </div>
-      <div class="col-lg-4">
-        <p>Go to the menu on the top left of the extension and <b>click Run</b>.</p>
-        <p>By default, the extention is paused as it could interfere with the websites that you normally use.</p>
-        <p>It is a good practice to keep the extention turned off when you are not using it, otherwise it would perform
-          unnecessary work in the background.</p>
-      </div>
-    </div>
-    <h2>Step 6 - Switch on the Request</h2>
-    <div class="row mb-5">
-      <div class="col-lg-8">
-        <img alt="Step 6 - Switch on the Request that you want to intercept" src="assets/images/documentation/step6.png"
-          class="img-fluid">
-      </div>
-      <div class="col-lg-4">
-        <p><b>Switch on</b> the request(s) that you want to intercept.</p>
-      </div>
-    </div>
-    <h2>Step 7 - Request intercepted!</h2>
-    <div class="row mb-5">
-      <div class="col-lg-8">
-        <img alt="Step 7 - The request was intercepted!" src="assets/images/documentation/step7.png" class="img-fluid">
-      </div>
-      <div class="col-lg-4">
-        <p><b>Reproduce the event that triggers the data fetching</b>, in this example by clicking on the refresh
-          button.</p>
-        <p>When the request is intercepted, you will see a number near the switch in the extention. This number displays
-          the amount of requests successfully intercepted.</p>
+        <ol>
+          <li><b>Minimize all</b>: collapses/minimizes all the requests created.</li>
+          <li><b>Regular expression toggle</b>: when toggled on, you can specify a <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank"
+              title="Regular expressions - JavaScript MDN">Regular Expression</a> to match against the request URL. Don't worry about <i>typos</i>, we will give you instant feedback on whether your regular expression is valid or not.</li>
+          <li><b>Number of requests successfully intercepted</b>: if you're seeing the <code>0</code> value after trying to intercept a request it means that you might have a mismatch on your configuration, double check the request URL and the selected HTTP method to ensure everything is ok.</li>
+          <li><b>Row Options</b>: here you have the additional options of duplicating or deleting a configuration.</li>
+          <li><b>Delay request by</b>: allows you to delay the request interception by as many milliseconds (<i>ms</i>)
+            as specified</li>
+          <li><b>Request payload</b>: for POST, PUT or PATCH requests, you can specify here the request payload.</li>
+        </ol>
       </div>
     </div>
   </div>
-  <div class="row" style="margin: 50px;">
-    <p>Do you want to try it yourself in the same application? <a href="https://tweak-target-app.herokuapp.com"
+</div>
+{{!-- tweak video tutorials --}}
+<div class="site-section bg-light">
+  <div class="documentation-section">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-md-8 section-heading">
+        <h3 class="heading mb-3">Video Tutorials</h3>
+        <span class="subheading">Some short and straight to the point videos to get you up to speed!</span>
+      </div>
+    </div>
+    {{#each htmlWebpackPlugin.options.content.videos }}
+      <div class="row justify-content-center text-center">
+        <h4 class="text-dark">{{ this.title }}</h4>
+      </div>
+      <div class="row justify-content-center text-center mb-5">
+        <iframe
+          src="{{ this.frameSrc }}"
+          style="min-height: 340px; width: 100%; margin: 2% 4%; max-width: 720px; border: 0;"
+          allowfullscreen>
+        </iframe>
+      </div>
+    {{/each}}
+  </div>
+</div>
+{{!-- closing notes --}}
+<div class="site-section">
+  <div class="documentation-section">
+    <p>
+      Do you want to try it yourself in our test application? <a href="https://tweak-target-app.herokuapp.com"
         target="_blank" title="Link to the web application where you can test tweak"><b>Here</b></a> you can access
-      the website shown in these steps.</p>
-    <p>Oh! and btw, to checkout the latest changes in tweak you can take a look at our <a href="{{ htmlWebpackPlugin.options.content.links.changelog }}" target="_blank" title="Link to Changelog of tweak"><b>Changelog</b></a></p>
+      the website that we use in our video demonstrations.<br>
+      Oh! and btw, to checkout the latest changes in tweak you can take a look at our <a
+        href="{{ htmlWebpackPlugin.options.content.links.changelog }}" target="_blank"
+        title="Link to Changelog of tweak"><b>Changelog</b></a>.
+    </p>
   </div>
 </div>
 {{/ _page }}
