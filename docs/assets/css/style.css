@@ -1454,3 +1454,12 @@ div.site-changelog b {
     font-size: 14px;
   }
 }
+
+.documentation-section {
+  margin: 0 5%;
+}
+
+.documentation-section b {
+  color: rgb(82, 81, 81);
+  font-weight: bolder;
+}

@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
   try {
     if (window.location.href.includes('/changelog')) {
       var navLis = Array.from(document.querySelectorAll('.js-clone-nav li .nav-link'));
-      navLis.forEach(e => {
+      navLis.forEach(function (e) {
         e.style.color = 'black';
       });
     }
