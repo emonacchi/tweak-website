@@ -104,11 +104,11 @@ module.exports = [
         },
         {
           title: 'How to intercept a POST request specifying the body with tweak',
-          frameSrc: 'https://www.youtube.com/embed/M7rMuNBw1xQ',
+          frameSrc: 'https://www.youtube.com/embed/iXGH95oK_BU',
         },
         {
           title: 'How to change the response status and content-type header in tweak',
-          frameSrc: 'https://www.youtube.com/embed/M7rMuNBw1xQ',
+          frameSrc: 'https://www.youtube.com/embed/wX_qp-Gorws',
         },
       ]
     },
