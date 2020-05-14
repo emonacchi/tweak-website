@@ -7,16 +7,35 @@ AOS.init({
 jQuery(document).ready(function($) {
   "use strict";
 
+  var tweakBanner = document.getElementById("tweak-announcements-banner");
+
   // do not show announcements banner to returning users
   try {
-    var tweakBanner = document.getElementById("tweak-announcements-banner");
-    var shouldHideBanner = localStorage.getItem("_tweak_hide_banner_v1_");
+    var shouldHideBanner = localStorage.getItem("_tweak_hide_banner_v2_");
     if(shouldHideBanner === "yes") {
       tweakBanner.remove();
     } else {
       tweakBanner.style.setProperty("visibility", "");
-      localStorage.setItem("_tweak_hide_banner_v1_", "yes");
     }
+  } catch (error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error(error);
+    }
+  }
+
+  // hide permanently the banner when dismissed
+  try {
+    var dismissBtn = document.getElementById('tweak-announcements-banner-dismiss-btn');
+    dismissBtn.addEventListener('click', function _onClickDismissBtn() {
+      try {
+        localStorage.setItem("_tweak_hide_banner_v2_", "yes");
+        tweakBanner.style.setProperty("visibility", "hidden");
+      } catch (error) {
+        if (process.env.NODE_ENV === "development") {
+          console.error(error);
+        }
+      }
+    });
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error(error);
