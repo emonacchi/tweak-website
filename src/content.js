@@ -16,8 +16,8 @@ module.exports = [
     output: "./index.html",
     content: {
       title: "tweak - browser extension",
-      metaDescription: "tweak browser extension main page",
-      metaSubject: "tweak is an extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application, tweak mock HTTP requests, tweak is a debugging proxy. Network debugging proxy tool for web application.",
+      metaDescription: "A browser extension that allows you to change your HTTP requests. Add custom rules. Mock HTTP requests. Simulate API responses. Developer tool. Mimic requests.",
+      metaSubject: "tweak browser extension official website",
       faqs: [
         {
           q: new handlebars.SafeString("How does this thing work?"),
