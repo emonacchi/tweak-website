@@ -15,13 +15,12 @@
 
 <a href="https://tweak-extension.com">tweak</a> is a browser extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application.
 
-### How does the thing work?
+### How does it work?
 
 <a href="https://tweak-extension.com/documentation" title="tweak browser extension documentation page">Here, we wrote a detailed documentation</a> to get you started with a simple example.
 
 ### Get tweak for free!
-*(unavailable at the moment)*
-<!-- <a href="" title="tweak browser extension">👉 available on google chrome store</a> -->
+<a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi?hl=en" title="tweak browser extension">👉 available on google chrome store</a>
 
 ### Developer guide (for the website)
 
