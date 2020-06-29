@@ -60,10 +60,6 @@ module.exports = [
           `),
         },
         {
-          q: new handlebars.SafeString("Will tweak ever be available for Mozilla Firefox?"),
-          a: new handlebars.SafeString("<span>Perhaps. There are no plans to do so at the moment, we might add it if there's a high number of requests.</span>")
-        },
-        {
           q: new handlebars.SafeString(`
             Any thoughts on having a tailored support for <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>?
           `),
