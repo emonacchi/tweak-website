@@ -1,5 +1,4 @@
-# tweak-website [![Build Status](https://travis-ci.com/emonacchi/tweak-website.svg?branch=master)](https://travis-ci.com/emonacchi/tweak-website)
-
+# tweak-website [![Build Status](https://travis-ci.com/emonacchi/tweak-website.svg?branch=master)](https://travis-ci.com/emonacchi/tweak-website) [![MadeWithSvelte.com shield](https://madewithsvelte.com/storage/repo-shields/2475-shield.svg)](https://madewithsvelte.com/p/tweak/shield-link)
 <a href="https://tweak-extension.com/" title="tweak browser extension">
   <img width="100" height="30" alt="tweak browser extension" style="border-width:0" src="https://raw.githubusercontent.com/emonacchi/tweak-website/master/src/assets/images/tweak-logo-23042020.png"/>
 </a>
