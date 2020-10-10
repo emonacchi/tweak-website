@@ -7,11 +7,11 @@ AOS.init({
 jQuery(document).ready(function($) {
   "use strict";
 
-  var tweakBanner = document.getElementById("tweak-announcements-banner");
+  var tweakBanner = document.getElementById("tweak-cookies-banner");
 
   // do not show announcements banner to returning users
   try {
-    var shouldHideBanner = localStorage.getItem("_tweak_hide_banner_v3_");
+    var shouldHideBanner = localStorage.getItem("_tweak_cookie_banner_");
     if(shouldHideBanner === "yes") {
       tweakBanner.remove();
     } else {
@@ -24,11 +24,30 @@ jQuery(document).ready(function($) {
   }
 
   // hide permanently the banner when dismissed
+  // try {
+  //   var dismissBtn = document.getElementById('tweak-announcements-banner-dismiss-btn');
+  //   dismissBtn.addEventListener('click', function _onClickDismissBtn() {
+  //     try {
+  //       localStorage.setItem("_tweak_hide_banner_v3_", "yes");
+  //       tweakBanner.style.setProperty("visibility", "hidden");
+  //     } catch (error) {
+  //       if (process.env.NODE_ENV === "development") {
+  //         console.error(error);
+  //       }
+  //     }
+  //   });
+  // } catch (error) {
+  //   if (process.env.NODE_ENV === "development") {
+  //     console.error(error);
+  //   }
+  // }
+
+  // hide cookies banner when user clicks on Ok
   try {
-    var dismissBtn = document.getElementById('tweak-announcements-banner-dismiss-btn');
-    dismissBtn.addEventListener('click', function _onClickDismissBtn() {
+    var dismissBtn = document.getElementById('tweak-cookies-banner-ok-btn');
+    dismissBtn.addEventListener('click', function _onClickOkBtn() {
       try {
-        localStorage.setItem("_tweak_hide_banner_v3_", "yes");
+        localStorage.setItem("_tweak_cookie_banner_", "yes");
         tweakBanner.style.setProperty("visibility", "hidden");
       } catch (error) {
         if (process.env.NODE_ENV === "development") {
@@ -36,6 +55,23 @@ jQuery(document).ready(function($) {
         }
       }
     });
+  } catch (error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error(error);
+    }
+  }
+
+// dismiss cookie banner when clicking outside
+  try {
+    var list = ["tweak-cookies-banner"];
+    var cookieBanner = document.getElementById("tweak-cookies-banner");
+    document.addEventListener('click', function (event) {
+      if (event && event.target && cookieBanner.contains(event.target)) {
+        return;
+      }
+      localStorage.setItem("_tweak_cookie_banner_", "yes");
+      tweakBanner.style.setProperty("visibility", "hidden");
+    })
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error(error);

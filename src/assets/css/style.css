@@ -1440,7 +1440,7 @@ div.site-changelog b {
   position: fixed;
   bottom: 0;
   z-index: 999999;
-  font-size: 12px;
+  font-size: 10px;
   margin-bottom: 0;
 }
 
@@ -1449,10 +1449,22 @@ div.site-changelog b {
     position: fixed;
     bottom: 0;
     z-index: 999999;
-    max-width: 60%;
+    max-width: 100%;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 18px;
+    width: 100%;
   }
+}
+
+.tweak-cookie-banner-settings {
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tweak-cookie-banner-settings:hover{
+  font-weight: bold;
+  text-decoration: unset;
 }
 
 .documentation-section {

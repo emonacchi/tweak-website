@@ -5,12 +5,62 @@
   {{> @partial-block }}
   {{#> footer }}
   {{/ footer }}
-  <div id="tweak-announcements-banner" class="custom-tweak-warning-banner alert alert-success alert-dismissible" style="visibility:hidden;" role="alert">
+  {{!-- <div id="tweak-announcements-banner" class="custom-tweak-warning-banner alert alert-success alert-dismissible" style="visibility:hidden;" role="alert">
     <h4><a href="https://tweak-extension.com/changelog" title="link to tweak changelog" target="_blank" rel="noopener">tweak 1.1.0</a> is out and available for <b><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="chrome store link" target="_blank" rel="noopener">Chrome</a></b> and <b><a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/" title="firefox link" target="_blank" rel="noopener">Firefox</a></b>! 🚀</h4>
     If you are using <b>Chrome</b> make sure you have the latest <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="chrome store link" target="_blank" rel="noopener">version</a> installed.<br>
     <button id="tweak-announcements-banner-dismiss-btn" type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
+  </div> --}}
+  <div id="tweak-cookies-banner" class="custom-tweak-warning-banner alert alert-success alert-dismissible" style="visibility:hidden;" role="alert">
+    <div class="row align-items-center">
+      <div class="col">
+        <b>How about cookies? 🍪 </b>We use cookies and other data and tech to analyze and enhance your experience. Click anywhere or “OK” to consent and continue enjoying tweak. You can manage your data in your cookie
+        <span class="tweak-cookie-banner-settings" data-toggle="modal" data-target="#cookiesSettingsModal">Settings</span>.
+      </div>
+      <div class="col col-lg-1 ">
+        <button id="tweak-cookies-banner-ok-btn" type="button" class="btn btn-outline-success btn-lg" data-dismiss="alert" aria-label="Close">Ok</button>
+      </div>
+    </div>
+  </div>
+    <!-- Modal -->
+  <div class="modal fade" id="cookiesSettingsModal" tabindex="-1" role="dialog" aria-labelledby="cookiesSettingsModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Privacy preference center</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Cookies are used on tweak-extension.com with the primary purpose of tracking bugs and enhance the website usability, based on usage patterns identified. <a href="https://tweak-extension.com/privacy-policy.txt" title="link to tweak privacy policy" target="_blank" rel="noopener">More information.</a></p><br>
+          <h5>Manage cookies preferences</h5>
+          <div class="row justify-content-end">
+            <div class="col">
+              <h6>Essential cookies</h6>
+            </div>
+            <div class="col col-lg-4">
+              <h6><b>Always active</b></h6>
+            </div>
+          </div>
+          <p>These cookies are necessary. They’re the basic cookies that enable our site to work properly so that you can use the most important functions and navigate the site smoothly.</p></br>
+
+          <div class="row justify-content-end">
+            <div class="col">
+              <h6>Performance cookies</h6>
+            </div>
+            <div class="col col-lg-4">
+              <input type="checkbox" aria-label="Checkbox for following text input"> Active
+            </div>
+          </div>
+          <p>These cookies allow us to measure and improve the performance of our site.  If you deactivate these cookies we won’t be able to optimize our site for you.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {{/ base }}
