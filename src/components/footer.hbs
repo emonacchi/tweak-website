@@ -1,30 +1,28 @@
 <footer class="footer-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3 class="text-dark">About tweak</h3>
         <p>tweak is an extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application.</p>
       </div>
       <div class="col-md-3 ml-auto">
         <h3 class="text-dark">Links</h3>
         <ul class="list-unstyled footer-links">
-          <li>
-            <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/"
-              target="_blank"
-              title="chrome store tweak extension available for free">Try tweak in Chrome</a>
-          </li>
-          <li>
-            <a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/"
-              target="_blank"
-              title="Firefox store tweak extension available for free">Try tweak in Firefox</a>
-          </li>
+          <li><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" target="_blank" title="chrome store tweak extension available for free">Try tweak in Chrome</a></li>
+          <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/" target="_blank" title="Firefox store tweak extension available for free">Try tweak in Firefox</a></li>
           <li><a href="{{ htmlWebpackPlugin.options.content.links.documentation }}" title="link to the Documentation page">Documentation</a></li>
           <li><a href="{{ htmlWebpackPlugin.options.content.links.changelog }}" title="link to the Changelog page">Changelog</a></li>
-          <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}privacy-policy.txt" title="Link to the Privacy policy document">Privacy Policy</a></li>
-          <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}use-policy.txt" title="Link to the Use Policy document">Use Policy</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
+        <h3 class="text-dark">Policies and settings</h3>
+        <ul class="list-unstyled footer-links">
+          <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}privacy-policy.txt" title="Link to the Privacy policy document">Privacy Policy</a></li>
+          <li><a href="{{ htmlWebpackPlugin.options.baseUrl }}use-policy.txt" title="Link to the Use Policy document">Use Policy</a></li>
+          <li><a data-toggle="modal" data-target="#cookiesSettingsModal" style="color: red; cursor: pointer;">Cookies Settings</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
         <h3 class="text-dark">Contribute</h3>
         <a class="footer-custom-link" href="https://paypal.me/EMonacchi" title="link to paypal" target="_blank">Contribute to tweak! <span class="icon-cc-paypal"></span>
         </a>
