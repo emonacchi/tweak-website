@@ -14,7 +14,7 @@ jQuery(document).ready(function($) {
    */
   function handleError(error) {
     if (process.env.NODE_ENV === "development") {
-      console.error('(visible in development mode only): ', error);
+      console.error("(visible in development mode only): ", error);
     }
   }
 
@@ -25,16 +25,25 @@ jQuery(document).ready(function($) {
   var tweakCookiesBanner = document.getElementById("tweak-cookies-banner");
   var hideBannerItem = null;
   var shouldHideCookiesBanner = false;
+  var isPrivacyPreferencesModalVisible = false;
 
+  // handle showing/hiding the privacy center
   try {
-    hideBannerItem = localStorage.getItem(_TWEAK_COOKIE_BANNER_LS_KEY);
-    shouldHideCookiesBanner = hideBannerItem === _TWEAK_COOKIE_YES;
+    $("#cookies-settings-modal").on("shown.bs.modal", function () {
+      isPrivacyPreferencesModalVisible = true;
+    });
+    $("#cookies-settings-modal").on("hidden.bs.modal", function () {
+      isPrivacyPreferencesModalVisible = false;
+    });
   } catch (error) {
     handleError(error);
   }
 
   // do not show the cookies banner to users that dismissed it already
   try {
+    hideBannerItem = localStorage.getItem(_TWEAK_COOKIE_BANNER_LS_KEY);
+    shouldHideCookiesBanner = hideBannerItem === _TWEAK_COOKIE_YES;
+
     if(shouldHideCookiesBanner) {
       tweakCookiesBanner.remove();
     } else {
@@ -63,7 +72,10 @@ jQuery(document).ready(function($) {
     // dismiss cookie banner when clicking outside
     try {
       var cookieBanner = document.getElementById("tweak-cookies-banner");
-      document.addEventListener('click', function (event) {
+      document.addEventListener("click", function (event) {
+        if (isPrivacyPreferencesModalVisible) {
+          return;
+        }
         if (event && event.target && cookieBanner.contains(event.target)) {
           return;
         }
@@ -104,7 +116,7 @@ jQuery(document).ready(function($) {
 
     // hand toggling of analytics in the privacy preferences center modal
     var toggleAnalyticsCheckbox = document.getElementById("toggle-analytics-checkbox");
-    toggleAnalyticsCheckbox.addEventListener('change', function (event) {
+    toggleAnalyticsCheckbox.addEventListener("change", function (event) {
       toggleAnalyticsPreference(event.target.checked);
     });
   } catch (error) {
