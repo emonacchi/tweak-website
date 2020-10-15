@@ -117,6 +117,7 @@ jQuery(document).ready(function($) {
         break;
       case _TWEAK_COOKIE_NO:
         isAnalyticsOn = false;
+        break;
       default:
         isAnalyticsOn = true;
         break;
