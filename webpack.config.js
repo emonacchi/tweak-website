@@ -70,8 +70,9 @@ module.exports = options => {
       new CopyWebpackPlugin([{ from: "./src/use-policy.txt", to: "." }]),
       new webpack.DefinePlugin({
         "process.env": {
-          NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-        }
+          NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+          GA_KEY: JSON.stringify(gaKey),
+        },
       }),
       new MiniCssExtractPlugin({
         filename:

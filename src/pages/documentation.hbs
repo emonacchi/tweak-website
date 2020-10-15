@@ -62,13 +62,35 @@
     {{/each}}
   </div>
 </div>
+{{!-- blog posts --}}
+<div class="site-section">
+  <div class="documentation-section">
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-md-8 section-heading">
+        <h3 class="heading mb-3">Blog posts</h3>
+        <span class="subheading">All about tweak!</span>
+      </div>
+    </div>
+    {{#each htmlWebpackPlugin.options.content.blogposts }}
+      <div class="col justify-content-center text-center">
+        <h4 class="text-dark">{{ this.title }}</h4>
+        <p>{{ this.subtitle }}</p>
+      </div>
+      <div class="row justify-content-center text-center mb-5">
+        <a href="{{ this.href }}" target="_blank" title="{{ this.seoTitle }}">📖 read now</a>
+      </div>
+    {{/each}}
+  </div>
+</div>
 {{!-- closing notes --}}
 <div class="site-section">
   <div class="documentation-section">
     <p>
       Do you want to try it yourself in our test application? <a href="https://tweak-target-app.herokuapp.com"
         target="_blank" title="Link to the web application where you can test tweak"><b>Here</b></a> you can access
-      the website that we use in our video demonstrations.<br>
+      the website that we use in our video demonstrations.
+    </p>
+    <p>
       Take a look at our <a
         href="{{ htmlWebpackPlugin.options.content.links.changelog }}" target="_blank"
         title="Link to Changelog of tweak"><b>Changelog</b> for the latest changes in tweak</a>!

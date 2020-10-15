@@ -7,53 +7,132 @@ AOS.init({
 jQuery(document).ready(function($) {
   "use strict";
 
-  var tweakBanner = document.getElementById("tweak-announcements-banner");
-
-  // do not show announcements banner to returning users
-  try {
-    var shouldHideBanner = localStorage.getItem("_tweak_hide_banner_v3_");
-    if(shouldHideBanner === "yes") {
-      tweakBanner.remove();
-    } else {
-      tweakBanner.style.setProperty("visibility", "");
-    }
-  } catch (error) {
+  /**
+   * Common error handler for development purposes only, keeps
+   * the `console` clean in production.
+   * @param {Error} error
+   */
+  function handleError(error) {
     if (process.env.NODE_ENV === "development") {
-      console.error(error);
+      console.error("(visible in development mode only): ", error);
     }
   }
 
-  // hide permanently the banner when dismissed
+  var _TWEAK_COOKIE_BANNER_LS_KEY = "_tweak_cookie_banner_";
+  var _TWEAK_COOKIE_IS_GA_ON_KEY = "_tweak_user_ga_is_on_"
+  var _TWEAK_COOKIE_YES = "yes";
+  var _TWEAK_COOKIE_NO = "no";
+  var tweakCookiesBanner = document.getElementById("tweak-cookies-banner");
+  var hideBannerItem = null;
+  var shouldHideCookiesBanner = false;
+  var isPrivacyPreferencesModalVisible = false;
+
+  // handle showing/hiding the privacy center
   try {
-    var dismissBtn = document.getElementById('tweak-announcements-banner-dismiss-btn');
-    dismissBtn.addEventListener('click', function _onClickDismissBtn() {
-      try {
-        localStorage.setItem("_tweak_hide_banner_v3_", "yes");
-        tweakBanner.style.setProperty("visibility", "hidden");
-      } catch (error) {
-        if (process.env.NODE_ENV === "development") {
-          console.error(error);
-        }
-      }
+    $("#cookies-settings-modal").on("shown.bs.modal", function () {
+      isPrivacyPreferencesModalVisible = true;
+    });
+    $("#cookies-settings-modal").on("hidden.bs.modal", function () {
+      isPrivacyPreferencesModalVisible = false;
     });
   } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
+    handleError(error);
+  }
+
+  // do not show the cookies banner to users that dismissed it already
+  try {
+    hideBannerItem = localStorage.getItem(_TWEAK_COOKIE_BANNER_LS_KEY);
+    shouldHideCookiesBanner = hideBannerItem === _TWEAK_COOKIE_YES;
+
+    if(shouldHideCookiesBanner) {
+      tweakCookiesBanner.remove();
+    } else {
+      tweakCookiesBanner.style.setProperty("visibility", "");
     }
+  } catch (error) {
+    handleError(error);
+  }
+
+  if (!shouldHideCookiesBanner) {
+    // hide permanently the cookies banner when user clicks on Ok
+    try {
+      var dismissBtn = document.getElementById("tweak-cookies-banner-ok-btn");
+      dismissBtn.addEventListener("click", function _onClickOkBtn() {
+        try {
+          localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_YES);
+          tweakCookiesBanner.style.setProperty("visibility", "hidden");
+        } catch (error) {
+          handleError(error);
+        }
+      });
+    } catch (error) {
+      handleError(error);
+    }
+
+    // dismiss cookie banner when clicking outside
+    try {
+      var cookieBanner = document.getElementById("tweak-cookies-banner");
+      document.addEventListener("click", function (event) {
+        if (isPrivacyPreferencesModalVisible) {
+          return;
+        }
+        if (event && event.target && cookieBanner.contains(event.target)) {
+          return;
+        }
+        localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_YES);
+        tweakCookiesBanner.style.setProperty("visibility", "hidden");
+      })
+    } catch (error) {
+      handleError(error);
+    }
+  }
+
+  /**
+   * https://developers.google.com/analytics/devguides/collection/gtagjs/user-opt-out
+   * @param {boolean} isOn true if analytics preference is active for the user, false
+   * otherwise.
+   */
+  function toggleAnalyticsPreference(isOn) {
+    try {
+      if (isOn === false) {
+        var GA_KEY = process.env.GA_KEY;
+        // disable ga
+        window["ga-disable-" + GA_KEY] = true;
+      }
+      localStorage.setItem(_TWEAK_COOKIE_IS_GA_ON_KEY, isOn ? _TWEAK_COOKIE_YES : _TWEAK_COOKIE_NO);
+    } catch (error) {
+      handleError(error);
+    }
+  }
+
+  try {
+    var toggleAnalyticsCheckbox = document.getElementById("toggle-analytics-checkbox");
+
+    // restore the returning user analytics preference
+    var analyticsOn = localStorage.getItem(_TWEAK_COOKIE_IS_GA_ON_KEY);
+    var isAnalyticsOn = analyticsOn === _TWEAK_COOKIE_YES;
+    toggleAnalyticsPreference(isAnalyticsOn);
+    toggleAnalyticsCheckbox.checked = isAnalyticsOn;
+
+    // hand toggling of analytics in the privacy preferences center modal
+    var toggleAnalyticsCheckbox = document.getElementById("toggle-analytics-checkbox");
+    toggleAnalyticsCheckbox.addEventListener("change", function (event) {
+      toggleAnalyticsPreference(event.target.checked);
+    });
+  } catch (error) {
+    handleError(error);
   }
 
   // when user goes over to the changelog page change the top bar links color to black
   try {
-    if (window.location.href.includes('/changelog')) {
-      var navLis = Array.from(document.querySelectorAll('.js-clone-nav li .nav-link'));
+    if (window.location.href.includes("/changelog")) {
+      var navLis = Array.from(document.querySelectorAll(".js-clone-nav li .nav-link"));
       navLis.forEach(function (e) {
-        e.style.color = 'black';
+        e.style.color = "black";
       });
     }
   } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
-    }
+    handleError(error);
   }
 
   var siteMenuClone = function() {
@@ -251,7 +330,7 @@ jQuery(document).ready(function($) {
           isHashInCurrentLocation = target && target === current;
         } catch (error) {
           if (process.env.NODE_ENV === "development") {
-            console.error(error);
+            console.error('(visible in development mode only): ', error);
           }
           isHashInCurrentLocation = false;
         }
