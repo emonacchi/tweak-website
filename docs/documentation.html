@@ -154,10 +154,36 @@
     </div>
     <div class="site-section">
       <div class="documentation-section">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-8 section-heading">
+            <h3 class="heading mb-3">Blog posts</h3>
+            <span class="subheading">All about tweak!</span>
+          </div>
+        </div>
+          <div class="col justify-content-center text-center">
+            <h4 class="text-dark">A Pragmatic Mocking Tool</h4>
+            <p>A browser extension to the rescue</p>
+          </div>
+          <div class="row justify-content-center text-center mb-5">
+            <a href="https://goodguydaniel.com/blog/best-http-request-mock-tool" target="_blank" title="A Pragmatic Mocking Tool by goodguydaniel.com">📖 read now</a>
+          </div>
+          <div class="col justify-content-center text-center">
+            <h4 class="text-dark">Simulate Delays in HTTP Requests</h4>
+            <p>Without writing any code!</p>
+          </div>
+          <div class="row justify-content-center text-center mb-5">
+            <a href="https://goodguydaniel.com/blog/how-to-simulate-delay-http-request" target="_blank" title="Simulate Delays in HTTP Requests by goodguydaniel.com">📖 read now</a>
+          </div>
+      </div>
+    </div>
+    <div class="site-section">
+      <div class="documentation-section">
         <p>
           Do you want to try it yourself in our test application? <a href="https://tweak-target-app.herokuapp.com"
             target="_blank" title="Link to the web application where you can test tweak"><b>Here</b></a> you can access
-          the website that we use in our video demonstrations.<br>
+          the website that we use in our video demonstrations.
+        </p>
+        <p>
           Take a look at our <a
             href="https://tweak-extension.com/changelog" target="_blank"
             title="Link to Changelog of tweak"><b>Changelog</b> for the latest changes in tweak</a>!
@@ -167,32 +193,30 @@
   <footer class="footer-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <h3 class="text-dark">About tweak</h3>
           <p>tweak is an extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application.</p>
         </div>
         <div class="col-md-3 ml-auto">
           <h3 class="text-dark">Links</h3>
           <ul class="list-unstyled footer-links">
-            <li>
-              <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/"
-                target="_blank"
-                title="chrome store tweak extension available for free">Try tweak in Chrome</a>
-            </li>
-            <li>
-              <a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/"
-                target="_blank"
-                title="Firefox store tweak extension available for free">Try tweak in Firefox</a>
-            </li>
+            <li><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" target="_blank" title="chrome store tweak extension available for free">Try tweak in Chrome</a></li>
+            <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/" target="_blank" title="Firefox store tweak extension available for free">Try tweak in Firefox</a></li>
             <li><a href="https://tweak-extension.com/documentation" title="link to the Documentation page">Documentation</a></li>
             <li><a href="https://tweak-extension.com/changelog" title="link to the Changelog page">Changelog</a></li>
-            <li><a href="https://tweak-extension.com/privacy-policy.txt" title="Link to the Privacy policy document">Privacy Policy</a></li>
-            <li><a href="https://tweak-extension.com/use-policy.txt" title="Link to the Use Policy document">Use Policy</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
-          <h3 class="text-dark">Contribute</h3>
-          <a class="footer-custom-link" href="https://paypal.me/EMonacchi" title="link to paypal" target="_blank">Contribute to tweak! <span class="icon-cc-paypal"></span>
+        <div class="col-md-3">
+          <h3 class="text-dark">Policies and settings</h3>
+          <ul class="list-unstyled footer-links">
+            <li><a href="https://tweak-extension.com/privacy-policy.txt" title="Link to the Privacy policy document">Privacy Policy</a></li>
+            <li><a href="https://tweak-extension.com/use-policy.txt" title="Link to the Use Policy document">Use Policy</a></li>
+            <li><a data-toggle="modal" data-target="#cookies-settings-modal" style="color: red; cursor: pointer;">Cookies Settings</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="text-dark">Donate</h3>
+          <a class="footer-custom-link" href="https://paypal.me/EMonacchi" title="link to paypal" target="_blank">Donate to tweak! <span class="icon-cc-paypal"></span>
           </a>
         </div>
       </div>
@@ -214,13 +238,72 @@
       </div>
     </div>
   </footer>
-    <div id="tweak-announcements-banner" class="custom-tweak-warning-banner alert alert-success alert-dismissible" style="visibility:hidden;" role="alert">
-      <h4><a href="https://tweak-extension.com/changelog" title="link to tweak changelog" target="_blank" rel="noopener">tweak 1.1.0</a> is out and available for <b><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="chrome store link" target="_blank" rel="noopener">Chrome</a></b> and <b><a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/" title="firefox link" target="_blank" rel="noopener">Firefox</a></b>! 🚀</h4>
-      If you are using <b>Chrome</b> make sure you have the latest <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" title="chrome store link" target="_blank" rel="noopener">version</a> installed.<br>
-      <button id="tweak-announcements-banner-dismiss-btn" type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div id="tweak-cookies-banner" class="custom-tweak-warning-banner alert alert-success alert-dismissible" role="alert">
+    <div class="row align-items-center">
+      <div class="col">
+        <b>How about cookies? 🍪 </b>We use cookies to analyze and enhance your experience. Click
+        anywhere or “OK” to consent and continue enjoying tweak. You can manage your data in your
+        <span class="tweak-cookie-banner-settings" data-toggle="modal" data-target="#cookies-settings-modal">
+          cookie settings
+        </span>.
+      </div>
+      <div class="col-1">
+        <button id="tweak-cookies-banner-ok-btn" type="button" class="btn btn-outline-success btn-lg" data-dismiss="alert"
+          aria-label="Close">Ok</button>
+      </div>
     </div>
+  </div>
+  
+    <div class="modal fade" id="cookies-settings-modal" tabindex="-1" role="dialog" aria-labelledby="cookies-settings-modal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Privacy preferences center</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Cookies are used on tweak-extension.com with the primary purpose of tracking bugs and enhance the website
+            usability, based on usage patterns identified.
+          </p>
+          <a href="https://tweak-extension.com/privacy-policy.txt" title="link to tweak privacy policy" target="_blank"
+            rel="noopener">Privacy policy</a>
+          <hr>
+          <h5 style="margin-bottom:22px;">Manage cookies preferences</h5>
+          <div class="row justify-content-between">
+            <div class="col-7">
+              <h6>Essential cookies</h6>
+            </div>
+            <div class="col-5">
+              <h6><b>Always active</b></h6>
+            </div>
+          </div>
+          <p>
+            These cookies are necessary. They’re the basic cookies that enable our site to work properly so that you can
+            use the most important functions and navigate the site smoothly.
+          </p>
+          <div class="row justify-content-between">
+            <div class="col-6">
+              <h6>Performance cookies</h6>
+            </div>
+            <div class="col-5">
+              <input id="toggle-analytics-checkbox" type="checkbox" aria-label="Checkbox for following text input">
+              <label for="toggle-analytics-checkbox" style="user-select:none;">Active</label>
+            </div>
+          </div>
+          <p>These cookies allow us to measure and improve the performance of our site. If you deactivate these cookies we
+            won’t be able to optimize our site for you.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   </div>
   <script src="assets/js/jquery-3.3.1.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
@@ -228,7 +311,6 @@
   <script src="assets/js/jquery.easing.min.js"></script>
   <script src="assets/js/aos.js"></script>
   <script src="assets/js/jquery.sticky.js"></script>
-  <script src="https://host.relaychat.app"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151413843-4"></script>
     <script>
@@ -238,6 +320,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.3e73622d22c11ea31703.js"></script></body>
+<script type="text/javascript" src="main.d0ae681b35d5bbfa2140.js"></script></body>
 
 </html>
