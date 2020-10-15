@@ -19,14 +19,16 @@ jQuery(document).ready(function($) {
   }
 
   var _TWEAK_COOKIE_BANNER_LS_KEY = "_tweak_cookie_banner_";
-  var _TWEAK_COOKIE_BANNER_LS_YES = "yes";
+  var _TWEAK_COOKIE_IS_GA_ON_KEY = "_tweak_user_ga_is_on_"
+  var _TWEAK_COOKIE_YES = "yes";
+  var _TWEAK_COOKIE_NO = "no";
   var tweakCookiesBanner = document.getElementById("tweak-cookies-banner");
   var hideBannerItem = null;
   var shouldHideCookiesBanner = false;
 
   try {
     hideBannerItem = localStorage.getItem(_TWEAK_COOKIE_BANNER_LS_KEY);
-    shouldHideCookiesBanner = hideBannerItem === _TWEAK_COOKIE_BANNER_LS_YES;
+    shouldHideCookiesBanner = hideBannerItem === _TWEAK_COOKIE_YES;
   } catch (error) {
     handleError(error);
   }
@@ -48,7 +50,7 @@ jQuery(document).ready(function($) {
       var dismissBtn = document.getElementById("tweak-cookies-banner-ok-btn");
       dismissBtn.addEventListener("click", function _onClickOkBtn() {
         try {
-          localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_BANNER_LS_YES);
+          localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_YES);
           tweakCookiesBanner.style.setProperty("visibility", "hidden");
         } catch (error) {
           handleError(error);
@@ -65,12 +67,48 @@ jQuery(document).ready(function($) {
         if (event && event.target && cookieBanner.contains(event.target)) {
           return;
         }
-        localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_BANNER_LS_YES);
+        localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_YES);
         tweakCookiesBanner.style.setProperty("visibility", "hidden");
       })
     } catch (error) {
       handleError(error);
     }
+  }
+
+  /**
+   * https://developers.google.com/analytics/devguides/collection/gtagjs/user-opt-out
+   * @param {boolean} isOn true if analytics preference is active for the user, false
+   * otherwise.
+   */
+  function toggleAnalyticsPreference(isOn) {
+    try {
+      if (isOn === false) {
+        var GA_KEY = process.env.GA_KEY;
+        // disable ga
+        window["ga-disable-" + GA_KEY] = true;
+      }
+      localStorage.setItem(_TWEAK_COOKIE_IS_GA_ON_KEY, isOn ? _TWEAK_COOKIE_YES : _TWEAK_COOKIE_NO);
+    } catch (error) {
+      handleError(error);
+    }
+  }
+
+  try {
+    var toggleAnalyticsCheckbox = document.getElementById("toggle-analytics-checkbox");
+
+    // restore the returning user analytics preference
+    var analyticsOn = localStorage.getItem(_TWEAK_COOKIE_IS_GA_ON_KEY);
+    var isAnalyticsOn = analyticsOn === _TWEAK_COOKIE_YES;
+    toggleAnalyticsPreference(isAnalyticsOn);
+    toggleAnalyticsCheckbox.checked = isAnalyticsOn;
+
+    // hand toggling of analytics in the privacy preferences center modal
+    var toggleAnalyticsCheckbox = document.getElementById("toggle-analytics-checkbox");
+    toggleAnalyticsCheckbox.addEventListener('change', function (event) {
+      toggleAnalyticsPreference(event.target.checked);
+    });
+  } catch (error) {
+    handleError(error);
   }
 
   // when user goes over to the changelog page change the top bar links color to black
