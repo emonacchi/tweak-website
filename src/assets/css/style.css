@@ -1458,6 +1458,12 @@ div.site-changelog b {
   }
 }
 
+@media (max-width: 500px) {
+  .tweak-mobile-firefox-btn {
+    margin-top: 8px;
+  }
+}
+
 .tweak-cookie-banner-settings {
   text-decoration: underline;
   font-weight: bold;
