@@ -1439,7 +1439,8 @@ div.site-changelog b {
 .custom-tweak-warning-banner {
   position: fixed;
   bottom: 0;
-  z-index: 999999;
+  /* 1049 because bootstrap modal-dialog is 1050 */
+  z-index: 1049;
   font-size: 10px;
   margin-bottom: 0;
 }
@@ -1448,7 +1449,8 @@ div.site-changelog b {
   .custom-tweak-warning-banner {
     position: fixed;
     bottom: 0;
-    z-index: 999999;
+    /* 1049 because bootstrap modal-dialog is 1050 */
+    z-index: 1049;
     max-width: 100%;
     margin-bottom: 0;
     font-size: 18px;
