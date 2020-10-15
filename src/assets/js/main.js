@@ -108,9 +108,19 @@ jQuery(document).ready(function($) {
   try {
     var toggleAnalyticsCheckbox = document.getElementById("toggle-analytics-checkbox");
 
-    // restore the returning user analytics preference
+    // restore the new or returning user analytics preference
     var analyticsOn = localStorage.getItem(_TWEAK_COOKIE_IS_GA_ON_KEY);
-    var isAnalyticsOn = analyticsOn === _TWEAK_COOKIE_YES;
+    var isAnalyticsOn = true;
+    switch (analyticsOn) {
+      case _TWEAK_COOKIE_YES:
+        isAnalyticsOn = true;
+        break;
+      case _TWEAK_COOKIE_NO:
+        isAnalyticsOn = false;
+      default:
+        isAnalyticsOn = true;
+        break;
+    }
     toggleAnalyticsPreference(isAnalyticsOn);
     toggleAnalyticsCheckbox.checked = isAnalyticsOn;
 
