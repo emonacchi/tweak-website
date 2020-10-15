@@ -7,89 +7,82 @@ AOS.init({
 jQuery(document).ready(function($) {
   "use strict";
 
-  var tweakBanner = document.getElementById("tweak-cookies-banner");
+  /**
+   * Common error handler for development purposes only, keeps
+   * the `console` clean in production.
+   * @param {Error} error
+   */
+  function handleError(error) {
+    if (process.env.NODE_ENV === "development") {
+      console.error('(visible in development mode only): ', error);
+    }
+  }
 
-  // do not show announcements banner to returning users
+  var _TWEAK_COOKIE_BANNER_LS_KEY = "_tweak_cookie_banner_";
+  var _TWEAK_COOKIE_BANNER_LS_YES = "yes";
+  var tweakCookiesBanner = document.getElementById("tweak-cookies-banner");
+  var hideBannerItem = null;
+  var shouldHideCookiesBanner = false;
+
   try {
-    var shouldHideBanner = localStorage.getItem("_tweak_cookie_banner_");
-    if(shouldHideBanner === "yes") {
-      tweakBanner.remove();
+    hideBannerItem = localStorage.getItem(_TWEAK_COOKIE_BANNER_LS_KEY);
+    shouldHideCookiesBanner = hideBannerItem === _TWEAK_COOKIE_BANNER_LS_YES;
+  } catch (error) {
+    handleError(error);
+  }
+
+  // do not show the cookies banner to users that dismissed it already
+  try {
+    if(shouldHideCookiesBanner) {
+      tweakCookiesBanner.remove();
     } else {
-      tweakBanner.style.setProperty("visibility", "");
+      tweakCookiesBanner.style.setProperty("visibility", "");
     }
   } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
-    }
+    handleError(error);
   }
 
-  // hide permanently the banner when dismissed
-  // try {
-  //   var dismissBtn = document.getElementById('tweak-announcements-banner-dismiss-btn');
-  //   dismissBtn.addEventListener('click', function _onClickDismissBtn() {
-  //     try {
-  //       localStorage.setItem("_tweak_hide_banner_v3_", "yes");
-  //       tweakBanner.style.setProperty("visibility", "hidden");
-  //     } catch (error) {
-  //       if (process.env.NODE_ENV === "development") {
-  //         console.error(error);
-  //       }
-  //     }
-  //   });
-  // } catch (error) {
-  //   if (process.env.NODE_ENV === "development") {
-  //     console.error(error);
-  //   }
-  // }
-
-  // hide cookies banner when user clicks on Ok
-  try {
-    var dismissBtn = document.getElementById('tweak-cookies-banner-ok-btn');
-    dismissBtn.addEventListener('click', function _onClickOkBtn() {
-      try {
-        localStorage.setItem("_tweak_cookie_banner_", "yes");
-        tweakBanner.style.setProperty("visibility", "hidden");
-      } catch (error) {
-        if (process.env.NODE_ENV === "development") {
-          console.error(error);
+  if (!shouldHideCookiesBanner) {
+    // hide permanently the cookies banner when user clicks on Ok
+    try {
+      var dismissBtn = document.getElementById("tweak-cookies-banner-ok-btn");
+      dismissBtn.addEventListener("click", function _onClickOkBtn() {
+        try {
+          localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_BANNER_LS_YES);
+          tweakCookiesBanner.style.setProperty("visibility", "hidden");
+        } catch (error) {
+          handleError(error);
         }
-      }
-    });
-  } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
+      });
+    } catch (error) {
+      handleError(error);
     }
-  }
 
-// dismiss cookie banner when clicking outside
-  try {
-    var list = ["tweak-cookies-banner"];
-    var cookieBanner = document.getElementById("tweak-cookies-banner");
-    document.addEventListener('click', function (event) {
-      if (event && event.target && cookieBanner.contains(event.target)) {
-        return;
-      }
-      localStorage.setItem("_tweak_cookie_banner_", "yes");
-      tweakBanner.style.setProperty("visibility", "hidden");
-    })
-  } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
+    // dismiss cookie banner when clicking outside
+    try {
+      var cookieBanner = document.getElementById("tweak-cookies-banner");
+      document.addEventListener('click', function (event) {
+        if (event && event.target && cookieBanner.contains(event.target)) {
+          return;
+        }
+        localStorage.setItem(_TWEAK_COOKIE_BANNER_LS_KEY, _TWEAK_COOKIE_BANNER_LS_YES);
+        tweakCookiesBanner.style.setProperty("visibility", "hidden");
+      })
+    } catch (error) {
+      handleError(error);
     }
   }
 
   // when user goes over to the changelog page change the top bar links color to black
   try {
-    if (window.location.href.includes('/changelog')) {
-      var navLis = Array.from(document.querySelectorAll('.js-clone-nav li .nav-link'));
+    if (window.location.href.includes("/changelog")) {
+      var navLis = Array.from(document.querySelectorAll(".js-clone-nav li .nav-link"));
       navLis.forEach(function (e) {
-        e.style.color = 'black';
+        e.style.color = "black";
       });
     }
   } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
-    }
+    handleError(error);
   }
 
   var siteMenuClone = function() {
@@ -287,7 +280,7 @@ jQuery(document).ready(function($) {
           isHashInCurrentLocation = target && target === current;
         } catch (error) {
           if (process.env.NODE_ENV === "development") {
-            console.error(error);
+            console.error('(visible in development mode only): ', error);
           }
           isHashInCurrentLocation = false;
         }
