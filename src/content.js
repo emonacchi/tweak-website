@@ -106,7 +106,21 @@ module.exports = [
           title: 'How to change the response status and content-type header in tweak',
           frameSrc: 'https://www.youtube.com/embed/wX_qp-Gorws',
         },
-      ]
+      ],
+      blogposts: [
+        {
+          title: 'A Pragmatic Mocking Tool',
+          subtitle: 'A browser extension to the rescue',
+          href: 'https://goodguydaniel.com/blog/best-http-request-mock-tool',
+          seoTitle: 'A Pragmatic Mocking Tool by goodguydaniel.com'
+        },
+        {
+          title: 'Simulate Delays in HTTP Requests',
+          subtitle: 'Without writing any code!',
+          href: 'https://goodguydaniel.com/blog/how-to-simulate-delay-http-request',
+          seoTitle: 'Simulate Delays in HTTP Requests by goodguydaniel.com',
+        }
+      ],
     },
     template: "./src/pages/documentation.hbs"
   },
