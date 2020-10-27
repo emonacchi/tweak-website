@@ -8,16 +8,42 @@
           title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
         version.</p>
     </div>
-    <h3 class="text-dark" title="iframe interceptor, bug fixing, small improvements">v1.1.0</h3>
-    <p title="bug fixing, small improvements">A bug fix and some improvements on expanding support of existent functionalities.</p>
+    <h3 class="text-dark" title="bug fixes">v2.0.1</h3>
+    <small>22.10.2020</small>
     <ul>
-      <li><b>Announcement: tweak is now <a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/" target="_blank" title="firefox tweak extension available for free">available on Firefox</a></b> 🎉</li>
+      <li>Bug fix: Layout glitch (overlap) when toggling the JSON editor's error panel.</li>
+    </ul>
+    <h3 class="text-dark" title="import export configurations">v2.0.0</h3>
+    <small>18.10.2020</small>
+    <p title="import and export configurations">With tweak 2.0, users are now able to export/import their tweak
+      configuration. We hope this provides users a better way to document different scenarios and empowers them to share
+      configurations within their teams to boost productivity.</p>
+    <ul>
+      <li>Feature: Export/import tweak configurations. Configurations are exported as a <code>.json</code> file.</li>
+      <li>Enhancement: Show timestamp of last request interception in the counter tooltip.</li>
+      <li>Enhancement: Add a loading state to the extension popup.</li>
+      <li>Maintenance: 3rd party security dependencies updates.</li>
+    </ul>
+    <h3 class="text-dark" title="iframe interceptor, bug fixing, small improvements">v1.1.0</h3>
+    <small>29.06.2020</small>
+    <p title="bug fixing, small improvements">A bug fix and some improvements on expanding support of existent
+      functionalities.</p>
+    <ul>
+      <li><b>Announcement: tweak is now <a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/"
+            target="_blank" title="firefox tweak extension available for free">available on Firefox</a></b> 🎉</li>
       <li>Bug fix: Fix glitch in URL input field, was below the regular expressions toggle.</li>
-      <li>Feature: Partial support for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe" title="<iframe>: The Inline Frame element - HTML: Hypertext Markup Language | MDN" target="_blank" rel="noopener">iframes</a>. Users are now able to intercept HTTP requests from iframes. The support we introduce is limited, the user needs to ensure he/she disables and re-enables the extension for tweak to attempt to kick into the iframes.</li>
-      <li>Feature: Proper support for non JSON formats. Provide different editor for users to manage non-JSON response payloads. Additionally allow users to setup mocks with invalid JSON.</li>
+      <li>Feature: Partial support for <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"
+          title="<iframe>: The Inline Frame element - HTML: Hypertext Markup Language | MDN" target="_blank"
+          rel="noopener">iframes</a>. Users are now able to intercept HTTP requests from iframes. The support we
+        introduce is limited, the user needs to ensure he/she disables and re-enables the extension for tweak to attempt
+        to kick into the iframes.</li>
+      <li>Feature: Proper support for non JSON formats. Provide different editor for users to manage non-JSON response
+        payloads. Additionally allow users to setup mocks with invalid JSON. We believe this is a very useful feature
+        for chaotic testing purposes.</li>
     </ul>
     <h3 class="text-dark" title="chrome developer tool to mock http request">v1.0.0</h3>
-    <p title="intercept POST request, delay HTTP request and more, debugging proxy">
+    <small>13.05.2020</small>
+    <p title="intercept POST request, delay HTTP request and more">
       We're happy to announce <b>tweak 1.0</b>! After <b>improving the foundations</b> of tweak in the initial releases
       where we mainly focus on making sure the extension intercepts requests consistently across different websites and
       different environments, we decided that now is the right time to <b>focus on new features and enhancing user
@@ -32,14 +58,14 @@
       <li>Feature: Add a new action on the top bar that allows users to <b>delete all</b> the configurations in one go.
       </li>
       <li>Feature: Allow users to <b>specify the request payload (request body)</b> for <a
-          href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST" title="POST - HTTP MDN"
+          href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST" title="POST - HTTP | MDN"
           target="_blank" rel="noopener">POST</a>, <code>PUT</code> and <code>PATCH</code> requests. The user can edit
         the request payload by clicking the <code>Request Payload</code> tab in the editors area.</li>
       <li>Feature: Allow users to specify the <a
           href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type"
-          title="Content-Type - HTTP MDN" target="_blank" rel="noopener">Content-Type</a> response header.</li>
+          title="Content-Type - HTTP | MDN" target="_blank" rel="noopener">Content-Type</a> response header.</li>
       <li>Feature: Allow users to specify the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status"
-          title="HTTP response status codes - HTTP MDN" target="_blank" rel="noopener">HTTP response status code</a>
+          title="HTTP response status codes - HTTP | MDN" target="_blank" rel="noopener">HTTP response status code</a>
         of an intercepted request.</li>
       <li>
         Enhancement: Overall <b>extension re-design with major UI improvements</b>. Some highlights:
@@ -63,10 +89,10 @@
       </li>
       <li>
         Feature: allow users to bypass requests despite the original one not being successful (e.g. status
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" title="404 Not Found - HTTP MDN"
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404" title="404 Not Found - HTTP | MDN"
           target="_blank" rel="noopener">404</a> or
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
-          title="500 Internal Server Error - HTTP MDN" target="_blank" rel="noopener">500</a> are the most common use
+          title="500 Internal Server Error - HTTP | MDN" target="_blank" rel="noopener">500</a> are the most common use
         cases). Users may now simulate calls to resources that don't exist on the server, or even create their own
         routes in the extension to truly simulate an API.
       </li>
@@ -85,6 +111,7 @@
       </li>
     </ul>
     <h3 class="text-dark">v0.2.0</h3>
+    <small>23.04.2020</small>
     <p title="tweak interceptor, mock responses, any website">Although we didn't introduced new functionalities in this
       release, we did some foundational changes in the
       way that tweak interacts with your website in order to augment the coverage of scenarios where it can intercept
@@ -131,6 +158,7 @@
       </li>
     </ul>
     <h3 class="text-dark">v0.1.0</h3>
+    <small>06.04.2020</small>
     <ul>
       <li>Feature: <b>By default turn on the request interception</b> <i>switch</i> toggle when adding a new
         configuration.</li>
@@ -146,6 +174,7 @@
       </ul>
     </ul>
     <h3 class="text-dark">v0.0.2</h3>
+    <small>23.03.2020</small>
     <ul>
       <li>Bug fix: Fix memory leak on start/stop extension.</li>
       <li>Bug fix: Improve compatibility of interceptions, better compliance with browser APIs:</li>
@@ -168,6 +197,7 @@
       </ul>
     </ul>
     <h3 class="text-dark">v0.0.1</h3>
+    <small>01.02.2020</small>
     <ul>
       <li>First <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/"
           target="_blank" title="chrome store tweak extension available for free">tweak</a> version</li>
