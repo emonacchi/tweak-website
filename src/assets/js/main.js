@@ -6,7 +6,10 @@ AOS.init({
 
 jQuery(document).ready(function($) {
   "use strict";
-
+  if (window.location.href.includes("uninstall")) {
+      var iframeEl=document.getElementById("uninstall-iframe");
+      iframeEl.setAttribute('width', window.outerWidth);
+  }
   /**
    * Common error handler for development purposes only, keeps
    * the `console` clean in production.
@@ -136,7 +139,7 @@ jQuery(document).ready(function($) {
 
   // when user goes over to the changelog page change the top bar links color to black
   try {
-    if (window.location.href.includes("/changelog")) {
+    if (window.location.href.includes("/changelog") || window.location.href.includes("uninstall")) {
       var navLis = Array.from(document.querySelectorAll(".js-clone-nav li .nav-link"));
       navLis.forEach(function (e) {
         e.style.color = "black";
