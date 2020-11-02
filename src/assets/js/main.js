@@ -6,10 +6,7 @@ AOS.init({
 
 jQuery(document).ready(function($) {
   "use strict";
-  if (window.location.href.includes("uninstall")) {
-      var iframeEl=document.getElementById("uninstall-iframe");
-      iframeEl.setAttribute('width', window.outerWidth);
-  }
+
   /**
    * Common error handler for development purposes only, keeps
    * the `console` clean in production.
@@ -19,6 +16,15 @@ jQuery(document).ready(function($) {
     if (process.env.NODE_ENV === "development") {
       console.error("(visible in development mode only): ", error);
     }
+  }
+
+  try {
+    if (window.location.href.includes("uninstall")) {
+      var iframeEl=document.getElementById("uninstall-iframe");
+      iframeEl.setAttribute('width', window.outerWidth);
+    }
+  } catch (error) {
+    handleError(error);
   }
 
   var _TWEAK_COOKIE_BANNER_LS_KEY = "_tweak_cookie_banner_";
