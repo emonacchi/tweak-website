@@ -4,7 +4,7 @@ const html5Lint = require("html5-lint");
 const WHITELIST = [
   "Bad value  for attribute “src” on element “img”: Expected an equals sign, a comma or a token character but saw “;” instead."
 ];
-const targets = ["docs/index.html", "docs/documentation.html", "docs/uninstall.html"];
+const targets = ["docs/index.html", "docs/documentation.html", "docs/uninstalltschussy07vv9cd6c4.html"];
 
 function isWhitelisted(m) {
   const { message = "" } = m;
