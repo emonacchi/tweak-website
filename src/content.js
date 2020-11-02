@@ -143,5 +143,12 @@ module.exports = [
       links
     },
     template: "./src/pages/404.hbs"
+  },
+  {
+    output: "./uninstall.html",
+    content: {
+      googleFormURL: "https://docs.google.com/forms/d/e/1FAIpQLSf-0mLiMMWCgugKQ-Cq2npNgdT4NNoVwqBTO_Nzj5qGRh-P7Q/viewform",
+    },
+    template: "./src/pages/uninstall.hbs",
   }
 ];
