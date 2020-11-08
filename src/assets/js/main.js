@@ -18,6 +18,15 @@ jQuery(document).ready(function($) {
     }
   }
 
+  try {
+    if (window.location.href.includes("uninstall")) {
+      var iframeEl=document.getElementById("uninstall-iframe");
+      iframeEl.setAttribute('width', window.outerWidth);
+    }
+  } catch (error) {
+    handleError(error);
+  }
+
   var _TWEAK_COOKIE_BANNER_LS_KEY = "_tweak_cookie_banner_";
   var _TWEAK_COOKIE_IS_GA_ON_KEY = "_tweak_user_ga_is_on_"
   var _TWEAK_COOKIE_YES = "yes";
@@ -136,7 +145,7 @@ jQuery(document).ready(function($) {
 
   // when user goes over to the changelog page change the top bar links color to black
   try {
-    if (window.location.href.includes("/changelog")) {
+    if (window.location.href.includes("/changelog") || window.location.href.includes("uninstall")) {
       var navLis = Array.from(document.querySelectorAll(".js-clone-nav li .nav-link"));
       navLis.forEach(function (e) {
         e.style.color = "black";
