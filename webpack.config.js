@@ -68,6 +68,8 @@ module.exports = options => {
       // privacy policies
       new CopyWebpackPlugin([{ from: "./src/privacy-policy.txt", to: "." }]),
       new CopyWebpackPlugin([{ from: "./src/use-policy.txt", to: "." }]),
+      // robots
+      new CopyWebpackPlugin([{ from: "./robots.txt", to: "." }]),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
