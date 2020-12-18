@@ -27,9 +27,15 @@ module.exports = [
           `),
         },
         {
+          q: new handlebars.SafeString("Do I need to add/install something in my code?"),
+          a: new handlebars.SafeString(`
+            <b>Absolutely not! No external application/library installation is required!</b> tweak works as a standalone browser extension and you can work with it in any environment, from development to production! No code required!
+          `),
+        },
+        {
           q: new handlebars.SafeString("Will this work in every web application?"),
           a: new handlebars.SafeString(`
-            No. tweak has its own <b>limitations</b>, currently:
+            tweak has proven to be reliable, but still we acknowledge our own <b>limitations</b>, currently:
             <ul>
               <li>
                 It will only apply the configurations to the browser tab where you configure the requests to intercept and
@@ -50,26 +56,21 @@ module.exports = [
           `),
         },
         {
-          q: new handlebars.SafeString("Do I need to keep the <i>DevTools</i> open?"),
+          q: new handlebars.SafeString("I clicked on the file import button but nothing happened?"),
           a: new handlebars.SafeString(`
             <span>
-              <b>No you don't</b> 😎. <b>tweak will still work even if you have the browser <i>DevTools</i> closed!</b> <b>However</b>, if you're using it for development purposes
-              we recommend you to keep the <i>DevTools</i> opened so that you don't get tricked by the browser cache. For cases where you're doing a demo or doing a
-              screen recording it's understandable that you would want to keep the <i>DevTools</i> closed.
+              In case this happens, close the popup, go back to your website, refresh the page, and give it another try.
+              <b>To import, you must be on a webpage</b> (e.g. <code>http(s)://...</code>). If you're for instance on the chrome/firefox settings page, (e.g. <code>chrome://settings</code>) you won't be able to perform the import.
             </span>
           `),
         },
         {
-          q: new handlebars.SafeString(`
-            Any thoughts on having a tailored support for <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>?
-          `),
+          q: new handlebars.SafeString("Do I need to keep the <i>DevTools</i> open?"),
           a: new handlebars.SafeString(`
             <span>
-              We're seriously considering having something in the extension very tailored to <a href="https://graphql.org/" title="GraphQL - A query language for your API" target="_blank" rel="noopener">GraphQL</a>
-              to intercept requests that interact with <i>GraphQL</i> servers. Send us an email to <b>help.tweak@gmail.com</b> expressing your interest.
-              In the meantime you can still intercept a specific GraphQL by specifying the right request body, you can
-              <a href="https://youtube.com/" title="tweak video tutorial, how to intercept a POST request" target="_blank" rel="noopener">watch this short video</a> to learn how to intercept a
-              request with a specific request payload (request body).
+              <b>No you don't</b> 😎. <b>tweak will still work even if you have the browser <i>DevTools</i> closed!</b> <b>However, if you're using it for development purposes
+              we recommend you to keep the <i>DevTools</i> opened so that you don't get tricked by the browser cache</b>. For cases where you're doing a demo or doing a
+              screen recording it's understandable that you would want to keep the <i>DevTools</i> closed.
             </span>
           `),
         },
@@ -78,6 +79,15 @@ module.exports = [
           a: new handlebars.SafeString(`
             <span>
               Glad you asked. We drafted a very detailed <a href="${links.documentation}" title="tweak documentation page">documentation page</a> for you with some awesome video content.
+            </span>
+          `),
+        },
+        {
+          q: new handlebars.SafeString("Does tweak work on iframes?"),
+          a: new handlebars.SafeString(`
+            <span>
+              We've introduced partial support in <b>tweak v1.1.0</b>, it's currently something has a great coverage, therefore we acknowledge that it might not work for most the use cases.
+              We advise to open the iframe in a separate browser tab to operate on it, if possible.
             </span>
           `),
         },
@@ -94,6 +104,10 @@ module.exports = [
       metaSubject: "tweak browser extension documentation page",
       links,
       videos: [
+        {
+          title: 'How to autocomplete a request in tweak',
+          frameSrc: 'https://www.youtube.com/embed/5LrhuNsIBOE',
+        },
         {
           title: 'How to intercept HTTP requests with tweak extension',
           frameSrc: 'https://www.youtube.com/embed/M7rMuNBw1xQ',
