@@ -8,7 +8,8 @@ const links = {
   changelog:
     process.env.NODE_ENV === "development"
       ? "/changelog.html"
-      : "https://tweak-extension.com/changelog"
+      : "https://tweak-extension.com/changelog",
+  youtubeChannel: "https://www.youtube.com/channel/UCRCdRZzz6TTsNx67m9JFVxg",
 };
 
 module.exports = [
