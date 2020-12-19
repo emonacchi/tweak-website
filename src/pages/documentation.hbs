@@ -21,20 +21,92 @@
     </div>
     <div class="row mb-6">
       <div class="col-lg-8">
-        <img alt="tweak components" src="assets/images/documentation/tweak-anatomy.png" class="img-fluid">
+        <img alt="tweak components" src="assets/images/documentation/tweak-anatomy2.png" class="img-fluid">
       </div>
       <div class="col-lg-4">
-        <ol>
-          <li><b>Minimize all</b>: collapses/minimizes all the requests created.</li>
-          <li><b>Regular expression toggle</b>: when toggled on, you can specify a <a
+        <ul style="list-style:none">
+          <li>
+            <details open>
+              <summary><b>1. Global settings</b></summary>
+              <ul>
+                <li><b>Search on/off</b>: read more about the Search functionality here</li>
+                <li><b>Delete all</b>: deletes all the configurations and the request autocomplete cache. Retrigger in the browser tab the requests that you wish to search in the URL field.</li>
+                <li><b>Collapse all rows</b>: minimizes all the rows</li>
+                <li><b>Run/Pause the extension</b>: click on the Run button when you are ready to start intercepting requests</li>
+                <li><b>Create a new configuration</b>: adds a new empty configuration as a row</li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><b>2. Import/Export</b></summary>
+              You can use the export functionality to save configurations and test cases that can be imported back later on
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><b>3. Regular expression toggle</b></summary>
+              When toggled on, you can specify a <a
               href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank"
-              title="Regular expressions - JavaScript MDN">Regular Expression</a> to match against the request URL. Don't worry about <i>typos</i>, we will give you instant feedback on whether your regular expression is valid or not.</li>
-          <li><b>Number of requests successfully intercepted</b>: if you're seeing the <code>0</code> value after trying to intercept a request it means that you might have a mismatch on your configuration, double check the request URL and the selected HTTP method to ensure everything is ok.</li>
-          <li><b>Row Options</b>: here you have the additional options of duplicating or deleting a configuration.</li>
-          <li><b>Delay request by</b>: allows you to delay the request interception by as many milliseconds (<i>ms</i>)
-            as specified</li>
-          <li><b>Request payload</b>: for POST, PUT or PATCH requests, you can specify here the request payload.</li>
-        </ol>
+              title="Regular expressions - JavaScript MDN">Regular Expression</a> to match against the request URL. Don't worry about <i>typos</i>, we will give you instant feedback on whether your regular expression is valid or not.
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><b>4. Number of requests intercepted</b></summary>
+              If you're seeing the <code>0</code> value after trying to intercept a request it means that you might have a mismatch on your configuration, double check the request URL and the selected HTTP method to ensure everything is ok.
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><b>5. Row Options</b></summary>
+              Here you have the additional options of duplicating or deleting a configuration.
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><b>6. Delay request by</b></summary>
+              Allows you to delay the request interception by as many milliseconds (<i>ms</i>) as specified.
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary><b>7. Request payload</b></summary>
+              You can specify here the request payload for each request.
+            </details>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center text-center mb-5">
+      <div class="col-md-8 section-heading">
+        <h3 class="heading mb-3">🆕 Requests autocomplete</h3>
+        <span class="subheading">Easily search and complete the requests you want to intercept</span>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-lg-8">
+        <img alt="tweak search" src="assets/images/documentation/tweak-request-autocomplete.gif" class="img-fluid">
+      </div>
+      <div class="col-lg-4">
+        <ul>
+          <li><b><i>How do I turn search on?</i></b>
+            <ul>
+              <li>Click on the search icon in the top bar</li>
+              <li>In the browser tab, <b>trigger the requests you want to autocomplete</b></li>
+              <li>Search for the request directly in the URL field (just like you do in the DevTools - Network panel)</li>
+              <li>Select a request and <b>all the fields will be autocompleted for you</b> 🎉</li>
+            </ul>
+          </li>
+          <li><b><i>What parameters can I search for?</i></b>
+            <ul>
+              <li>Search <b>by request URL</b></li>
+              <li>Search <b>by HTTP method</b>: if you search for "GET", you will see all the GET requests available. Note: all the HTTP method keywords are case-sensitive.</li>
+            </ul>
+          </li>
+          <li><b><i>Can I use regular expressions to search?</i></b>  Yes, if you turn on the regular expression toggle, you will be able to filter results with regular expressions.</li>
+          <li>❗<b>After deleting all the requests from the extention</b>, remember to retrigger all the requests from the browser tab, otherwise the search results will be empty.</li>
+        </ul>
       </div>
     </div>
   </div>
