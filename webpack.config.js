@@ -70,6 +70,8 @@ module.exports = options => {
       new CopyWebpackPlugin([{ from: "./src/use-policy.txt", to: "." }]),
       // robots
       new CopyWebpackPlugin([{ from: "./robots.txt", to: "." }]),
+      // sitemap
+      new CopyWebpackPlugin([{ from: "./sitemap.xml", to: "." }]),
       new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify(process.env.NODE_ENV),
