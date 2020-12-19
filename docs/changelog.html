@@ -62,8 +62,7 @@
               <li><a href="https://tweak-extension.com/#home-section" class="nav-link" title="Link to the homepage">Home</a></li>
               <li><a href="https://tweak-extension.com/#faqs-section" class="nav-link" title="Link to the FAQs section">FAQs</a></li>
               <li><a href="https://tweak-extension.com/#contact-section" class="nav-link" title="Link to the Get In Touch section">Get In Touch</a></li>
-              <li><a href="https://tweak-extension.com/#about-section" class="nav-link" title="Link to the About Us section">About</a></li>
-              <li><a href="https://tweak-extension.com/documentation" class="nav-link" title="Link to the documentation page">Docs</a></li>
+              <li><a href="https://tweak-extension.com/documentation" class="nav-link" title="Link to the documentation page">Documentation</a></li>
               <li><a href="https://tweak-extension.com/changelog" class="nav-link" title="Link to the changelog page">Changelog</a></li>
             </ul>
           </nav>
@@ -82,6 +81,21 @@
               title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
             version.</p>
         </div>
+        <h3 class="text-dark" title="request autocomplete, UI improvements">v3.0.0</h3>
+        <small>18.12.2020</small>
+        <ul>
+          <li>Feature: 🌟 <b>Request Autocomplete</b> - 🥁🥁🥁🥁🥁 After some careful UX analysis we finally bring to you a autocomplete experience. With this feature we expect to boost your productivity by many orders of magnitude as you won't longer be required to input all the configuration settings manually! You can simply search a request that occurred in your web app and tweak will automatically import all the necessary information. Curious to know more about this one? Checkout <a href="https://www.youtube.com/watch?v=5LrhuNsIBOE" target="_blank" title="How to intercept HTTP requests with tweak extension">this quick video</a> this quick video, or our <a href="https://tweak-extension.com/documentation" target="_blank" title="tweak documentation">documentation</a> to get up to speed with this new feature.</li>
+          <li>Feature: <b>Wildcard for HTTP methods</b> - we've received quite some user feedback around restrictions in the available HTTP methods. We now introduce a wildcard option to allow you to mock/intercept requests disregarding their HTTP method.</li>
+          <li>Enhancement: <b>All HTTP methods are now allowed to specify a request payload</b>. During the initial designs we thought that the request payload would be used mostly for <code>POST</code>, <code>PUT</code> or <code>PATCH</code>, but it's not really our business to decide what HTTP methods to restrict. After some very thoughtful user feedback, we've remove all the restrictions on what HTTP methods can define a request payload.</li>
+          <li>Enhancement: <b>Save the scroll position upon return to the extension popup</b> - we've received user feedback that when there's the need to go back and forth between the popup and the website not restoring the exact scroll position might be disruptive.</li>
+          <li>
+            Enhancement: In this release we make some improvements to keep you up to date. We will notify you by popping up our changelog every time there's an update to the extension. This is the reason why we require the permission <code>"tabs"</code>, so that we can open our page with the changelog and/or documentation.
+          </li>
+          <li>Bug fix: Fix UI glitch in Firefox causing error messages to be hidden when using regular expressions in the URL field.</li>
+          <li>
+          Maintenance: As usual we've done a round of internal software upgrades to provide our users with the latest improvements and security patches.</li>
+        </ul>
+        <p>In this release we've given some proof that we listen to our users, so don't be shy. Have any improvements in mind? Mail us at <a href="mailto:help.tweak@gmail.com">help.tweak@gmail.com</a></i></p>
         <h3 class="text-dark" title="bug fixes">v2.0.1</h3>
         <small>22.10.2020</small>
         <ul>
@@ -285,27 +299,23 @@
           <h3 class="text-dark">About tweak</h3>
           <p>tweak is an extension that allows you to tweak your HTTP requests so that you can test, develop and demo your web application.</p>
         </div>
-        <div class="col-md-3 ml-auto">
+        <div class="col-md-4 ml-auto">
           <h3 class="text-dark">Links</h3>
           <ul class="list-unstyled footer-links">
             <li><a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" target="_blank" title="chrome store tweak extension available for free">Try tweak in Chrome</a></li>
             <li><a href="https://addons.mozilla.org/en-US/firefox/addon/tweak-extension/" target="_blank" title="Firefox store tweak extension available for free">Try tweak in Firefox</a></li>
             <li><a href="https://tweak-extension.com/documentation" title="link to the Documentation page">Documentation</a></li>
             <li><a href="https://tweak-extension.com/changelog" title="link to the Changelog page">Changelog</a></li>
+            <li><a href="https://www.youtube.com/channel/UCRCdRZzz6TTsNx67m9JFVxg" title="tweak support youtube channel">YouTube</a></li>
           </ul>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <h3 class="text-dark">Policies and settings</h3>
           <ul class="list-unstyled footer-links">
             <li><a href="https://tweak-extension.com/privacy-policy.txt" title="Link to the Privacy policy document">Privacy Policy</a></li>
             <li><a href="https://tweak-extension.com/use-policy.txt" title="Link to the Use Policy document">Use Policy</a></li>
             <li><a data-toggle="modal" data-target="#cookies-settings-modal" style="color: red; cursor: pointer;">Cookies Settings</a></li>
           </ul>
-        </div>
-        <div class="col-md-3">
-          <h3 class="text-dark">Donate</h3>
-          <a class="footer-custom-link" href="https://paypal.me/EMonacchi" title="link to paypal" target="_blank">Donate to tweak! <span class="icon-cc-paypal"></span>
-          </a>
         </div>
       </div>
       <div class="row" style="text-center pt-5">
@@ -408,6 +418,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.28434efd33696bd959f8.js"></script></body>
+<script type="text/javascript" src="main.715ac719bb091fd67059.js"></script></body>
 
 </html>
