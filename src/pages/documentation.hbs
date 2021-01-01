@@ -72,14 +72,14 @@
         </ul>
       </div>
     </div>
-    <div class="col-lg-8">
+    <div class="col-lg-12">
       <ul style="list-style:none">
           <li>
             <details open>
               <summary><b>7. Requests and response tabs</b></summary>
               <ul>
                 <li><b>Response payload</b>: here you can make the changes you want to be reflected in your web application</li>
-                <li><b>Request payload</b>: ensure the request payload content is matching <b>exactly</b> the request you want to intercept, or tweak will intercept all the requests, regarless the request payload.</li>
+                <li><b>Request payload</b>: ensure the request payload content is matching <b>exactly</b> the request you want to intercept, or tweak will intercept all the requests, regarless the request payload. <br>💡 You can use this field to specify which request you wish to mock. This might be useful for cases such as GraphQL APIs that always hit the same endpoint (regardless of the fetched content).</li>
                 <li><b>Response headers 🆕</b>: you can give more context about your request by specifying response headers. Click on "Add new" to add a new row of keys and values.</li>
               </ul>
             </details>
@@ -94,7 +94,7 @@
     </div>
     <div class="row mb-6">
       <div class="col-lg-8">
-        <img alt="tweak search" src="assets/images/documentation/tweak-request-autocomplete.gif" class="img-fluid">
+        <img alt="tweak search" src="assets/images/documentation/request-autocomplete.gif" class="img-fluid">
       </div>
       <div class="col-lg-4">
         <ul>
