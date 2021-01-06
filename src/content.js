@@ -84,6 +84,14 @@ module.exports = [
           `),
         },
         {
+          q: new handlebars.SafeString("Does tweak support <code>window.fetch</code>?"),
+          a: new handlebars.SafeString(`
+            <span>
+              Yes! tweak supports both <code>window.fetch</code> and <code>XMLHttpRequest (XHR)</code>.
+            </span>
+          `),
+        },
+        {
           q: new handlebars.SafeString("Does tweak work on iframes?"),
           a: new handlebars.SafeString(`
             <span>
