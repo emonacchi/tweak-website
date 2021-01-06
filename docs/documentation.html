@@ -93,7 +93,7 @@
         </div>
         <div class="row mb-6">
           <div class="col-lg-8">
-            <img alt="tweak components" src="assets/images/documentation/tweak-anatomy2.png" class="img-fluid">
+            <img alt="tweak components" src="assets/images/documentation/tweak-anatomy.png" class="img-fluid">
           </div>
           <div class="col-lg-4">
             <ul style="list-style:none">
@@ -141,14 +141,22 @@
                   Allows you to delay the request interception by as many milliseconds (<i>ms</i>) as specified.
                 </details>
               </li>
-              <li>
-                <details>
-                  <summary><b>7. Request payload</b></summary>
-                  You can specify here the request payload for each request.
-                </details>
-              </li>
             </ul>
           </div>
+        </div>
+        <div class="col-lg-12">
+          <ul style="list-style:none">
+              <li>
+                <details open>
+                  <summary><b>7. Requests and response tabs</b></summary>
+                  <ul>
+                    <li><b>Response payload</b>: here you can make the changes you want to be reflected request response, ultimately reflected in your web application.</li>
+                    <li><b>Request payload</b>: you can use this field to specify which request you wish to mock. This might be useful for cases such as GraphQL APIs that always hit the same endpoint e.g. <code>POST /graphql</code> (regardless of the fetched content).</li>
+                    <li><b>Response headers 🆕</b>: you can give more context about your request by specifying response headers. Click on "Add new" to add a new row of keys and values.</li>
+                  </ul>
+                </details>
+              </li>
+          </ul>
         </div>
         <div class="row justify-content-center text-center mb-5">
           <div class="col-md-8 section-heading">
@@ -158,7 +166,7 @@
         </div>
         <div class="row mb-6">
           <div class="col-lg-8">
-            <img alt="tweak search" src="assets/images/documentation/tweak-request-autocomplete.gif" class="img-fluid">
+            <img alt="tweak search" src="assets/images/documentation/request-autocomplete.gif" class="img-fluid">
           </div>
           <div class="col-lg-4">
             <ul>
@@ -397,6 +405,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.12ed5f9387e658fe8f31.js"></script></body>
+<script type="text/javascript" src="main.1478d6ec76de293ea5f6.js"></script></body>
 
 </html>
