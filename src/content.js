@@ -76,6 +76,18 @@ module.exports = [
           `),
         },
         {
+          q: new handlebars.SafeString("When mocking a response it disappears from chrome <i>DevTools</i> network tab?"),
+          a: new handlebars.SafeString(`
+            <span>
+              <b>Yes! But don't worry, tweak is designed to work that way.</b> Requests are mocked at the
+              XHR & fetch APIs level, hence it's not reflected on the network
+              panel. Once you mock a request it won't be surfaced in the devtools. This is a side
+              effect of our implementation decision which hopefully allows us to have more control and add
+              more features easily as we move forward.
+            </span>
+          `),
+        },
+        {
           q: new handlebars.SafeString("Is there any detailed step by step guide where I can learn how to use tweak?"),
           a: new handlebars.SafeString(`
             <span>
