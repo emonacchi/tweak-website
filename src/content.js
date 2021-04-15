@@ -10,6 +10,9 @@ const links = {
       ? "/changelog.html"
       : "https://tweak-extension.com/changelog",
   youtubeChannel: "https://www.youtube.com/channel/UCRCdRZzz6TTsNx67m9JFVxg",
+  privacyPolice: process.env.NODE_ENV === "development"
+    ? "/privacy-policy.txt"
+    : "https://tweak-extension.com/privacy-policy.txt",
 };
 
 module.exports = [
@@ -109,6 +112,15 @@ module.exports = [
             <span>
               We've introduced partial support in <b>tweak v1.1.0</b>, it's currently something has a great coverage, therefore we acknowledge that it might not work for most the use cases.
               We advise to open the iframe in a separate browser tab to operate on it, if possible.
+            </span>
+          `),
+        },
+        {
+          q: new handlebars.SafeString("Is this extension safe? I'm concerned about my privacy."),
+          a: new handlebars.SafeString(`
+            <span>
+              <b>tweak is as safe as they come, simply because we don't store any data you input. Everything is stored in your browser</b> We simply collect basic google analytics metrics to track
+              the usage of our functionalities to better serve our users. This is mentioned in the <a target="_blank" title="tweak privacy police page" href="${links.privacyPolice}">privacy policy</a>.
             </span>
           `),
         },
