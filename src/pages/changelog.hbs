@@ -8,34 +8,72 @@
           title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
         version.</p>
     </div>
+    <h3 class="text-dark" title="angular XHR load bug">v4.1.1</h3>
+    <small>xx.04.2020</small>
+    <ul>
+      <li>Bug fix: Fix XHR mocking, missing support for <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event" target="_blank">load
+          event</a>.<br>
+        We've received several reports where some of our users were getting their applications stuck. The extension was
+        intercepting requests but the mocked responses were not coming through! Unfortunately we just recently got some
+        more detailed feedback and we were able to <i>connect the dots</i>. <b>Most of the affected users were mocking
+          requests on Angular applications</b>. If you are one of them, give tweak another try and let us know how it
+        goes, we would be very happy to hear some Angular developers' feedback.
+      </li>
+    </ul>
     <h3 class="text-dark" title="fullscreen json editor experience">v4.1.0</h3>
     <small>16.04.2020</small>
     <ul>
-      <li>Feature: Full popup experience for tweak's JSON editor. You can now expand your JSON editor to expand to the dimensions of the extension popup.</li>
+      <li>Feature: Full popup experience for tweak's JSON editor. You can now expand your JSON editor to expand to the
+        dimensions of the extension popup.</li>
       <li>Feature: Beautify JSON automatically upon request autocompletion.</li>
-      <li>Maintenance: We've done quite some major migrations of internal software libraries we use. Please reach out to us if you detect any anomaly in the existent functionalities.</li>
+      <li>Maintenance: We've done quite some major migrations of internal software libraries we use. Please reach out to
+        us if you detect any anomaly in the existent functionalities.</li>
     </ul>
     <h3 class="text-dark" title="response headers">v4.0.0</h3>
     <small>06.01.2020</small>
     <ul>
-      <li>Feature: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header" title="Response header - MDN Web Docs Glossary: Definitions of Web-related terms | MDN" target="_blank">Response headers</a> - you can now specify the response headers to go along with you response mocked data.</li>
+      <li>Feature: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header"
+          title="Response header - MDN Web Docs Glossary: Definitions of Web-related terms | MDN"
+          target="_blank">Response headers</a> - you can now specify the response headers to go along with you response
+        mocked data.</li>
     </ul>
     <h3 class="text-dark" title="request autocomplete, UI improvements">v3.0.0</h3>
     <small>18.12.2020</small>
     <ul>
-      <li>Feature: 🌟 <b>Request Autocomplete</b> - 🥁🥁🥁🥁🥁 After some careful UX analysis we finally bring to you a autocomplete experience. With this feature we expect to boost your productivity by many orders of magnitude as you won't longer be required to input all the configuration settings manually! You can simply search a request that occurred in your web app and tweak will automatically import all the necessary information. Curious to know more about this one? Checkout <a href="https://www.youtube.com/watch?v=5LrhuNsIBOE" target="_blank" title="How to intercept HTTP requests with tweak extension">this quick video</a>, or our <a href="https://tweak-extension.com/documentation" target="_blank" title="tweak documentation">documentation</a> to get up to speed with this new feature.</li>
-      <li>Feature: <b>Wildcard for HTTP methods</b> - we've received quite some user feedback around restrictions in the available HTTP methods. We now introduce a wildcard option to allow you to mock/intercept requests disregarding their HTTP method.</li>
-      <li>Enhancement: <b>All HTTP methods are now allowed to specify a request payload</b>. During the initial designs we thought that the request payload would be used mostly for <code>POST</code>, <code>PUT</code> or <code>PATCH</code>, but it's not really our business to decide what HTTP methods to restrict. After some very thoughtful user feedback, we've remove all the restrictions on what HTTP methods can define a request payload.</li>
-      <li>Enhancement: <b>Save the scroll position upon return to the extension popup</b> - we've received user feedback that when there's the need to go back and forth between the popup and the website not restoring the exact scroll position might be disruptive.</li>
+      <li>Feature: 🌟 <b>Request Autocomplete</b> - 🥁🥁🥁🥁🥁 After some careful UX analysis we finally bring to you a
+        autocomplete experience. With this feature we expect to boost your productivity by many orders of magnitude as
+        you won't longer be required to input all the configuration settings manually! You can simply search a request
+        that occurred in your web app and tweak will automatically import all the necessary information. Curious to know
+        more about this one? Checkout <a href="https://www.youtube.com/watch?v=5LrhuNsIBOE" target="_blank"
+          title="How to intercept HTTP requests with tweak extension">this quick video</a>, or our <a
+          href="https://tweak-extension.com/documentation" target="_blank" title="tweak documentation">documentation</a>
+        to get up to speed with this new feature.</li>
+      <li>Feature: <b>Wildcard for HTTP methods</b> - we've received quite some user feedback around restrictions in the
+        available HTTP methods. We now introduce a wildcard option to allow you to mock/intercept requests disregarding
+        their HTTP method.</li>
+      <li>Enhancement: <b>All HTTP methods are now allowed to specify a request payload</b>. During the initial designs
+        we thought that the request payload would be used mostly for <code>POST</code>, <code>PUT</code> or
+        <code>PATCH</code>, but it's not really our business to decide what HTTP methods to restrict. After some very
+        thoughtful user feedback, we've remove all the restrictions on what HTTP methods can define a request payload.
+      </li>
+      <li>Enhancement: <b>Save the scroll position upon return to the extension popup</b> - we've received user feedback
+        that when there's the need to go back and forth between the popup and the website not restoring the exact scroll
+        position might be disruptive.</li>
       <li>
-        Enhancement: In this release we make some improvements to keep you up to date. We will notify you by popping up our changelog every time there's an update to the extension. This is the reason why we require the permission <code>"tabs"</code>, so that we can open our page with the changelog and/or documentation.
+        Enhancement: In this release we make some improvements to keep you up to date. We will notify you by popping up
+        our changelog every time there's an update to the extension. This is the reason why we require the permission
+        <code>"tabs"</code>, so that we can open our page with the changelog and/or documentation.
       </li>
       <li>Enhancement: <b>Add copy to clipboard</b> in the JSON editors.</li>
-      <li>Bug fix: Fix UI glitch in Firefox causing error messages to be hidden when using regular expressions in the URL field.</li>
+      <li>Bug fix: Fix UI glitch in Firefox causing error messages to be hidden when using regular expressions in the
+        URL field.</li>
       <li>
-      Maintenance: As usual we've done a round of internal software upgrades to provide our users with the latest improvements and security patches.</li>
+        Maintenance: As usual we've done a round of internal software upgrades to provide our users with the latest
+        improvements and security patches.</li>
     </ul>
-    <p>In this release we've given some proof that we listen to our users, so don't be shy. Have any improvements in mind? Mail us at <a href="mailto:help.tweak@gmail.com">help.tweak@gmail.com</a></i></p>
+    <p>In this release we've given some proof that we listen to our users, so don't be shy. Have any improvements in
+      mind? Mail us at <a href="mailto:help.tweak@gmail.com">help.tweak@gmail.com</a></i></p>
     <h3 class="text-dark" title="bug fixes">v2.0.1</h3>
     <small>22.10.2020</small>
     <ul>
