@@ -79,32 +79,38 @@
           <p>In this page we document <a
               href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/" target="_blank"
               title="chrome store tweak extension available for free">tweak</a> changes and improvements per release
-            version.</p>
+            version. Do you have any feedback? Reach out at <a href="mailto:help.tweak@gmail.com">help.tweak@gmail.com</a></i></p>
         </div>
+        <h3 class="text-dark" title="dark mode, label displayed in the URL">v4.2.0</h3>
+        <small>June 2021</small>
+        <ul>
+          <li>Feature: <a href="https://tweak-extension.com//documentation.html#dark-mode-documentation">Dark mode 🌗</a> available!</li>
+          <li>Feature: We want to make it easy for you to report issues. We've added a new feature that allows you to download the extension error logs so that you can forward them to us.</li>
+          <li>Enhancements: 
+            <ul>
+              <li><b>Input any status code</b>. Can't find the status code you need? To give you more flexibility, you can now input any status code, instead of selecting it from a pre-defined list.</li>
+              <li><b>Label displayed on top of the request URL</b> and visible also when the request is minimized. Use the label to differentiate and quickly identify your configurations!</li>
+              <li>We have made <b>significant performance improvements</b>, hoping to get you a faster experience when interacting with the extension UI.</li>
+            </ul>
+          </li>
+        </ul>
         <h3 class="text-dark" title="angular XHR load bug">v4.1.1</h3>
-        <small>22.04.2020</small>
+        <small>April 2021</small>
         <ul>
           <li>Bug fix: Fix XHR mocking, missing support for <a
               href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/load_event" target="_blank">load
-              event</a>.<br>
-            We've received several reports where some of our users were getting their applications stuck. The extension was
-            intercepting requests but the mocked responses were not coming through! Unfortunately we just recently got some
-            more detailed feedback and we were able to <i>connect the dots</i>. <b>Most of the affected users were mocking
-              requests on Angular applications</b>. If you are one of them, give tweak another try and let us know how it
-            goes, we would be very happy to hear some Angular developers' feedback.
+              event</a>. <b>This fixes an issue preventing tweak from working on Angular applications. </b>
           </li>
         </ul>
         <h3 class="text-dark" title="fullscreen json editor experience">v4.1.0</h3>
-        <small>16.04.2020</small>
+        <small>April 2021</small>
         <ul>
-          <li>Feature: Full popup experience for tweak's JSON editor. You can now expand your JSON editor to expand to the
-            dimensions of the extension popup.</li>
-          <li>Feature: Beautify JSON automatically upon request autocompletion.</li>
-          <li>Maintenance: We've done quite some major migrations of internal software libraries we use. Please reach out to
-            us if you detect any anomaly in the existent functionalities.</li>
+          <li>Feature: You can now <b>expand the JSON editor</b> to the dimensions of the extension popup.</li>
+          <li>Feature: <b>Beautify JSON automatically</b> upon request autocompletion.</li>
+          <li>Maintenance: Major migrations of internal software libraries we use. Please reach out to us if you detect any anomaly in the existent functionalities.</li>
         </ul>
         <h3 class="text-dark" title="response headers">v4.0.0</h3>
-        <small>06.01.2020</small>
+        <small>January 2021</small>
         <ul>
           <li>Feature: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Response_header"
               title="Response header - MDN Web Docs Glossary: Definitions of Web-related terms | MDN"
@@ -112,27 +118,23 @@
             mocked data.</li>
         </ul>
         <h3 class="text-dark" title="request autocomplete, UI improvements">v3.0.0</h3>
-        <small>18.12.2020</small>
+        <small>December 2020</small>
         <ul>
           <li>Feature: 🌟 <b>Request Autocomplete</b> - 🥁🥁🥁🥁🥁 After some careful UX analysis we finally bring to you a
-            autocomplete experience. With this feature we expect to boost your productivity by many orders of magnitude as
-            you won't longer be required to input all the configuration settings manually! You can simply search a request
-            that occurred in your web app and tweak will automatically import all the necessary information. Curious to know
+            autocomplete experience. You can easily set up the requests to mock without any manual entry! Simply search a request
+            triggered in your web app and tweak will automatically import all the necessary information. Curious to know
             more about this one? Checkout <a href="https://www.youtube.com/watch?v=5LrhuNsIBOE" target="_blank"
               title="How to intercept HTTP requests with tweak extension">this quick video</a>, or our <a
               href="https://tweak-extension.com/documentation" target="_blank" title="tweak documentation">documentation</a>
             to get up to speed with this new feature.</li>
-          <li>Feature: <b>Wildcard for HTTP methods</b> - we've received quite some user feedback around restrictions in the
-            available HTTP methods. We now introduce a wildcard option to allow you to mock/intercept requests disregarding
+          <li>Feature: <b>Wildcard for HTTP methods</b> - You can select a wildcard option to mock/intercept requests disregarding
             their HTTP method.</li>
           <li>Enhancement: <b>All HTTP methods are now allowed to specify a request payload</b>. During the initial designs
             we thought that the request payload would be used mostly for <code>POST</code>, <code>PUT</code> or
             <code>PATCH</code>, but it's not really our business to decide what HTTP methods to restrict. After some very
             thoughtful user feedback, we've remove all the restrictions on what HTTP methods can define a request payload.
           </li>
-          <li>Enhancement: <b>Save the scroll position upon return to the extension popup</b> - we've received user feedback
-            that when there's the need to go back and forth between the popup and the website not restoring the exact scroll
-            position might be disruptive.</li>
+          <li>Enhancement: <b>Save the scroll position upon return to the extension popup</b></li>
           <li>
             Enhancement: In this release we make some improvements to keep you up to date. We will notify you by popping up
             our changelog every time there's an update to the extension. This is the reason why we require the permission
@@ -145,10 +147,8 @@
             Maintenance: As usual we've done a round of internal software upgrades to provide our users with the latest
             improvements and security patches.</li>
         </ul>
-        <p>In this release we've given some proof that we listen to our users, so don't be shy. Have any improvements in
-          mind? Mail us at <a href="mailto:help.tweak@gmail.com">help.tweak@gmail.com</a></i></p>
         <h3 class="text-dark" title="bug fixes">v2.0.1</h3>
-        <small>22.10.2020</small>
+        <small>October 2020</small>
         <ul>
           <li>Bug fix: Layout glitch (overlap) when toggling the JSON editor's error panel.</li>
         </ul>
@@ -164,7 +164,7 @@
           <li>Maintenance: 3rd party security dependencies updates.</li>
         </ul>
         <h3 class="text-dark" title="iframe interceptor, bug fixing, small improvements">v1.1.0</h3>
-        <small>29.06.2020</small>
+        <small>June 2020</small>
         <p title="bug fixing, small improvements">A bug fix and some improvements on expanding support of existent
           functionalities.</p>
         <ul>
@@ -181,7 +181,7 @@
             for chaotic testing purposes.</li>
         </ul>
         <h3 class="text-dark" title="chrome developer tool to mock http request">v1.0.0</h3>
-        <small>13.05.2020</small>
+        <small>May 2020</small>
         <p title="intercept POST request, delay HTTP request and more">
           We're happy to announce <b>tweak 1.0</b>! After <b>improving the foundations</b> of tweak in the initial releases
           where we mainly focus on making sure the extension intercepts requests consistently across different websites and
@@ -250,7 +250,7 @@
           </li>
         </ul>
         <h3 class="text-dark">v0.2.0</h3>
-        <small>23.04.2020</small>
+        <small>April 2020</small>
         <p title="tweak interceptor, mock responses, any website">Although we didn't introduced new functionalities in this
           release, we did some foundational changes in the
           way that tweak interacts with your website in order to augment the coverage of scenarios where it can intercept
@@ -297,7 +297,7 @@
           </li>
         </ul>
         <h3 class="text-dark">v0.1.0</h3>
-        <small>06.04.2020</small>
+        <small>April 2020</small>
         <ul>
           <li>Feature: <b>By default turn on the request interception</b> <i>switch</i> toggle when adding a new
             configuration.</li>
@@ -313,7 +313,7 @@
           </ul>
         </ul>
         <h3 class="text-dark">v0.0.2</h3>
-        <small>23.03.2020</small>
+        <small>March 2020</small>
         <ul>
           <li>Bug fix: Fix memory leak on start/stop extension.</li>
           <li>Bug fix: Improve compatibility of interceptions, better compliance with browser APIs:</li>
@@ -336,7 +336,7 @@
           </ul>
         </ul>
         <h3 class="text-dark">v0.0.1</h3>
-        <small>01.02.2020</small>
+        <small>01 February 2020</small>
         <ul>
           <li>First <a href="https://chrome.google.com/webstore/detail/tweak/feahianecghpnipmhphmfgmpdodhcapi/"
               target="_blank" title="chrome store tweak extension available for free">tweak</a> version</li>
@@ -469,6 +469,6 @@
       gtag("config", "UA-151413843-4");
     </script>
 
-<script type="text/javascript" src="main.d1b72cf3313a39c5cda9.js"></script></body>
+<script type="text/javascript" src="main.6e231c4324da77fd24a9.js"></script></body>
 
 </html>
